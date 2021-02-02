@@ -48,3 +48,9 @@
   border-radius: 100px;
   padding: 10px;
 }
+
+#searchicon {
+  font-size: 45px;
+  float: right;
+  padding: 15px;
+}
