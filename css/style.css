@@ -1,6 +1,5 @@
 #menuicon {
   font-size: 50px;
-  margin-left: 10px;
 }
 
 .opennav {
@@ -11,6 +10,7 @@
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
+  padding-top: 20px;
 }
 
 .opennav a {
@@ -19,4 +19,31 @@
   color: #818181;
   display: block;
   transition: 0.3s;
+}
+
+.userinfo {
+  background-color: rgb(255, 0, 0);
+  height: 150px;
+  text-align: left;
+  font-size: auto;
+}
+
+#profilebtn {
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+#profilebox-navbar {
+  padding: 10px;
+}
+
+.profilecontent-navbar {
+  margin-top: 20px;
+}
+.profileimg {
+  width: 130px;
+  height: 130px;
+  float: left;
+  border-radius: 100px;
+  padding: 10px;
 }
