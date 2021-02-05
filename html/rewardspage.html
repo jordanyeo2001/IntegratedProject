@@ -33,25 +33,27 @@
             <div id="profilebox-navbar" class="userinfo" href="#">
               <img class="profileimg" src="../img/Untitled.png" alt="" />
               <h2 class="profilecontent-navbar" href="#">User 1</h2>
-              <a id="profilebtn" href="#">Edit Profile</a>
+              <a id="profilebtn" onclick="href='profilepage.html'"
+                >Edit Profile</a
+              >
             </div>
           </div>
 
-          <a id="navbartext1" href="#"
+          <a id="navbartext1" href="homepage.html"
             ><img
               class="navbaricons"
               src="../img/home_icon.png"
               alt=""
             />Home</a
           >
-          <a id="navbartext2" href="#"
+          <a id="navbartext2" href="nearbystorepage.html"
             ><img
               class="navbaricons"
               src="../img/location_icon.png"
               alt=""
             />Nearby Store</a
           >
-          <a id="navbartext3" href="#"
+          <a id="navbartext3" href="rewardspage.html"
             ><img
               class="navbaricons"
               src="../img/trophy_icon.png"
@@ -65,7 +67,7 @@
               alt=""
             />Daily</a
           >
-          <a id="navbartext5" href="#"
+          <a id="navbartext5" href="feedbackpage.html"
             ><img
               class="navbaricons"
               src="../img/feedback_icon.png"
@@ -80,9 +82,24 @@
       </nav>
       <nav class="navbar-dark bg-primary navbar2 center">
         <span class="navbar-dark bg-primary"></span>
-        <img class="icon2 floatleft" src="../img/trophy_icon.png" alt="" />
-        <img class="icon1" src="../img/home_icon.png" alt="" />
-        <img class="icon3 floatright" src="../img/location_icon.png" alt="" />
+        <img
+          onclick="window.location.href='rewardspage.html'"
+          class="icon2 floatleft"
+          src="../img/trophy_icon.png"
+          alt=""
+        />
+        <img
+          onclick="window.location.href='homepage.html'"
+          class="icon1"
+          src="../img/home_icon.png"
+          alt=""
+        />
+        <img
+          onclick="window.location.href='nearbystorepage.html'"
+          class="icon3 floatright"
+          src="../img/location_icon.png"
+          alt=""
+        />
       </nav>
     </header>
 
