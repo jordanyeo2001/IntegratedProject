@@ -8,8 +8,9 @@
 }
 
 #pagename {
-  font-size: 40px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.9;
 }
 .opennav {
   height: 100%;
@@ -63,6 +64,16 @@
   height: 80px;
   padding: 10px;
   margin-top: -10px;
+  flex: 1;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  margin-left: -55px;
+  margin-top: 4px;
+  border-radius: 100px;
+  padding: 10px;
   flex: 1;
 }
 
