@@ -153,3 +153,13 @@
 .background {
   background-color: bisque;
 }
+
+#map {
+  width: auto;
+  max-width: 100%;
+  height: 500px;
+}
+
+#info_div {
+  background-color: aliceblue;
+}
