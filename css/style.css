@@ -158,6 +158,7 @@
   width: auto;
   max-width: 100%;
   height: 500px;
+  z-index: -1;
 }
 
 #info_div {
