@@ -1,6 +1,9 @@
-#menuicon {
-  margin-left: 10px;
-  font-size: 50px;
+.menuicon {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  padding: 10px;
+  flex: 1;
 }
 
 #pagename {
@@ -15,7 +18,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgb(0, 238, 255);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 20px;
@@ -56,19 +59,68 @@
   padding: 10px;
 }
 
-.profileimg2 {
+.searchicon {
   width: 80px;
   height: 80px;
-  margin-left: 34px;
+  padding: 10px;
+  flex: 1;
+}
+
+.icon1 {
+  width: 80px;
+  height: 80px;
+  margin-left: 5px;
+  margin-top: 4px;
+  border-radius: 100px;
+  padding: 10px;
+  flex: 1;
+}
+.icon2 {
+  width: 80px;
+  height: 80px;
+  margin-left: -70px;
+  border-radius: 100px;
+  padding: 10px;
+  flex: 1;
+}
+.icon3 {
+  width: 80px;
+  height: 80px;
+  margin-right: -60px;
   border-radius: 100px;
   padding: 10px;
   flex: 1;
 }
 
-#searchicon {
-  font-size: 45px;
-  float: right;
-  padding: 15px;
+.navbaricons {
+  width: 80px;
+  height: 80px;
+  margin-left: -30px;
+  padding: 10px;
+}
+
+#navbartext1 {
+  font-size: 20px;
+}
+
+#navbartext2 {
+  font-size: 20px;
+}
+
+#navbartext3 {
+  font-size: 20px;
+}
+
+#navbartext4 {
+  font-size: 20px;
+}
+
+#navbartext5 {
+  font-size: 20px;
+}
+
+#navbartext6 {
+  font-size: 20px;
 }
 
 .navbar2 {
