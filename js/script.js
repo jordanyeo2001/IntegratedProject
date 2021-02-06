@@ -79,6 +79,7 @@ function initMap(latitude, longitude) {
 }
 
 //For Login and SignUp
+
 $(document).ready(function () {
   const APIKEY = "5ffd00071346a1524ff127a5";
 
@@ -118,10 +119,16 @@ $(document).ready(function () {
         //clear the form and triggering it's reset feature
         $("#add-contact-form").trigger("reset");
       },
+      error: function (err) {
+        alert("This username/email is already in use!");
+      },
     };
 
     $.ajax(settings).done(function (response) {
       $("#accounts-submit").prop("disabled", false);
+
+      alert("You account has been successfully created! Please login.");
+      window.location.href = "loginpage.html";
     });
   });
 
@@ -159,10 +166,11 @@ $(document).ready(function () {
         }
         var x = usernamelist.includes(accountusername);
         var y = passwordlist.includes(accountpassword);
+
         if (x == true && y == true) {
           window.location.href = "homepage.html";
         } else {
-          $("#invalidtext").append("Incorrect username or password");
+          $("#invalidtext").html("Incorrect username or password");
         }
       });
     }
