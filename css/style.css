@@ -79,6 +79,9 @@
 .btnsize {
   min-width: 100px;
 }
+.btn {
+  font-size: 25px;
+}
 .space {
   width: 10px;
   display: inline-block;
