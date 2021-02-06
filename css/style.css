@@ -1,3 +1,6 @@
+.textcenter {
+  text-align: center;
+}
 .navbarbg {
   background-color: #add8e6;
 }
@@ -70,7 +73,29 @@
   margin-top: -10px;
   flex: 1;
 }
-
+.btnsize {
+  min-width: 100px;
+}
+.space {
+  width: 10px;
+  display: inline-block;
+}
+.logo {
+  width: 350px;
+  height: auto;
+  margin-left: 5px;
+  margin-top: 4px;
+  padding: 10px;
+  flex: 1;
+}
+.box_img {
+  width: 350px;
+  height: auto;
+  margin-left: 5px;
+  margin-top: -150px;
+  padding: 10px;
+  flex: 1;
+}
 .icon {
   width: 80px;
   height: 80px;
@@ -80,7 +105,21 @@
   padding: 10px;
   flex: 1;
 }
-
+.shopicon {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  margin-left: -25px;
+  flex: 1;
+}
+.shoptext {
+  margin-top: 25px;
+  margin-left: -10px;
+  font-size: 4vw;
+}
+.shoptext2 {
+  margin-top: -15px;
+}
 .icon1 {
   width: 80px;
   height: 80px;
@@ -180,4 +219,13 @@
   max-width: 100%;
   height: 300px;
   padding: 10px;
+}
+
+@media only screen and (max-width: 320px) {
+  .textcenter {
+    margin-right: -65px;
+  }
+  .center {
+    margin-right: -65px;
+  }
 }
