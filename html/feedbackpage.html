@@ -22,6 +22,7 @@
             alt="" /></span
         ><span id="pagename">Feedback</span>
         <span id="searchicon"
+          ><a id="searchicon" onclick="href='searchpage.html'"
           ><img
             class="searchicon floatright"
             src="../img/search_icon.png"
@@ -104,6 +105,28 @@
         />
       </nav>
     </header>
+
+    <div class="feedback-form ">
+      <br>
+      <label for="inputName" class="form-label">Full Name</label>
+      <input type="name" class="form-control" id="inputName" placeholder="John Johnson"><br>
+
+      <label for="inputEmail" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com"><br>
+
+      <label for="inputSubject" class="form-label">Subject</label>
+      <input type="subject" list="subjectDatalist" class="form-control" id="inputSubject" placeholder="Type to search"><br>
+      <datalist id="subjectDatalist">
+        <option value="Bug Report">
+        <option value="Customer Support">
+        <option value="Suggestion">
+        <option value="Other">
+      </datalist>
+
+      <label for="inputMessage" class="form-label">Message</label>
+      <textarea class="form-control" id="inputMessage" rows="6" placeholder="Enter your message here"></textarea><br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"

@@ -240,6 +240,11 @@
 .form {
   margin-top: 100px;
 }
+
+.feedback-form {
+  padding: 30px;
+}
+
 @media only screen and (max-width: 320px) {
   .textcenter {
     margin-right: -65px;
