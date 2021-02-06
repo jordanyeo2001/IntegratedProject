@@ -78,27 +78,20 @@ function initMap(latitude, longitude) {
   });
 }
 
-//[STEP 0]: Make sure our document is A-OK
+//For Login and SignUp
 $(document).ready(function () {
-  //what kind of interface we want at the start
   const APIKEY = "5ffd00071346a1524ff127a5";
 
-  //[STEP 1]: Create our submit form listener
   $("#accounts-submit").on("click", function (e) {
     //prevent default action of the button
     e.preventDefault();
 
-    //[STEP 2]: let's retrieve form data
-    //for now we assume all information is valid
-    //you are to do your own data validation
     let accountusername = $("#accounts-username").val();
     let accountemail = $("#accounts-email").val();
     let accountpassword = $("#accounts-password").val();
     let accountgender = $("#accounts-gender").val();
     let accountphonenumber = $("#accounts-phonenumber").val();
 
-    //[STEP 3]: get form values when user clicks on send
-    //Adapted from restdb api
     let jsondata = {
       username: accountusername,
       email: accountemail,
@@ -107,12 +100,11 @@ $(document).ready(function () {
       phonenumber: accountphonenumber,
     };
 
-    //[STEP 4]: Create our AJAX settings. Take note of API key
     let settings = {
       async: true,
       crossDomain: true,
       url: "https://interactivedev-e9de.restdb.io/rest/accounts",
-      method: "POST", //[cher] we will use post to send info
+      method: "POST",
       headers: {
         "content-type": "application/json",
         "x-apikey": APIKEY,
@@ -121,18 +113,14 @@ $(document).ready(function () {
       processData: false,
       data: JSON.stringify(jsondata),
       beforeSend: function () {
-        //@TODO use loading bar instead
-        //disable our button or show loading bar
+        //disable the button
         $("#accounts-submit").prop("disabled", true);
-        //clear our form using the form id and triggering it's reset feature
+        //clear the form and triggering it's reset feature
         $("#add-contact-form").trigger("reset");
       },
     };
 
-    //[STEP 5]: Send our ajax request over to the DB and print response of the RESTDB storage to console.
     $.ajax(settings).done(function (response) {
-      console.log(response);
-
       $("#accounts-submit").prop("disabled", false);
     });
   });
@@ -141,21 +129,17 @@ $(document).ready(function () {
     //prevent default action of the button
     e.preventDefault();
 
-    //[STEP 2]: let's retrieve form data
-    //for now we assume all information is valid
-    //you are to do your own data validation
     let accountusername = $("#accounts-username").val();
     let accountpassword = $("#accounts-password").val();
 
     getaccounts();
 
     function getaccounts(limit = 10, all = true) {
-      //[STEP 7]: Create our AJAX settings
       let settings = {
         async: true,
         crossDomain: true,
         url: "https://interactivedev-e9de.restdb.io/rest/accounts",
-        method: "GET", //[cher] we will use GET to retrieve info
+        method: "GET",
         headers: {
           "content-type": "application/json",
           "x-apikey": APIKEY,
@@ -163,25 +147,22 @@ $(document).ready(function () {
         },
       };
 
-      //[STEP 8]: Make our AJAX calls
-      //Once we get the response, we modify our table content by creating the content internally. We run a loop to continously add on data
-      //RESTDb/NoSql always adds in a unique id for each data, we tap on it to have our data and place it into our links
       $.ajax(settings).done(function (response) {
-        let content = "";
+        var usernamelist = [];
+        var passwordlist = [];
+
         for (var i = 0; i < response.length && i < limit; i++) {
           var tempusername = response[i].username;
           var temppassword = response[i].password;
-          if (
-            accountusername == tempusername &&
-            accountpassword == temppassword
-          ) {
-            window.location.href = "homepage.html";
-          } else {
-            $("#invalidtext").append("Incorrect username or password");
-            break;
-          }
-          console.log(tempusername);
-          console.log(temppassword);
+          usernamelist.push(tempusername);
+          passwordlist.push(temppassword);
+        }
+        var x = usernamelist.includes(accountusername);
+        var y = passwordlist.includes(accountpassword);
+        if (x == true && y == true) {
+          window.location.href = "homepage.html";
+        } else {
+          $("#invalidtext").append("Incorrect username or password");
         }
       });
     }
