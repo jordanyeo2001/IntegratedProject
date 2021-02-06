@@ -78,12 +78,11 @@ function initMap(latitude, longitude) {
   });
 }
 
-//account info
 //[STEP 0]: Make sure our document is A-OK
 $(document).ready(function () {
   //what kind of interface we want at the start
   const APIKEY = "5ffd00071346a1524ff127a5";
-  getContacts();
+
   //[STEP 1]: Create our submit form listener
   $("#accounts-submit").on("click", function (e) {
     //prevent default action of the button
@@ -92,22 +91,20 @@ $(document).ready(function () {
     //[STEP 2]: let's retrieve form data
     //for now we assume all information is valid
     //you are to do your own data validation
-    let contactName = $("#contact-name").val();
-    let contactEmail = $("#contact-email").val();
-    let contactMessage = $("#contact-msg").val();
-    let contactStudentID = $("#contact-studentid").val();
-    let contactStudentClass = $("#contact-studentclass").val();
-    let contactStudentMentor = $("#contact-studentmentor").val();
+    let accountusername = $("#accounts-username").val();
+    let accountemail = $("#accounts-email").val();
+    let accountpassword = $("#accounts-password").val();
+    let accountgender = $("#accounts-gender").val();
+    let accountphonenumber = $("#accounts-phonenumber").val();
 
     //[STEP 3]: get form values when user clicks on send
     //Adapted from restdb api
     let jsondata = {
-      name: contactName,
-      email: contactEmail,
-      message: contactMessage,
-      studentid: contactStudentID,
-      studentclass: contactStudentClass,
-      studentmentor: contactStudentMentor,
+      username: accountusername,
+      email: accountemail,
+      password: accountpassword,
+      gender: accountgender,
+      phonenumber: accountphonenumber,
     };
 
     //[STEP 4]: Create our AJAX settings. Take note of API key
@@ -136,7 +133,7 @@ $(document).ready(function () {
     $.ajax(settings).done(function (response) {
       console.log(response);
 
-      $("#accounts-submit").prop("disabled", false);
+      $("#contact-submit").prop("disabled", false);
 
       //@TODO update frontend UI
       $("#add-update-msg").show().fadeOut(3000);
