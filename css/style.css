@@ -66,6 +66,9 @@
   padding: 10px;
 }
 
+.centercontent {
+  justify-content: center;
+}
 .searchicon {
   width: 80px;
   height: 80px;
@@ -79,6 +82,9 @@
 .space {
   width: 10px;
   display: inline-block;
+}
+.backbtn {
+  width: 120px;
 }
 .logo {
   width: 350px;
@@ -146,6 +152,16 @@
   flex: 1;
 }
 
+.searchpageicon {
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+  flex: 1;
+}
+
+.alignsearchbox {
+  margin-top: 10px;
+}
 .navbaricons {
   width: 80px;
   height: 80px;

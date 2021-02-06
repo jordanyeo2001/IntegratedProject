@@ -13,38 +13,81 @@
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="background">
-    <div class="center">
-      <img class="logo" src="/img/logo_icon.png" alt="" />
-    </div>
-    <div class="center">
-      <img class="box_img" src="/img/boxes.png" alt="" />
-    </div>
-    <div class="d-flex justify-content-center textcenter">
-      <div>
-        <img class="shopicon" src="/img/shopping_cart.png" alt="" />
+    <div class="container">
+      <div class="row row-cols-2">
+        <img class="backbtn floatleft" src="../img/back_icon.png" alt="" />
       </div>
-      <div class="shoptext">
-        <p>Get the items you need today.</p>
-        <p class="shoptext2">Shop now!</p>
+      <div class="row row-cols-2 centercontent">
+        <div><h1>Login</h1></div>
       </div>
     </div>
-    <div class="center">
-      <button
-        style="min-width: 100px"
-        type="button"
-        class="btn-primary btn-lg rounded-pill"
-      >
-        Login
-      </button>
-      <div class="space"></div>
-      <button
-        style="min-width: 100px"
-        type="button"
-        class="btn-primary btn-lg rounded-pill"
-      >
-        Sign Up
-      </button>
+    <div class="container">
+      <div class="form" id="add-contact">
+        <form id="add-contact-form">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input
+              type="text"
+              id="contact-name"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact-studentid">Student ID</label>
+            <input
+              type="text"
+              id="contact-studentid"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact-studentclass">Student Class</label>
+            <input
+              type="text"
+              id="contact-studentclass"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact-studentmentor">Student Mentor</label>
+            <input
+              type="text"
+              id="contact-studentmentor"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input
+              type="email"
+              id="contact-email"
+              class="form-control"
+              required
+            />
+            <small id="contact-email-help" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="contact-msg">Message</label>
+            <textarea id="contact-msg" class="form-control" required>
+            </textarea>
+          </div>
+
+          <input
+            type="submit"
+            value="Send"
+            class="btn btn-primary"
+            id="contact-submit"
+          />
+        </form>
+      </div>
     </div>
+    <!-- end add container -->
 
     <script src="/js/script.js"></script>
     <script
