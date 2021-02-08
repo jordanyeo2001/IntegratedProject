@@ -38,7 +38,7 @@
   transition: 0.5s;
 }
 
-.userinfo {
+.navbarimg {
   background: url("../img/cloud_img.jpg");
   background-size: 300px 200px;
   height: 150px;
@@ -58,12 +58,34 @@
 .profilecontent-navbar {
   margin-top: 20px;
 }
+
 .profileimg {
   width: 130px;
   height: 130px;
   float: left;
   border-radius: 100px;
   padding: 10px;
+}
+.profilepagebox {
+  margin-top: 30px;
+  padding: 20px;
+}
+.profilepagetext {
+  font-size: 6vw;
+}
+.profilepageimg {
+  width: 140px;
+  height: 140px;
+  float: left;
+  border-radius: 100px;
+  padding: 10px;
+}
+.profilepagebg {
+  background: url("../img/cloud_img.jpg");
+  background-size: 100vw 60vw;
+  height: 180px;
+  text-align: left;
+  font-size: auto;
 }
 
 .centercontent {
@@ -255,5 +277,24 @@
   }
   .center {
     margin-right: -65px;
+  }
+}
+
+@media only screen and (width: 1024px) {
+  .profilepageimg {
+    width: 200px;
+    height: 200px;
+  }
+  .profilepagebg {
+    height: auto;
+  }
+}
+@media only screen and (width: 768px) {
+  .profilepageimg {
+    width: 200px;
+    height: 200px;
+  }
+  .profilepagebg {
+    height: auto;
   }
 }

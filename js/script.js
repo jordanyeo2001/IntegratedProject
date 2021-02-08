@@ -138,7 +138,7 @@ $(document).ready(function () {
 
     let accountusername = $("#accounts-username").val();
     let accountpassword = $("#accounts-password").val();
-
+    localStorage.setItem("username", accountusername);
     getaccounts();
 
     function getaccounts(limit = 10, all = true) {
@@ -176,3 +176,31 @@ $(document).ready(function () {
     }
   });
 });
+
+function accountinfo() {
+  var settings = {
+    url: "https://interactivedev-e9de.restdb.io/rest/accounts",
+    method: "GET",
+    timeout: 0,
+    headers: {
+      "x-api-key": "5ffd00071346a1524ff127a5",
+    },
+  };
+
+  $.ajax(settings).done(function (response) {
+    var x = localStorage.getItem("username");
+    $("#profileusername").html(x);
+    for (i in response) {
+      var y = response[i].username;
+      if (x == y) {
+        var accemail = response[i].email;
+        var accnumber = response[i].phonenumber;
+        var accgender = response[i].gender;
+        $("#accemail").html(accemail);
+        $("#accphonenumber").html(accnumber);
+        $("#accgender").html(accgender);
+      }
+    }
+  });
+}
+accountinfo();
