@@ -113,20 +113,13 @@ $(document).ready(function () {
       },
       processData: false,
       data: JSON.stringify(jsondata),
-      beforeSend: function () {
-        //disable the button
-        $("#accounts-submit").prop("disabled", true);
-        //clear the form and triggering it's reset feature
-        $("#add-contact-form").trigger("reset");
-      },
+      beforeSend: function () {},
       error: function (err) {
         alert("This username/email is already in use!");
       },
     };
 
     $.ajax(settings).done(function (response) {
-      $("#accounts-submit").prop("disabled", false);
-
       alert("You account has been successfully created! Please login.");
       window.location.href = "loginpage.html";
     });
@@ -205,3 +198,12 @@ function accountinfo() {
   });
 }
 accountinfo();
+
+$(document).ready(function () {
+  $("#navbartext4").on("click", function (e) {
+    $("#newmsg").css("display", "none");
+    setTimeout(function () {
+      $("#newmsg").css("display", "inline-block");
+    }, 86400);
+  });
+});
