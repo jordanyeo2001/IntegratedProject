@@ -105,26 +105,28 @@
       </nav>
     </header>
     <div class="closebtn" onclick="closeNavbar()"><div class="feedback-form ">
-      <br>
-      <label for="inputName" class="form-label">Full Name</label>
-      <input type="name" class="form-control" id="inputName" placeholder="John Johnson"><br>
-
-      <label for="inputEmail" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com"><br>
-
-      <label for="inputSubject" class="form-label">Subject</label>
-      <input type="subject" list="subjectDatalist" class="form-control" id="inputSubject" placeholder="Type to search"><br>
-      <datalist id="subjectDatalist">
-        <option value="Bug Report">
-        <option value="Customer Support">
-        <option value="Suggestion">
-        <option value="Other">
-      </datalist>
-
-      <label for="inputMessage" class="form-label">Message</label>
-      <textarea class="form-control" id="inputMessage" rows="6" placeholder="Enter your message here"></textarea><br>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </div></div>
+      <div class="feedback-form" id="update-feedback-form">
+        <div id="add-feedback-form">
+          <label for="inputUser" class="form-label">Username</label>
+          <div type="username" class="form-control" id="inputUser" ></div><br>
+  
+          <label for="inputName" class="form-label">Full Name</label>
+          <input type="name" class="form-control" id="inputName" placeholder="John Johnson"><br>
+        
+          <label for="inputSubject" class="form-label">Subject</label>
+          <input type="subject" list="subjectDatalist" class="form-control" id="inputSubject" placeholder="Type to search"><br>
+          <datalist id="subjectDatalist">
+            <option value="Bug Report">
+            <option value="Customer Support">
+            <option value="Suggestion">
+            <option value="Other">
+          </datalist>
+  
+          <label for="inputMessage" class="form-label">Message</label>
+          <textarea class="form-control" id="inputMessage" rows="6" placeholder="Enter your message here"></textarea><br>
+          <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+        </div>
+      </div></div>
     
 
     <script

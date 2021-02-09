@@ -184,6 +184,7 @@ function accountinfo() {
     var x = localStorage.getItem("username");
     $("#profileusername").html(x);
     $("#navbarname").html(x);
+    $("#inputUser").html(x);
     for (i in response) {
       var y = response[i].username;
       if (x == y) {
@@ -205,5 +206,50 @@ $(document).ready(function () {
     setTimeout(function () {
       $("#newmsg").css("display", "inline-block");
     }, 86400);
+  });
+});
+
+//JS for Feedback Page//
+$(document).ready(function () {
+  const APIKEY = "5ffd003a1346a1524ff127ad";
+
+  $("#submit-button").on("click", function (e) {
+    e.preventDefault();
+    var x = localStorage.getItem("username");
+    let contactUsername = x;
+    let contactName = $("#inputName").val();
+    let contactSubject = $("#inputSubject").val();
+    let contactMessage = $("#inputMessage").val();
+
+    let jsondata = {
+      username: contactUsername,
+      name: contactName,
+      subject: contactSubject,
+      message: contactMessage,
+    };
+
+    let settings = {
+      async: true,
+      crossDomain: true,
+      url: "https://interactivedev-c72a.restdb.io/rest/contact",
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache",
+      },
+      processData: false,
+      data: JSON.stringify(jsondata),
+      beforeSend: function () {
+        $("#submit-button").prop("disabled", true);
+        $("#add-feedback-form").trigger("reset");
+      },
+    };
+
+    $.ajax(settings).done(function (response) {
+      $("#submit-button").prop("disabled", false);
+      alert("Your feedback has been succesfully submitted.");
+      window.location.href = "homepage.html";
+    });
   });
 });
