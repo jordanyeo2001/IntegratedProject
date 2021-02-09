@@ -13,13 +13,16 @@
   flex: 1;
 }
 
+#sidenavbar {
+  z-index: 1;
+}
 #pagename {
   font-size: 30px;
   font-weight: 500;
   line-height: 1.9;
 }
 .opennav {
-  height: 100%;
+  height: 105%;
   width: 0;
   position: fixed;
   top: 0;
@@ -41,7 +44,8 @@
 .navbarimg {
   background: url("../img/cloud_img.jpg");
   background-size: 300px 200px;
-  height: 150px;
+  height: 200px;
+  margin-top: -21%;
   text-align: left;
   font-size: auto;
 }
@@ -56,12 +60,13 @@
 }
 
 .profilecontent-navbar {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .profileimg {
-  width: 130px;
-  height: 130px;
+  margin-top: 30px;
+  width: 100px;
+  height: 100px;
   float: left;
   border-radius: 100px;
   padding: 10px;

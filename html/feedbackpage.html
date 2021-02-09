@@ -29,7 +29,6 @@
             alt=""
         /></span>
         <div id="sidenavbar" class="opennav">
-          <a class="closebtn" onclick="closeNavbar()">&times;</a>
           <div>
             <div id="profilebox-navbar" class="navbarimg">
               <img class="profileimg" src="../img/profilepic.jpg" alt="" />
@@ -105,8 +104,7 @@
         />
       </nav>
     </header>
-
-    <div class="feedback-form ">
+    <div class="closebtn" onclick="closeNavbar()"><div class="feedback-form ">
       <br>
       <label for="inputName" class="form-label">Full Name</label>
       <input type="name" class="form-control" id="inputName" placeholder="John Johnson"><br>
@@ -126,7 +124,8 @@
       <label for="inputMessage" class="form-label">Message</label>
       <textarea class="form-control" id="inputMessage" rows="6" placeholder="Enter your message here"></textarea><br>
       <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+    </div></div>
+    
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
