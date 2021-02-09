@@ -66,6 +66,12 @@
   border-radius: 100px;
   padding: 10px;
 }
+.profilepagefont {
+  font-size: 7vw;
+}
+.profilepagefont1 {
+  font-size: 5vw;
+}
 .profilepagebox {
   margin-top: 30px;
   padding: 20px;

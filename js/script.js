@@ -190,6 +190,7 @@ function accountinfo() {
   $.ajax(settings).done(function (response) {
     var x = localStorage.getItem("username");
     $("#profileusername").html(x);
+    $("#navbarname").html(x);
     for (i in response) {
       var y = response[i].username;
       if (x == y) {
