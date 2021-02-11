@@ -131,7 +131,7 @@
   margin-top: -10px;
   flex: 1;
 }
-.form-control {
+.textboxes {
   box-shadow: black 2px 2px;
 }
 .btnsize {
@@ -147,13 +147,13 @@
 }
 .backbtn {
   width: 120px;
-  height: 80px;
+  height: 100px;
 }
 .logo {
   width: 350px;
   height: auto;
   margin-left: 5px;
-  margin-top: 4px;
+  margin-top: 60px;
   padding: 10px;
   flex: 1;
 }
@@ -179,10 +179,11 @@
   height: 80px;
   padding: 10px;
   margin-left: -25px;
+  margin-top: 125px;
   flex: 1;
 }
 .shoptext {
-  margin-top: 25px;
+  margin-top: 150px;
   margin-left: -10px;
   font-size: 4vw;
 }
