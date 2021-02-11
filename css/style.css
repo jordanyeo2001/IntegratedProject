@@ -131,7 +131,11 @@
   margin-top: -10px;
   flex: 1;
 }
+.form-control {
+  box-shadow: black 2px 2px;
+}
 .btnsize {
+  box-shadow: black 2px 2px;
   min-width: 100px;
 }
 .btn {
