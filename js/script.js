@@ -253,3 +253,17 @@ $(document).ready(function () {
     });
   });
 });
+
+$(document).ready(function () {
+  $("#camclosebtn").on("click", function (e) {
+    window.location.href = "homepage.html";
+  });
+
+  $("#carmodel").on("click", function (e) {
+    window.location.href = "cararpage.html";
+  });
+
+  $("#truckmodel").on("click", function (e) {
+    window.location.href = "cararpage.html";
+  });
+});

@@ -305,6 +305,13 @@
   padding: 30px;
 }
 
+.cambox {
+  position: absolute;
+  top: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
 @media only screen and (max-width: 320px) {
   .textcenter {
     margin-right: -65px;
