@@ -348,7 +348,9 @@
     width: 354.5px;
   }
 }
-
+.allbtns {
+  background-color: #90bcff;
+}
 @media only screen and (width: 1024px) {
   .profilepageimg {
     margin-top: 10px;
