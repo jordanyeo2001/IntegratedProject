@@ -122,7 +122,9 @@
   text-align: left;
   font-size: auto;
 }
-
+.profilebtn {
+  margin-top: 50px;
+}
 .centercontent {
   justify-content: center;
 }
@@ -349,6 +351,7 @@
   }
 }
 .allbtns {
+  color: #ffffff;
   background-color: #90bcff;
 }
 @media only screen and (width: 1024px) {
