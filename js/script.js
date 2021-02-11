@@ -206,7 +206,6 @@ function resetdaily() {
   var currentmins = currenttime.getMinutes();
   var timenow = currenthrs + ":" + currentmins;
   var resettime = "0:0";
-  console.log(resettime);
   if (timenow == resettime) {
     $("#newmsg").css("display", "inline-block");
   } else {

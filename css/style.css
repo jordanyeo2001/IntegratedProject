@@ -68,14 +68,17 @@
 
 #profilebox-navbar {
   padding: 10px;
+  background-color: #fababa;
 }
 
 .profilecontent-navbar {
-  margin-top: 50px;
+  margin-top: 80px;
 }
-
-.profileimgsearch {
+.profilesearch-navbar {
   margin-top: 60px;
+}
+.profileimgsearch {
+  margin-top: 40px;
   width: 100px;
   height: 100px;
   float: left;
@@ -83,10 +86,9 @@
   padding: 10px;
 }
 .profileimg {
-  margin-top: 30px;
-  margin-left: -30px;
-  width: 100px;
-  height: 100px;
+  margin-top: 60px;
+  width: 20vw;
+  height: 20vw;
   float: left;
   border-radius: 100px;
   padding: 10px;
@@ -315,19 +317,49 @@
   z-index: 1;
 }
 
-@media only screen and (max-width: 320px) {
+.rewardbox {
+  height: 30px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+}
+
+.rewardpoint1 {
+  padding-left: 5px;
+}
+
+.rewardpoint2 {
+  padding-right: 5px;
+}
+
+.rewardvoucher {
+  width: 30vw;
+  height: 30vw;
+  padding: 10px;
+}
+@media only screen and (width: 320px) {
   .textcenter {
     margin-right: -65px;
   }
   .center {
     margin-right: -65px;
   }
+  .navbar2 {
+    width: 354.5px;
+  }
 }
 
 @media only screen and (width: 1024px) {
   .profilepageimg {
-    width: 200px;
-    height: 200px;
+    margin-top: 10px;
+    width: 160px;
+    height: 160px;
+  }
+  .profilepagefont {
+    margin-top: 15px;
+  }
+  .profilepagefont2 {
+    font-size: 30px;
   }
   .profilepagebg {
     height: auto;
@@ -335,8 +367,15 @@
 }
 @media only screen and (width: 768px) {
   .profilepageimg {
-    width: 200px;
-    height: 200px;
+    margin-top: 10px;
+    width: 140px;
+    height: 140px;
+  }
+  .profilepagefont {
+    margin-top: 10px;
+  }
+  .profilepagefont2 {
+    font-size: 30px;
   }
   .profilepagebg {
     height: auto;
