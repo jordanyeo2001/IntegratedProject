@@ -7,7 +7,7 @@
   text-align: center;
 }
 .navbarbg {
-  background-color: #add8e6;
+  background-color: #dd7e80;
 }
 .menuicon {
   width: 80px;
@@ -32,7 +32,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #add8e6;
+  background-color: #92d0dd;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 20px;
@@ -47,8 +47,7 @@
 }
 
 .navbarimg {
-  background: url("../img/cloud_img.jpg");
-  background-size: 300px 200px;
+  background-color: #0097b5;
   height: 200px;
   margin-top: -21%;
   text-align: left;
@@ -56,8 +55,7 @@
 }
 
 .navbarimgsearch {
-  background: url("../img/cloud_img.jpg");
-  background-size: 300px 200px;
+  background-color: #0097b5;
   height: 200px;
   margin-top: -10%;
   text-align: left;
@@ -271,7 +269,7 @@
   float: right;
 }
 .background {
-  background-color: #f9f4ca;
+  background-color: #ffd4db;
 }
 
 #map {

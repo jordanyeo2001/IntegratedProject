@@ -199,13 +199,28 @@ function accountinfo() {
   });
 }
 accountinfo();
+resetdaily();
+function resetdaily() {
+  var currenttime = new Date();
+  var currenthrs = currenttime.getHours();
+  var currentmins = currenttime.getMinutes();
+  var timenow = currenthrs + ":" + currentmins;
+  var resettime = "0:0";
+  console.log(resettime);
+  if (timenow == resettime) {
+    $("#newmsg").css("display", "inline-block");
+  } else {
+    $("#newmsg").css("display", "none");
+  }
+}
 
 $(document).ready(function () {
   $("#navbartext4").on("click", function (e) {
+    var currenttime = new Date();
+    var currenthrs = currenttime.getHours();
+    var currentmins = currenttime.getMinutes();
+    var timenow = currenthrs + ":" + currentmins;
     $("#newmsg").css("display", "none");
-    setTimeout(function () {
-      $("#newmsg").css("display", "inline-block");
-    }, 86400);
   });
 });
 
