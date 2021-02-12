@@ -280,4 +280,19 @@ $(document).ready(function () {
   $("#truckmodel").on("click", function (e) {
     window.location.href = "cararpage.html";
   });
+  $("#plus-btn").on("click", function (e) {
+    var x = document.getElementById("productquantity").value;
+    x = parseInt(x) + 1;
+    document.getElementById("productquantity").value = x;
+  });
+  $("#minus-btn").on("click", function (e) {
+    var x = document.getElementById("productquantity").value;
+    if (x != 1) {
+      x = parseInt(x) - 1;
+    } else {
+      x = 1;
+    }
+
+    document.getElementById("productquantity").value = x;
+  });
 });

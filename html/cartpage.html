@@ -99,70 +99,70 @@
         />
       </nav>
     </header>
-    <div>
-      <div
-        style="margin-left: 1px; padding: 5px; margin-top: 20px"
-        class="closebtn row"
-        onclick="closeNavbar()"
-      >
-        <div style="margin-left: 10px">
+    <div class="cartcontainer">
+      <div id="closebtn" class="closebtn row" onclick="closeNavbar()">
+        <div class="productbox">
           <input
             type="checkbox"
             id="product1"
             name="product1"
             value="Product"
           />
-          <img
-            style="
-              margin-left: 5px;
-              margin-right: 10px;
-              width: 80px;
-              height: 80px;
-              border-radius: 5px;
-            "
-            src="../img/Untitled.png"
-          />
+          <img class="productimg" src="../img/Untitled.png" />
         </div>
 
-        <div
-          class="column"
-          style="
-            width: 60%;
-            border-radius: 5px;
-            background-color: #ecb5bf;
-            padding: 10px;
-            height: 80px;
-          "
-        >
+        <div class="column productinfobox">
           <h4>Product name</h4>
           <p>$0.00</p>
         </div>
       </div>
-      <div>
-        <div style="padding: 10px" class="input-group">
+      <div class="quantitybox">
+        <div class="input-group">
           <input
-            style="width: 30px"
             type="button"
             value="–"
             class="minus-btn"
+            id="minus-btn"
             data-field="quantity"
           />
           <input
-            style="width: 60px; text-align: center"
+            min="1"
             type="number"
             max=""
             value="1"
             name="quantity"
             class="productquantity"
+            id="productquantity"
           />
           <input
-            style="font-size: 20px"
             type="button"
             value="+"
             class="plus-btn"
+            id="plus-btn"
             data-field="quantity"
           />
         </div>
+      </div>
+    </div>
+    <div style="background-color: #dd7e80; height: 60px; margin-top: 460px">
+      <div style="margin-left: 10px; margin-top: 20px" class="floatleft">
+        <input
+          style="width: 15px; height: 15px"
+          type="checkbox"
+          id="product1"
+          name="product1"
+          value="Product"
+        />All
+      </div>
+      <div class="floatright" style="text-align: right">
+        <div style="background-color: #ff4448; padding: 17px">Checkout</div>
+      </div>
+      <div
+        class="floatright"
+        style="background-color: #dd7e80; text-align: right; padding: 5px"
+      >
+        <div>SubTotal</div>
+        <div>$0.00</div>
       </div>
     </div>
 
