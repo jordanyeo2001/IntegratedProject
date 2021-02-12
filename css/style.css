@@ -318,7 +318,9 @@
   text-align: center;
   z-index: 1;
 }
-
+.rewardscontainer {
+  padding: 10px;
+}
 .rewardbox {
   height: 30px;
   border-style: solid;
