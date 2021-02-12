@@ -295,4 +295,44 @@ $(document).ready(function () {
 
     document.getElementById("productquantity").value = x;
   });
+
+  document.getElementById("selectall").onclick = function () {
+    var productbox = document.getElementsByName("products");
+    for (var x of productbox) {
+      x.checked = this.checked;
+    }
+  };
+
+  function addtocart(x) {
+    var productelement = document.querySelector("#productcontainer");
+
+    var duplicate = productelement.cloneNode(true);
+    var productnumber = x;
+    duplicate.id = "productcontainer" + productnumber;
+    duplicate.classList.add("text-large");
+
+    productelement.after(duplicate);
+
+    var productelement = document.querySelector("#productcontainer");
+  }
+  $("#").on("click", function (e) {
+    if (localStorage.getItem("cartnum")) {
+      var cartnum = parseInt(localStorage.getItem("cartnum"));
+      cartnum += 1;
+    } else {
+      var cartnum = 0;
+      cartnum += 1;
+    }
+
+    localStorage.setItem("cartnum", cartnum);
+    addtocart(cartnum);
+    var getcartitems = document.querySelector("#cartcontent");
+    localStorage.setItem("cartitems", getcartitems.innerHTML);
+  });
+  $("#").on("click", function (e) {
+    var getcartitems = document.querySelector("#cartcontent");
+    var storeitems = localStorage.getItem("cartitems");
+    $("#cartcontent").innerHTML = storeitems;
+    getcartitems.innerHTML = storeitems;
+  });
 });
