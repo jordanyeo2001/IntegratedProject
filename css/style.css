@@ -341,6 +341,10 @@
   height: 30vw;
   padding: 10px;
 }
+.allbtns {
+  color: #ffffff;
+  background-color: #90bcff;
+}
 @media only screen and (width: 320px) {
   .textcenter {
     margin-right: -65px;
@@ -352,10 +356,7 @@
     width: 354.5px;
   }
 }
-.allbtns {
-  color: #ffffff;
-  background-color: #90bcff;
-}
+
 @media only screen and (width: 1024px) {
   .profilepageimg {
     margin-top: 10px;
