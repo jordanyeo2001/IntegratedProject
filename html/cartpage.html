@@ -45,6 +45,8 @@
               src="../img/home_icon.png"
               alt=""
             />Home</a
+          ><a id="navbartext" href="cartpage.html"
+            ><img class="navbaricons" src="#" alt="" />Cart</a
           >
           <a id="navbartext2" href="nearbystorepage.html"
             ><img
@@ -99,80 +101,131 @@
         />
       </nav>
     </header>
-    <div id="carttext" class="center"><h2>Your cart is empty.</h2></div>
-    <div id="cartcontent">
-      <div id="productcontainer" class="cartcontainer">
-        <div id="closebtn" class="closebtn row" onclick="closeNavbar()">
-          <div class="productbox">
-            <input
-              type="checkbox"
-              id="product1"
-              name="products"
-              value="Product"
-            />
-            <img class="productimg" src="../img/Untitled.png" />
-          </div>
+    <div class="closebtn" onclick="closeNavbar()">
+      <div id="carttext" class="center"><h2>Your cart is empty.</h2></div>
+      <div id="cartcontent">
+        <div id="productcontainer" class="cartcontainer">
+          <div id="closebtn" class="closebtn row" onclick="closeNavbar()">
+            <div class="productbox">
+              <input
+                type="checkbox"
+                id="product1"
+                name="products"
+                value="Product"
+              />
+              <img class="cartproductimg" src="../img/Untitled.png" />
+            </div>
 
-          <div class="column productinfobox">
-            <h4>Product name</h4>
-            <p>$0.00</p>
+            <div class="column productinfobox">
+              <h4>Product name</h4>
+              <p>$0.00</p>
+            </div>
+          </div>
+          <div class="quantitybox">
+            <div class="input-group">
+              <input
+                type="button"
+                value="–"
+                class="minus-btn"
+                name="minus-btn"
+                id="minus-btn"
+                data-field="quantity"
+              />
+              <input
+                min="1"
+                type="number"
+                value="1"
+                name="quantity"
+                class="productquantity"
+                id="productquantity"
+              />
+              <input
+                type="button"
+                value="+"
+                class="plus-btn"
+                name="plus-btn"
+                id="plus-btn"
+                data-field="quantity"
+              />
+            </div>
           </div>
         </div>
-        <div class="quantitybox">
-          <div class="input-group">
-            <input
-              type="button"
-              value="–"
-              class="minus-btn"
-              id="minus-btn"
-              data-field="quantity"
-            />
-            <input
-              min="1"
-              type="number"
-              max=""
-              value="1"
-              name="quantity"
-              class="productquantity"
-              id="productquantity"
-            />
-            <input
-              type="button"
-              value="+"
-              class="plus-btn"
-              id="plus-btn"
-              data-field="quantity"
-            />
+        <div id="productcontainer1" class="cartcontainer">
+          <div id="closebtn1" class="closebtn row" onclick="closeNavbar()">
+            <div class="productbox">
+              <input
+                type="checkbox"
+                id="product2"
+                name="products"
+                value="Product"
+              />
+              <img class="cartproductimg" src="../img/Untitled.png" />
+            </div>
+
+            <div class="column productinfobox">
+              <h4>Product name</h4>
+              <p>$0.00</p>
+            </div>
+          </div>
+          <div class="quantitybox">
+            <div class="input-group">
+              <input
+                type="button"
+                value="–"
+                class="minus-btn"
+                name="minus-btn"
+                id="minus-btn1"
+                data-field="quantity"
+              />
+              <input
+                min="1"
+                type="number"
+                value="1"
+                name="quantity"
+                class="productquantity"
+                id="productquantity1"
+              />
+              <input
+                type="button"
+                value="+"
+                class="plus-btn"
+                name="plus-btn"
+                id="plus-btn1"
+                data-field="quantity"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        style="
-          background-color: #dd7e80;
-          height: 60px;
-          position: sticky;
-          bottom: 0px;
-          width: 100%;
-        "
-      >
-        <div style="margin-left: 10px; margin-top: 20px" class="floatleft">
-          <input
-            style="width: 15px; height: 15px"
-            type="checkbox"
-            id="selectall"
-            name="selectall"
-            value="Product"
-          />All
-        </div>
-        <div class="floatright" style="text-align: right">
-          <div style="background-color: #ff4448; padding: 17px">Checkout</div>
-        </div>
+
         <div
-          class="floatright"
-          style="background-color: #dd7e80; text-align: right; padding: 5px"
+          style="
+            background-color: #dd7e80;
+            margin-top: 573px;
+            height: 60px;
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+          "
         >
-          <div>SubTotal</div>
-          <div>$0.00</div>
+          <div style="margin-left: 10px; margin-top: 20px" class="floatleft">
+            <input
+              style="width: 15px; height: 15px"
+              type="checkbox"
+              id="selectall"
+              name="selectall"
+              value="Product"
+            />All
+          </div>
+          <div class="floatright" style="text-align: right">
+            <div style="background-color: #ff4448; padding: 17px">Checkout</div>
+          </div>
+          <div
+            class="floatright"
+            style="background-color: #dd7e80; text-align: right; padding: 5px"
+          >
+            <div>SubTotal</div>
+            <div>$0.00</div>
+          </div>
         </div>
       </div>
     </div>

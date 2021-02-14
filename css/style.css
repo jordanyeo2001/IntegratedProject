@@ -21,6 +21,9 @@
 #sidenavbar {
   z-index: 1;
 }
+.profilesidenavbar {
+  margin-top: -20px;
+}
 #pagename {
   font-size: 30px;
   font-weight: 500;
@@ -236,9 +239,13 @@
   margin-left: -30px;
   padding: 10px;
 }
-
+#navbartext {
+  font-size: 20px;
+  margin-top: -10px;
+}
 #navbartext1 {
   font-size: 18px;
+  margin-top: -10px;
 }
 
 #navbartext2 {
@@ -278,9 +285,13 @@
   float: right;
 }
 .background {
-  background-color: #ffd4db;
+  background-image: url("../img/background.jpg");
 }
-
+.cartproductimg {
+  width: 80px;
+  height: 80px;
+  padding: 5px;
+}
 #map {
   width: auto;
   max-width: 100%;
@@ -383,6 +394,14 @@
 }
 #productcontainer {
   display: none;
+}
+#productcontainer1 {
+  display: none;
+}
+#closebtn1 {
+  margin-left: 1px;
+  padding: 5px;
+  margin-top: 20px;
 }
 @media only screen and (width: 320px) {
   .textcenter {

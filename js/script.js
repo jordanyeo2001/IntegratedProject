@@ -280,6 +280,7 @@ $(document).ready(function () {
   $("#truckmodel").on("click", function (e) {
     window.location.href = "cararpage.html";
   });
+
   $("#plus-btn").on("click", function (e) {
     var x = document.getElementById("productquantity").value;
     x = parseInt(x) + 1;
@@ -295,44 +296,29 @@ $(document).ready(function () {
 
     document.getElementById("productquantity").value = x;
   });
+  $("#plus-btn1").on("click", function (e) {
+    var x = document.getElementById("productquantity1").value;
+    x = parseInt(x) + 1;
+    document.getElementById("productquantity1").value = x;
+  });
+  $("#minus-btn1").on("click", function (e) {
+    var x = document.getElementById("productquantity1").value;
+    if (x != 1) {
+      x = parseInt(x) - 1;
+    } else {
+      x = 1;
+    }
 
+    document.getElementById("productquantity1").value = x;
+  });
+  $("#").on("click", function (e) {
+    $("#productcontainer").css("display", "block");
+    $("#productcontainer1").css("display", "block");
+  });
   document.getElementById("selectall").onclick = function () {
     var productbox = document.getElementsByName("products");
     for (var x of productbox) {
       x.checked = this.checked;
     }
   };
-
-  function addtocart(x) {
-    var productelement = document.querySelector("#productcontainer");
-
-    var duplicate = productelement.cloneNode(true);
-    var productnumber = x;
-    duplicate.id = "productcontainer" + productnumber;
-    duplicate.classList.add("text-large");
-
-    productelement.after(duplicate);
-
-    var productelement = document.querySelector("#productcontainer");
-  }
-  $("#").on("click", function (e) {
-    if (localStorage.getItem("cartnum")) {
-      var cartnum = parseInt(localStorage.getItem("cartnum"));
-      cartnum += 1;
-    } else {
-      var cartnum = 0;
-      cartnum += 1;
-    }
-
-    localStorage.setItem("cartnum", cartnum);
-    addtocart(cartnum);
-    var getcartitems = document.querySelector("#cartcontent");
-    localStorage.setItem("cartitems", getcartitems.innerHTML);
-  });
-  $("#").on("click", function (e) {
-    var getcartitems = document.querySelector("#cartcontent");
-    var storeitems = localStorage.getItem("cartitems");
-    $("#cartcontent").innerHTML = storeitems;
-    getcartitems.innerHTML = storeitems;
-  });
 });
