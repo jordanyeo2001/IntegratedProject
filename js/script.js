@@ -200,26 +200,51 @@ function accountinfo() {
 }
 accountinfo();
 resetdaily();
+var resettime = "0:0";
+var checkclaim = 0;
 function resetdaily() {
   var currenttime = new Date();
   var currenthrs = currenttime.getHours();
   var currentmins = currenttime.getMinutes();
   var timenow = currenthrs + ":" + currentmins;
-  var resettime = "0:0";
+  console.log(timenow);
   if (timenow == resettime) {
     $("#newmsg").css("display", "inline-block");
+    localStorage.setItem("claimcheck", "0");
+    checkclaim = 0;
   } else {
     $("#newmsg").css("display", "none");
   }
 }
 
 $(document).ready(function () {
-  $("#navbartext4").on("click", function (e) {
-    var currenttime = new Date();
-    var currenthrs = currenttime.getHours();
-    var currentmins = currenttime.getMinutes();
-    var timenow = currenthrs + ":" + currentmins;
+  var currenttime = new Date();
+  var currenthrs = currenttime.getHours();
+  var currentmins = currenttime.getMinutes();
+  var timenow = currenthrs + ":" + currentmins;
+  if (localStorage.getItem("claimcheck")) {
+    var tempnum = localStorage.getItem("claimcheck");
+    var checkclaim = tempnum;
+  } else {
+    var checkclaim = 0;
+    localStorage.setItem("claimcheck", "0");
+  }
+
+  if (checkclaim == 0) {
+    $("#newmsg").css("display", "inline-block");
+  } else if (checkclaim == 1 && timenow != resettime) {
     $("#newmsg").css("display", "none");
+  }
+
+  if (timenow == resettime) {
+    $("#newmsg").css("display", "inline-block");
+    localStorage.setItem("claimcheck", "0");
+  } else if (timenow != resettime && checkclaim == 1) {
+    $("#newmsg").css("display", "none");
+  }
+  $("#navbartext4").on("click", function (e) {
+    $("#newmsg").css("display", "none");
+    localStorage.setItem("claimcheck", "1");
   });
 });
 
