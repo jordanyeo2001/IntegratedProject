@@ -207,7 +207,6 @@ function resetdaily() {
   var currenthrs = currenttime.getHours();
   var currentmins = currenttime.getMinutes();
   var timenow = currenthrs + ":" + currentmins;
-  console.log(timenow);
   if (timenow == resettime) {
     $("#newmsg").css("display", "inline-block");
     localStorage.setItem("claimcheck", "0");
@@ -308,6 +307,7 @@ $(document).ready(function () {
   });
 });
 
+//For homepage AR/3D view
 $(document).ready(function () {
   $("#camclosebtn").on("click", function (e) {
     window.location.href = "homepage.html";
@@ -320,7 +320,10 @@ $(document).ready(function () {
   $("#truckmodel").on("click", function (e) {
     window.location.href = "cararpage.html";
   });
+});
 
+//For cart page
+$(document).ready(function () {
   $("#plus-btn").on("click", function (e) {
     var x = document.getElementById("productquantity").value;
     x = parseInt(x) + 1;
@@ -351,14 +354,67 @@ $(document).ready(function () {
 
     document.getElementById("productquantity1").value = x;
   });
-  $("#").on("click", function (e) {
+  var cartitem = parseInt(0);
+  if (localStorage.getItem("cartitem")) {
+    cartitem = localStorage.getItem("cartitem");
+  } else {
+    localStorage.setItem("cartitem", parseInt(0));
+  }
+  if (cartitem == 1) {
+    $("#productcontainer").css("display", "block");
+    $("#carttext").css("display", "none");
+  } else if (cartitem == 2) {
     $("#productcontainer").css("display", "block");
     $("#productcontainer1").css("display", "block");
+    $("#carttext").css("display", "none");
+  }
+  $("#truck").on("click", function () {
+    cartitem = parseInt(cartitem) + 1;
+    localStorage.setItem("cartitem", parseInt(cartitem));
+    var tempname = document.getElementsByName("truck")[0].id;
+    var finalname = document.getElementById(tempname + "name").textContent;
+    var finalprice = document.getElementById(tempname + "price").textContent;
+    localStorage.setItem("item1name", finalname);
+    localStorage.setItem("item1price", finalprice);
   });
+  updatecart();
+  function updatecart() {
+    var nameofproduct = localStorage.getItem("item1name");
+    var finalprice = localStorage.getItem("item1price");
+    document.getElementById("itemname").innerHTML = nameofproduct;
+    document.getElementById("itemprice").innerHTML = finalprice;
+  }
   document.getElementById("selectall").onclick = function () {
     var productbox = document.getElementsByName("products");
     for (var x of productbox) {
       x.checked = this.checked;
+      if (x.checked) {
+        var finalprice = localStorage.getItem("item1price");
+        document.getElementById("product1").value = finalprice;
+        document.getElementById(
+          "subtotalamount"
+        ).innerHTML = document.getElementById("product1").value;
+      } else {
+        document.getElementById("subtotalamount").innerHTML = "$0.00";
+      }
     }
   };
+
+  document.getElementById("product1").onclick = function () {};
 });
+function addvalue(checkboxElem) {
+  if (checkboxElem.checked) {
+    var finalprice = localStorage.getItem("item1price");
+    document.getElementById("subtotalamount").innerHTML = finalprice;
+  } else {
+    var finalprice = localStorage.getItem("item1price");
+    var tempamount = document.getElementById("subtotalamount").textContent;
+    finalamount =
+      parseInt(tempamount.substring(1)) - parseInt(finalprice.substring(1));
+    if (finalamount == "0") {
+      document.getElementById("subtotalamount").innerHTML = "$0.00";
+    } else {
+      document.getElementById("subtotalamount").innerHTML = "$" + finalamount;
+    }
+  }
+}

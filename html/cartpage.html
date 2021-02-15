@@ -112,13 +112,13 @@
                 id="product1"
                 name="products"
                 value="Product"
+                onchange="addvalue(this)"
               />
               <img class="cartproductimg" src="../img/Untitled.png" />
             </div>
-
             <div class="column productinfobox">
-              <h4>Product name</h4>
-              <p>$0.00</p>
+              <h4 id="itemname">Product name</h4>
+              <p id="itemprice">$0.00</p>
             </div>
           </div>
           <div class="quantitybox">
@@ -212,7 +212,7 @@
           </div>
           <div class="floatright totalamountbtn">
             <div>SubTotal</div>
-            <div>$0.00</div>
+            <div id="subtotalamount">$0.00</div>
           </div>
         </div>
       </div>
