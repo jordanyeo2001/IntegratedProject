@@ -156,6 +156,11 @@
   width: 120px;
   height: 100px;
 }
+.backbtn2 {
+  width: 120px;
+  height: 100px;
+  margin-left: -13px;
+}
 .logo {
   width: 350px;
   height: auto;
@@ -405,6 +410,50 @@
   margin-left: 1px;
   padding: 5px;
   margin-top: 20px;
+}
+.checkoutbtn {
+  background-color: #ff4448;
+  padding: 17px;
+}
+.totalamountbtn {
+  background-color: #dd7e80;
+  text-align: right;
+  padding: 5px;
+}
+.selectallbtn {
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.bottombackground {
+  background-color: #dd7e80;
+  margin-top: 573px;
+  height: 60px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+.deliverybox {
+  background-color: #ecb5bf;
+  height: 65px;
+  border-radius: 10px;
+  padding: 7px;
+}
+.productcheckout {
+  height: 90px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #ecb5bf;
+}
+.productcheckoutimg {
+  padding: 5px;
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+}
+.checkoutcontent {
+  padding-left: 15px;
 }
 @media only screen and (width: 320px) {
   .textcenter {
