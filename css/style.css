@@ -458,6 +458,20 @@
 .rewardscontent {
   padding: 10px;
 }
+.dailyreward {
+  width: 360px;
+  height: 360px;
+  margin-top: 50px;
+  position: fixed;
+  display: none;
+}
+.dailyopened {
+  width: 360px;
+  height: 360px;
+  margin-top: 50px;
+  position: fixed;
+  display: none;
+}
 @media only screen and (width: 320px) {
   .textcenter {
     margin-right: -65px;

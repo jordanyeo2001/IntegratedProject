@@ -243,8 +243,23 @@ $(document).ready(function () {
     $("#newmsg").css("display", "none");
   }
   $("#navbartext4").on("click", function (e) {
-    $("#newmsg").css("display", "none");
-    localStorage.setItem("claimcheck", "1");
+    var checkdaily = localStorage.getItem("claimcheck");
+    if (checkdaily == 0) {
+      $("#newmsg").css("display", "none");
+      localStorage.setItem("claimcheck", "1");
+      closeNavbar();
+      $(".dailyreward").css("display", "block");
+    } else {
+      closeNavbar();
+      alert("You may only claim once a day!");
+    }
+  });
+  $(".dailyreward").on("click", function (e) {
+    $(".dailyreward").css("display", "none");
+    $(".dailyopened").css("display", "block");
+  });
+  $(".dailyopened").on("click", function (e) {
+    $(".dailyopened").css("display", "none");
   });
 });
 
