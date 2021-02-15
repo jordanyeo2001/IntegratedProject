@@ -455,6 +455,9 @@
 .checkoutcontent {
   padding-left: 15px;
 }
+.rewardscontent {
+  padding: 10px;
+}
 @media only screen and (width: 320px) {
   .textcenter {
     margin-right: -65px;
