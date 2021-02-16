@@ -285,9 +285,17 @@
 .floatleft {
   float: left;
 }
+.floatleft2 {
+  float: left;
+  padding: 10px;
+}
 
 .floatright {
   float: right;
+}
+.floatright2 {
+  float: right;
+  padding: 10px;
 }
 .background {
   background-color: #ffd4db;
@@ -340,15 +348,21 @@
 .rewardscontainer {
   padding: 10px;
 }
+.rewardpadding {
+  padding: 5px;
+}
 .rewardbox {
   height: 30px;
   border-style: solid;
   border-width: 1px;
   border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .rewardpoint1 {
   padding-left: 5px;
+  margin-left: -130px;
 }
 
 .rewardpoint2 {
@@ -471,6 +485,91 @@
   margin-top: 50px;
   position: fixed;
   display: none;
+}
+.close-button {
+  width: 80px;
+  height: 100px;
+  margin-top: -80px;
+}
+
+.tier-list {
+  margin-top: 100px;
+}
+.bronze {
+  width: 140px;
+  height: 180px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-top: -10px;
+  flex: 1;
+}
+
+.silver {
+  width: 140px;
+  height: 180px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-top: -10px;
+  flex: 1;
+}
+
+.gold {
+  width: 140px;
+  height: 180px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-top: -10px;
+  flex: 1;
+}
+
+.platinum {
+  width: 140px;
+  height: 180px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-top: -10px;
+  flex: 1;
+}
+
+.diamond {
+  width: 140px;
+  height: 180px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-top: 20px;
+  flex: 1;
+}
+
+.tier-description {
+  font-size: 3vw;
+  font-weight: 500;
+  line-height: 1.9;
+  margin-left: -60px;
+}
+
+.question {
+  width: 120px;
+  height: 160px;
+  border-radius: 1px;
+  padding: 20px;
+  margin-top: -60px;
+  margin-left: -50px;
+  flex: 1;
+}
+
+@media only screen and (max-width: 376px) {
+  .tier-description {
+    font-size: 20px;
+  }
+  #tierbox {
+    padding: 50px;
+  }
+  .platinum {
+    margin-top: 50px;
+  }
+  .diamond {
+    margin-top: 160px;
+  }
 }
 @media only screen and (width: 320px) {
   .textcenter {
