@@ -1,36 +1,18 @@
-newmtl lambert4SG
+newmtl lambert6SG
 illum 4
-Kd 0.00 0.00 0.00
-Ka 0.00 0.00 0.00
-Tf 0.18 0.18 0.18
-Ni 1.00
-newmtl phongE1SG
-illum 4
-Kd 0.00 0.00 0.00
+Kd 0.00 1.00 1.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd car_low_1001_BaseColor.png
-map_Ka car_low_1001_AO.png
-bump  -bm 1 car_low_1001_Normal.png
 Ni 1.00
-Ks 0.50 0.50 0.50
-newmtl phongE2SG
+newmtl pasted__lambert4SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd car_low_1002_BaseColor.png
-map_Ka car_low_1002_AO.png
-bump  -bm 1 car_low_1002_Normal.png
+Tf 0.24 0.24 0.24
 Ni 1.00
-Ks 0.50 0.50 0.50
-newmtl phongE3SG
+newmtl pasted__lambert5SG
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
-Tf 1.00 1.00 1.00
-map_Kd car_low_1011_BaseColor.png
-map_Ka car_low_1011_AO.png
-bump  -bm 1 car_low_1011_Normal.png
+Tf 0.80 0.80 0.80
 Ni 1.00
-Ks 0.50 0.50 0.50
