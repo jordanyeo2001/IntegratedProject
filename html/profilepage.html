@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="background">
+  <body class="background" onload="updateUserTier()">
     <header>
       <nav class="navbarbg">
         <span class="navbarbg" onclick="openNavbar()"
@@ -121,13 +121,15 @@
               <div class="column">
                 <br />
                 <h2 class="profilepagefont" id="profileusername">User 1</h2>
-                <p class="profilepagefont2" id="acclevel">Bronze</p>
+                <p class="profilepagefont2" id="acclevel">Tier</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="profilepagebox">
+        <h2 id="profileinfoheading">Personal Information</h2>
+        <br />
         <div>
           <h3 class="profilepagetext">
             Email:
@@ -142,6 +144,11 @@
             <span id="accgender">Male</span>
           </h3>
         </div>
+        <h2 id="voucherprofileheading">Vouchers</h2>
+        <p id="profilevouchertext" class="profilepagetext">
+          No vouchers found.
+        </p>
+        <img id="profilevoucher" class="rewardvoucher" src="#" />
       </div>
       <div class="profilebtn center">
         <button

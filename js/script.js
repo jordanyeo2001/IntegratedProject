@@ -12,7 +12,7 @@ function updatepoints() {
 if (localStorage.getItem("tier")) {
   usertier = localStorage.getItem("tier");
 } else {
-  localStorage.setItem("tier", "bronze");
+  localStorage.setItem("tier", "Bronze");
 }
 
 function openNavbar() {
@@ -279,31 +279,31 @@ $(document).ready(function () {
     var tempnum = Math.floor(Math.random() * 2) + 1;
     if (tempnum == "1") {
       var points = 200;
-      if (usertier == "bronze") {
+      if (usertier == "Bronze") {
         var newpoints = points * 1;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-      } else if (usertier == "silver") {
+      } else if (usertier == "Silver") {
         var newpoints = points * 1.5;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-      } else if (usertier == "gold") {
+      } else if (usertier == "Gold") {
         var newpoints = points * 2;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-      } else if (usertier == "platinum") {
+      } else if (usertier == "Platinum") {
         var newpoints = points * 2;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-      } else if (usertier == "diamond") {
+      } else if (usertier == "Diamond") {
         var newpoints = points * 3;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
@@ -311,7 +311,8 @@ $(document).ready(function () {
           totalpoints + " points";
       }
     } else if (tempnum == "2") {
-      localStorage.setItem("voucher", 1);
+      localStorage.setItem("voucher", "5OFF");
+      localStorage.setItem("numofvoucher", "1");
     }
   });
 });
@@ -477,4 +478,30 @@ function loadingpage() {
   setTimeout(function () {
     window.location.href = "../html/mainpage.html";
   }, 3000);
+}
+
+function updateUserTier() {
+  if (localStorage.getItem("tier")) {
+    document.getElementById("acclevel").innerHTML = localStorage.getItem(
+      "tier"
+    );
+  } else {
+    document.getElementById("acclevel").innerHTML = "Bronze";
+  }
+
+  if (localStorage.getItem("numofvoucher")) {
+    var x = localStorage.getItem("numofvoucher");
+    if (x == "1") {
+      $("#profilevouchertext").css("display", "none");
+      $("#profilevoucher").css("display", "block");
+      var y = localStorage.getItem("voucher");
+      if (y == "5OFF") {
+        $("#profilevoucher").attr("src", "../img/voucher2.png");
+      } else if (y == "10OFF") {
+        $("#profilevoucher").attr("src", "../img/voucher3.png");
+      } else if (y == "30%OFF") {
+        $("#profilevoucher").attr("src", "../img/voucher1.png");
+      }
+    }
+  }
 }

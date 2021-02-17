@@ -574,6 +574,55 @@
 .benefitspage {
   padding: 20px;
 }
+.makecenter {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.voucherheading {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px;
+  width: 155px;
+  background-color: #ecb5bf;
+  box-shadow: 10px 10px #d2a5ad;
+}
+#quizheading {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px;
+  width: 100px;
+  background-color: #ecb5bf;
+  box-shadow: 10px 10px #d2a5ad;
+}
+#profileinfoheading {
+  margin-left: -20px;
+  padding: 10px;
+  width: 330px;
+  background-color: #ecb5bf;
+  box-shadow: 10px 10px #d2a5ad;
+}
+#voucherprofileheading {
+  margin-left: -20px;
+  padding: 10px;
+  width: 155px;
+  background-color: #ecb5bf;
+  box-shadow: 10px 10px #d2a5ad;
+}
+#profilevoucher {
+  display: none;
+}
 @media only screen and (width: 280px) {
   .splashscreen {
     background-size: 100% 700px;
@@ -626,6 +675,9 @@
   .splashscreen {
     background-size: 100% 1200px;
   }
+  .profilepagetext {
+    font-size: 4vw;
+  }
 }
 
 @media only screen and (width: 1024px) {
@@ -645,5 +697,8 @@
   }
   .splashscreen {
     background-size: 100% 1600px;
+  }
+  .profilepagetext {
+    font-size: 4vw;
   }
 }
