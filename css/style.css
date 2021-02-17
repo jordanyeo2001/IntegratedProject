@@ -428,6 +428,7 @@
 .checkoutbtn {
   background-color: #ff4448;
   padding: 17px;
+  border: none;
 }
 .totalamountbtn {
   background-color: #dd7e80;
@@ -453,6 +454,13 @@
   height: 65px;
   border-radius: 10px;
   padding: 7px;
+}
+#discountbox {
+  background-color: #ecb5bf;
+  height: 40px;
+  border-radius: 10px;
+  padding: 7px;
+  display: none;
 }
 .productcheckout {
   height: 90px;
@@ -622,6 +630,17 @@
 }
 #profilevoucher {
   display: none;
+}
+#homepagespace {
+  margin-bottom: 20px;
+}
+.addtocartbtn {
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #ecb5bf;
 }
 @media only screen and (width: 280px) {
   .splashscreen {

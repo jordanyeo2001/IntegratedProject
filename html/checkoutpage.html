@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="background">
+  <body class="background" onload="totalpayment()">
     <div class="checkoutcontent">
       <div class="row">
         <img
@@ -31,9 +31,9 @@
           alt=""
         />
         <div>
-          <div>Product name</div>
+          <div id="item1name">Product name</div>
           <br />
-          <div>$0.00</div>
+          <div id="item1price">$0.00</div>
         </div>
       </div>
       <br />
@@ -44,9 +44,9 @@
           alt=""
         />
         <div>
-          <div>Product name</div>
+          <div id="item2name">Product name</div>
           <br />
-          <div>$0.00</div>
+          <div id="item2price">$0.00</div>
         </div>
       </div>
       <br />
@@ -57,15 +57,21 @@
         <div class="floatright">$1.00</div>
         <br />
       </div>
+      <br />
+      <div id="discountbox">
+        <div class="floatleft">Discount</div>
+        <div id="discountamount" class="floatright">$0.00</div>
+        <br />
+      </div>
     </div>
 
     <div class="bottombackground">
       <div class="floatright">
-        <div class="checkoutbtn">Place Order</div>
+        <div id="placeorderbtn" class="checkoutbtn">Place Order</div>
       </div>
       <div class="floatright totalamountbtn">
         <div>Total Payment</div>
-        <div>$0.00</div>
+        <div id="totalpayment">$0.00</div>
       </div>
     </div>
 

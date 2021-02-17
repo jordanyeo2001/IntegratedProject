@@ -5,6 +5,43 @@ if (localStorage.getItem("totalpoints")) {
 } else {
   localStorage.setItem("totalpoints", 0);
 }
+
+function totalpayment() {
+  var numofitems = localStorage.getItem("cartitem");
+  if (numofitems == "1") {
+    var finalprice = localStorage.getItem("item1price");
+    document.getElementById("totalpayement").innerHTML =
+      parseFloat(finalprice) + parseFloat("1");
+  } else if (numofitems == "2") {
+    var finalprice = localStorage.getItem("item1price");
+    var finalprice2 = localStorage.getItem("item2price");
+    if (localStorage.getItem("numofvoucher")) {
+      var x = localStorage.getItem("numofvoucher");
+      if (x == "1") {
+        $("#discountbox").css("display", "block");
+        var y = localStorage.getItem("voucher");
+        if (y == "5OFF") {
+          var discount = 5;
+          document.getElementById("discountamount").innerHTML =
+            "$" + discount + ".00";
+          document.getElementById("totalpayment").innerHTML =
+            "$" +
+            (parseFloat(finalprice.substring(1)) +
+              parseFloat(finalprice2.substring(1)) +
+              parseFloat(1) -
+              discount);
+        }
+      } else {
+        document.getElementById("totalpayment").innerHTML =
+          "$" +
+          (parseFloat(finalprice.substring(1)) +
+            parseFloat(finalprice2.substring(1)) +
+            parseFloat(1));
+      }
+    }
+  }
+}
+
 function updatepoints() {
   document.getElementById("totalpoints").innerHTML = totalpoints + " points";
 }
@@ -432,23 +469,50 @@ $(document).ready(function () {
     localStorage.setItem("item1name", finalname);
     localStorage.setItem("item1price", finalprice);
   });
+  $("#car").on("click", function () {
+    cartitem = parseInt(cartitem) + 1;
+    localStorage.setItem("cartitem", parseInt(cartitem));
+    var tempname = document.getElementsByName("car")[0].id;
+    var finalname = document.getElementById(tempname + "name").textContent;
+    var finalprice = document.getElementById(tempname + "price").textContent;
+    localStorage.setItem("item2name", finalname);
+    localStorage.setItem("item2price", finalprice);
+  });
   updatecart();
   function updatecart() {
-    var nameofproduct = localStorage.getItem("item1name");
-    var finalprice = localStorage.getItem("item1price");
-    document.getElementById("itemname").innerHTML = nameofproduct;
-    document.getElementById("itemprice").innerHTML = finalprice;
+    var numofitems = localStorage.getItem("cartitem");
+    if (numofitems == "1") {
+      var nameofproduct = localStorage.getItem("item1name");
+      var finalprice = localStorage.getItem("item1price");
+      document.getElementById("item1name").innerHTML = nameofproduct;
+      document.getElementById("item1price").innerHTML = finalprice;
+    } else if (numofitems == "2") {
+      var nameofproduct = localStorage.getItem("item1name");
+      var finalprice = localStorage.getItem("item1price");
+      document.getElementById("item1name").innerHTML = nameofproduct;
+      document.getElementById("item1price").innerHTML = finalprice;
+
+      var nameofproduct = localStorage.getItem("item2name");
+      var finalprice = localStorage.getItem("item2price");
+      document.getElementById("item2name").innerHTML = nameofproduct;
+      document.getElementById("item2price").innerHTML = finalprice;
+    }
   }
   document.getElementById("selectall").onclick = function () {
     var productbox = document.getElementsByName("products");
     for (var x of productbox) {
       x.checked = this.checked;
       if (x.checked) {
+        document.getElementById("oncheckout").disabled = false;
         var finalprice = localStorage.getItem("item1price");
         document.getElementById("product1").value = finalprice;
-        document.getElementById(
-          "subtotalamount"
-        ).innerHTML = document.getElementById("product1").value;
+
+        var finalprice2 = localStorage.getItem("item2price");
+        document.getElementById("product2").value = finalprice2;
+        document.getElementById("subtotalamount").innerHTML =
+          "$" +
+          (parseFloat(finalprice.substring(1)) +
+            parseFloat(finalprice2.substring(1)));
       } else {
         document.getElementById("subtotalamount").innerHTML = "$0.00";
       }
@@ -459,13 +523,37 @@ $(document).ready(function () {
 });
 function addvalue(checkboxElem) {
   if (checkboxElem.checked) {
+    document.getElementById("oncheckout").disabled = false;
     var finalprice = localStorage.getItem("item1price");
-    document.getElementById("subtotalamount").innerHTML = finalprice;
+    var tempamount = document.getElementById("subtotalamount").textContent;
+    finalamount =
+      parseFloat(tempamount.substring(1)) + parseFloat(finalprice.substring(1));
+    document.getElementById("subtotalamount").innerHTML = "$" + finalamount;
   } else {
     var finalprice = localStorage.getItem("item1price");
     var tempamount = document.getElementById("subtotalamount").textContent;
     finalamount =
-      parseInt(tempamount.substring(1)) - parseInt(finalprice.substring(1));
+      parseFloat(tempamount.substring(1)) - parseFloat(finalprice.substring(1));
+    if (finalamount == "0") {
+      document.getElementById("subtotalamount").innerHTML = "$0.00";
+    } else {
+      document.getElementById("subtotalamount").innerHTML = "$" + finalamount;
+    }
+  }
+}
+function addvalue2(checkboxElem) {
+  if (checkboxElem.checked) {
+    document.getElementById("oncheckout").disabled = false;
+    var finalprice = localStorage.getItem("item2price");
+    var tempamount = document.getElementById("subtotalamount").textContent;
+    finalamount =
+      parseFloat(tempamount.substring(1)) + parseFloat(finalprice.substring(1));
+    document.getElementById("subtotalamount").innerHTML = "$" + finalamount;
+  } else {
+    var finalprice = localStorage.getItem("item2price");
+    var tempamount = document.getElementById("subtotalamount").textContent;
+    finalamount =
+      parseFloat(tempamount.substring(1)) - parseFloat(finalprice.substring(1));
     if (finalamount == "0") {
       document.getElementById("subtotalamount").innerHTML = "$0.00";
     } else {
@@ -505,3 +593,13 @@ function updateUserTier() {
     }
   }
 }
+
+$(document).ready(function () {
+  $("#oncheckout").on("click", function () {
+    window.location.href = "checkoutpage.html";
+  });
+  $("#placeorderbtn").on("click", function () {
+    alert("Thank you for your purchase, your order has been placed.");
+    window.location.href = "homepage.html";
+  });
+});

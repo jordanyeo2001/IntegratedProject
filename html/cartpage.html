@@ -121,8 +121,8 @@
               <img class="cartproductimg" src="../img/Untitled.png" />
             </div>
             <div class="column productinfobox">
-              <h4 id="itemname">Product name</h4>
-              <p id="itemprice">$0.00</p>
+              <h4 id="item1name">Product name</h4>
+              <p id="item1price">$0.00</p>
             </div>
           </div>
           <div class="quantitybox">
@@ -162,13 +162,14 @@
                 id="product2"
                 name="products"
                 value="Product"
+                onchange="addvalue2(this)"
               />
               <img class="cartproductimg" src="../img/Untitled.png" />
             </div>
 
             <div class="column productinfobox">
-              <h4>Product name</h4>
-              <p>$0.00</p>
+              <h4 id="item2name">Product name</h4>
+              <p id="item2price">$0.00</p>
             </div>
           </div>
           <div class="quantitybox">
@@ -212,7 +213,9 @@
             />All
           </div>
           <div class="floatright">
-            <div class="checkoutbtn">Checkout</div>
+            <button id="oncheckout" class="checkoutbtn" disabled>
+              Checkout
+            </button>
           </div>
           <div class="floatright totalamountbtn">
             <div>SubTotal</div>
