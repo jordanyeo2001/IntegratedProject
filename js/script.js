@@ -322,30 +322,35 @@ $(document).ready(function () {
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
+        localStorage.setItem("earnpoints", totalpoints);
       } else if (usertier == "Silver") {
         var newpoints = points * 1.5;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
+        localStorage.setItem("earnpoints", totalpoints);
       } else if (usertier == "Gold") {
         var newpoints = points * 2;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
+        localStorage.setItem("earnpoints", totalpoints);
       } else if (usertier == "Platinum") {
         var newpoints = points * 2;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
+        localStorage.setItem("earnpoints", totalpoints);
       } else if (usertier == "Diamond") {
         var newpoints = points * 3;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
+        localStorage.setItem("earnpoints", totalpoints);
       }
     } else if (tempnum == "2") {
       localStorage.setItem("voucher", "5OFF");
@@ -354,6 +359,20 @@ $(document).ready(function () {
   });
 });
 
+updaterewardinfo();
+function updaterewardinfo() {
+  if (localStorage.getItem("earnpoints")) {
+    var x = localStorage.getItem("earnpoints");
+    var progress = (parseInt(x) / 500) * 97.3;
+    document.getElementById("bar1").style.width = progress + "%";
+    if (x == "500") {
+      document.getElementById("bar1").style.width = "0%";
+      document.getElementById("rewardtier").innerHTML = "Silver";
+      localStorage.setItem("tier", "Silver");
+      localStorage.setItem("earnpoints", "0");
+    }
+  }
+}
 //JS for Feedback Page//
 $(document).ready(function () {
   const APIKEY = "5ffd003a1346a1524ff127ad";
