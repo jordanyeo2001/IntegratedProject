@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="background">
+  <body class="background" onload="updatepoints()">
     <header>
       <nav class="navbarbg">
         <span class="navbarbg" onclick="openNavbar()"
@@ -102,6 +102,17 @@
         />
       </nav>
     </header>
+    <div>
+      <lottie-player
+        src="https://assets4.lottiefiles.com/packages/lf20_pggrgrjo.json"
+        background="transparent"
+        class="dailyreward"
+        speed="1"
+        loop
+        autoplay
+      ></lottie-player>
+      <img class="dailyopened" src="../img/reward_open.png" alt="" />
+    </div>
     <div class="closebtn" onclick="closeNavbar()">
       <div>
         <div class="floatleft2">Bronze</div>
@@ -113,12 +124,12 @@
             onclick="location.href='benefitspage.html'"
           />
         </div>
-        <div class="floatright2">0 points</div>
+        <div id="totalpoints" class="floatright2">0 points</div>
       </div>
       <br />
       <br />
       <div class="rewardbox">
-        <div class="rewardpoint1 floatleft">0</div>
+        <div id="pointbar" class="rewardpoint1 floatleft">0</div>
         <div class="rewardpoint2 floatright">500 points</div>
       </div>
       <br />
@@ -150,6 +161,7 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="../js/script.js"></script>
   </body>
 </html>

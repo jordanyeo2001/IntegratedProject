@@ -1,3 +1,20 @@
+var usertier = "";
+var totalpoints = 0;
+if (localStorage.getItem("totalpoints")) {
+  totalpoints = localStorage.getItem("totalpoints");
+} else {
+  localStorage.setItem("totalpoints", 0);
+}
+function updatepoints() {
+  document.getElementById("totalpoints").innerHTML = totalpoints + " points";
+}
+
+if (localStorage.getItem("tier")) {
+  usertier = localStorage.getItem("tier");
+} else {
+  localStorage.setItem("tier", "bronze");
+}
+
 function openNavbar() {
   document.getElementById("sidenavbar").style.width = "250px";
 }
@@ -259,6 +276,43 @@ $(document).ready(function () {
   });
   $(".dailyopened").on("click", function (e) {
     $(".dailyopened").css("display", "none");
+    var tempnum = Math.floor(Math.random() * 2) + 1;
+    if (tempnum == "1") {
+      var points = 200;
+      if (usertier == "bronze") {
+        var newpoints = points * 1;
+        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
+        localStorage.setItem("totalpoints", totalpoints);
+        document.getElementById("totalpoints").innerHTML =
+          totalpoints + " points";
+      } else if (usertier == "silver") {
+        var newpoints = points * 1.5;
+        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
+        localStorage.setItem("totalpoints", totalpoints);
+        document.getElementById("totalpoints").innerHTML =
+          totalpoints + " points";
+      } else if (usertier == "gold") {
+        var newpoints = points * 2;
+        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
+        localStorage.setItem("totalpoints", totalpoints);
+        document.getElementById("totalpoints").innerHTML =
+          totalpoints + " points";
+      } else if (usertier == "platinum") {
+        var newpoints = points * 2;
+        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
+        localStorage.setItem("totalpoints", totalpoints);
+        document.getElementById("totalpoints").innerHTML =
+          totalpoints + " points";
+      } else if (usertier == "diamond") {
+        var newpoints = points * 3;
+        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
+        localStorage.setItem("totalpoints", totalpoints);
+        document.getElementById("totalpoints").innerHTML =
+          totalpoints + " points";
+      }
+    } else if (tempnum == "2") {
+      localStorage.setItem("voucher", 1);
+    }
   });
 });
 
