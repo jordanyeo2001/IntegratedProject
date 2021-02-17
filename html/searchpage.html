@@ -16,13 +16,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
-  <body class="background">
+  <body class="background" onload="showproducts()">
     <header>
       <nav class="navbarbg">
         <span class="navbarbg" onclick="openNavbar()"
           ><img class="menuicon floatleft" src="../img/menu_icon.png" alt=""
         /></span>
-        <form class="d-flex">
+        <form class="d-flex" id="search-input">
           <input
             class="form-control me-2 alignsearchbox"
             type="search"
@@ -117,7 +117,17 @@
         />
       </nav>
     </header>
-    <div class="closebtn" onclick="closeNavbar()"></div>
+    <div class="closebtn" onclick="closeNavbar()"><div>
+      
+    <div class="container center">
+    <div class="row">
+      <div id="products" class="col">
+      </div>
+      <div id="products2" class="col">
+      </div>
+    </div>
+  </div>
+  </div>
 
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSFAcKf_jgMOBqNvOvJ64kpjtVsN8tY3I&callback=initMap"

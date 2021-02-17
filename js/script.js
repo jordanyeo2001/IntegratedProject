@@ -603,3 +603,94 @@ $(document).ready(function () {
     window.location.href = "homepage.html";
   });
 });
+
+function showproducts() {
+  var settings = {
+    url: "https://fakestoreapi.com/products",
+    method: "GET",
+    timeout: 0,
+  };
+
+  $.ajax(settings).done(function (response) {
+    var productlist = "products";
+    for (i in response) {
+      var div = document.createElement("div");
+      div.setAttribute("class", "products");
+      var image = document.createElement("img");
+      image.src = response[i].image;
+      image.setAttribute("class", "productimg");
+      document.getElementById(productlist).className = "productimg";
+
+      var heading = document.createElement("h3");
+      heading.textContent = response[i].title;
+
+      var price = document.createElement("p");
+      price.textContent = "$" + response[i].price;
+
+      var description = document.createElement("p");
+      description.textContent = response[i].description;
+
+      var button = document.createElement("div");
+      button.textContent = "Add to Cart";
+      button.setAttribute("class", "addtocartbtn");
+      document.getElementById(productlist).appendChild(image);
+      document.getElementById(productlist).appendChild(heading);
+      document.getElementById(productlist).appendChild(price);
+      document.getElementById(productlist).appendChild(description);
+      document.getElementById(productlist).appendChild(button);
+    }
+  });
+}
+
+$(document).ready(function () {
+  $("#search-input").on("keyup", function (e) {
+    $("#products").css("display", "none");
+    $("#products2").css("display", "block");
+    var settings = {
+      url: "https://fakestoreapi.com/products",
+      method: "GET",
+      timeout: 0,
+    };
+
+    $.ajax(settings).done(function (response) {
+      var productlist2 = "products2";
+      for (i in response) {
+        var div = document.createElement("div");
+        div.setAttribute("class", "products");
+
+        var str = response[i].title;
+        var searchtext = e.target.value;
+        if (searchtext == null || searchtext == "") {
+          window.location.href = "searchpage.html";
+        }
+        var n = str.includes(searchtext);
+        if (n == true) {
+          var image = document.createElement("img");
+          image.src = response[i].image;
+          image.setAttribute("class", "productimg");
+          document.getElementById(productlist2).className = "productimg";
+
+          var heading = document.createElement("h3");
+          heading.textContent = response[i].title;
+
+          var price = document.createElement("p");
+          price.textContent = "$" + response[i].price;
+
+          var description = document.createElement("p");
+          description.textContent = response[i].description;
+
+          var button = document.createElement("div");
+          button.textContent = "Add to Cart";
+          button.setAttribute("class", "addtocartbtn");
+
+          var x = document.getElementById(productlist2);
+          x.appendChild(image);
+          x.appendChild(heading);
+          x.appendChild(price);
+          x.appendChild(description);
+          x.appendChild(button);
+        }
+      }
+    });
+  });
+});
