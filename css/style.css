@@ -126,7 +126,7 @@
   font-size: auto;
 }
 .profilebtn {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 .centercontent {
   justify-content: center;
@@ -498,6 +498,7 @@
   margin-top: 50px;
   position: fixed;
   display: none;
+  z-index: 1;
 }
 .dailyopened {
   width: 360px;
@@ -505,6 +506,7 @@
   margin-top: 50px;
   position: fixed;
   display: none;
+  z-index: 1;
 }
 .close-button {
   width: 80px;

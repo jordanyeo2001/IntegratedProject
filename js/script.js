@@ -30,6 +30,38 @@ function totalpayment() {
               parseFloat(finalprice2.substring(1)) +
               parseFloat(1) -
               discount);
+          localStorage.setItem("numofvoucher", "0");
+          localStorage.setItem("voucher", "");
+          $("#profilevouchertext").css("display", "block");
+          $("#profilevoucher").css("display", "none");
+        } else if (y == "10OFF") {
+          var discount = 10;
+          document.getElementById("discountamount").innerHTML =
+            "$" + discount + ".00";
+          document.getElementById("totalpayment").innerHTML =
+            "$" +
+            (parseFloat(finalprice.substring(1)) +
+              parseFloat(finalprice2.substring(1)) +
+              parseFloat(1) -
+              discount);
+          localStorage.setItem("numofvoucher", "0");
+          localStorage.setItem("voucher", "");
+          $("#profilevouchertext").css("display", "block");
+          $("#profilevoucher").css("display", "none");
+        } else if (y == "30%OFF") {
+          var discount = 0.7;
+          document.getElementById("discountamount").innerHTML =
+            "$" + discount + ".00";
+          document.getElementById("totalpayment").innerHTML =
+            "$" +
+            (parseFloat(finalprice.substring(1)) +
+              parseFloat(finalprice2.substring(1)) +
+              parseFloat(1)) *
+              discount;
+          localStorage.setItem("numofvoucher", "0");
+          localStorage.setItem("voucher", "");
+          $("#profilevouchertext").css("display", "block");
+          $("#profilevoucher").css("display", "none");
         }
       } else {
         document.getElementById("totalpayment").innerHTML =
@@ -309,12 +341,10 @@ $(document).ready(function () {
   });
   $(".dailyreward").on("click", function (e) {
     $(".dailyreward").css("display", "none");
-    $(".dailyopened").css("display", "block");
-  });
-  $(".dailyopened").on("click", function (e) {
-    $(".dailyopened").css("display", "none");
-    var tempnum = Math.floor(Math.random() * 2) + 1;
+    var tempnum = Math.floor(Math.random() * 1) + 1;
     if (tempnum == "1") {
+      $(".dailyopened").css("display", "block");
+      document.getElementById("rewarddaily").src = "../img/daily_bonus.png";
       var points = 200;
       if (usertier == "Bronze") {
         var newpoints = points * 1;
@@ -375,7 +405,20 @@ $(document).ready(function () {
     } else if (tempnum == "2") {
       localStorage.setItem("voucher", "5OFF");
       localStorage.setItem("numofvoucher", "1");
+      document.getElementById("rewarddaily").src = "../img/daily_voucher2.png";
+    } else if (tempnum == "3") {
+      localStorage.setItem("voucher", "10OFF");
+      localStorage.setItem("numofvoucher", "1");
+      document.getElementById("rewarddaily").src = "../img/daily_voucher1.png";
+    } else if (tempnum == "4") {
+      localStorage.setItem("voucher", "30%OFF");
+      localStorage.setItem("numofvoucher", "1");
+      document.getElementById("rewarddaily").src = "../img/daily_voucher3.png";
     }
+    $(".dailyopened").css("display", "block");
+  });
+  $(".dailyopened").on("click", function (e) {
+    $(".dailyopened").css("display", "none");
   });
 });
 
