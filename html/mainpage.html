@@ -10,19 +10,40 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
   </head>
-  <body class="splashscreen" onload="loadingpage()">
-    <lottie-player
-      class="loadinganimation"
-      src="https://assets2.lottiefiles.com/packages/lf20_cTXX7h.json"
-      background="transparent"
-      speed="1"
-      style="width: 200px; height: 200px"
-      loop
-      autoplay
-    ></lottie-player>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <body class="background2">
+    <div class="center">
+      <img class="logo" src="../img/logo_icon.png" alt="" />
+    </div>
+
+    <div class="d-flex justify-content-center textcenter">
+      <div>
+        <img class="shopicon" src="../img/shopping_cart.png" alt="" />
+      </div>
+      <div class="shoptext">
+        <p>Get the items you need today.</p>
+        <p class="shoptext2">Shop now!</p>
+      </div>
+    </div>
+    <div class="center">
+      <button
+        onclick="window.location.href = 'html/loginpage.html'"
+        type="button"
+        class="allbtns btn-lg rounded-pill btnsize"
+      >
+        Login
+      </button>
+      <div class="space"></div>
+      <button
+        onclick="window.location.href = 'html/createaccpage.html'"
+        type="button"
+        class="allbtns btn-lg rounded-pill btnsize"
+      >
+        Sign Up
+      </button>
+    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -39,6 +60,6 @@
       integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>

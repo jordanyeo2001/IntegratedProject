@@ -557,6 +557,42 @@
   flex: 1;
 }
 
+.splashscreen {
+  background-image: url("../img/splashscreen.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loadinganimation {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+@media only screen and (width: 280px) {
+  .splashscreen {
+    background-size: 100% 700px;
+  }
+}
+@media only screen and (width: 320px) {
+  .textcenter {
+    margin-right: -65px;
+  }
+  .center {
+    margin-right: -65px;
+  }
+  .navbar2 {
+    width: 354.5px;
+  }
+}
+@media only screen and (width: 360px) {
+  .splashscreen {
+    background-size: 100% 700px;
+  }
+}
 @media only screen and (max-width: 376px) {
   .tier-description {
     font-size: 20px;
@@ -571,15 +607,28 @@
     margin-top: 160px;
   }
 }
-@media only screen and (width: 320px) {
-  .textcenter {
-    margin-right: -65px;
+@media only screen and (width: 540px) {
+  .splashscreen {
+    background-size: 100% 800px;
   }
-  .center {
-    margin-right: -65px;
+}
+@media only screen and (width: 768px) {
+  .profilepageimg {
+    margin-top: 10px;
+    width: 140px;
+    height: 140px;
   }
-  .navbar2 {
-    width: 354.5px;
+  .profilepagefont {
+    margin-top: 10px;
+  }
+  .profilepagefont2 {
+    font-size: 30px;
+  }
+  .profilepagebg {
+    height: auto;
+  }
+  .splashscreen {
+    background-size: 100% 1200px;
   }
 }
 
@@ -598,20 +647,7 @@
   .profilepagebg {
     height: auto;
   }
-}
-@media only screen and (width: 768px) {
-  .profilepageimg {
-    margin-top: 10px;
-    width: 140px;
-    height: 140px;
-  }
-  .profilepagefont {
-    margin-top: 10px;
-  }
-  .profilepagefont2 {
-    font-size: 30px;
-  }
-  .profilepagebg {
-    height: auto;
+  .splashscreen {
+    background-size: 100% 1600px;
   }
 }
