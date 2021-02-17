@@ -370,8 +370,8 @@
 }
 
 .rewardvoucher {
-  width: 30vw;
-  height: 30vw;
+  width: 40vw;
+  height: 20vw;
   padding: 10px;
 }
 .allbtns {
@@ -489,7 +489,6 @@
 .close-button {
   width: 80px;
   height: 100px;
-  margin-top: -80px;
 }
 
 .tier-list {
@@ -536,7 +535,7 @@
   height: 180px;
   border-radius: 100px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: -10px;
   flex: 1;
 }
 
@@ -544,7 +543,6 @@
   font-size: 3vw;
   font-weight: 500;
   line-height: 1.9;
-  margin-left: -60px;
 }
 
 .question {
@@ -571,6 +569,10 @@
   right: 0;
   bottom: 0;
   text-align: center;
+}
+
+.benefitspage {
+  padding: 20px;
 }
 @media only screen and (width: 280px) {
   .splashscreen {
@@ -599,12 +601,6 @@
   }
   #tierbox {
     padding: 50px;
-  }
-  .platinum {
-    margin-top: 50px;
-  }
-  .diamond {
-    margin-top: 160px;
   }
 }
 @media only screen and (width: 540px) {
