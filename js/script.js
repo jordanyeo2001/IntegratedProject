@@ -322,35 +322,55 @@ $(document).ready(function () {
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-        localStorage.setItem("earnpoints", totalpoints);
+        if (localStorage.getItem("earnpoints")) {
+          var temppoints = localStorage.getItem("earnpoints");
+          var finalearnpoints = parseInt(temppoints) + newpoints;
+          localStorage.setItem("earnpoints", finalearnpoints);
+        }
       } else if (usertier == "Silver") {
         var newpoints = points * 1.5;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-        localStorage.setItem("earnpoints", totalpoints);
+        if (localStorage.getItem("earnpoints")) {
+          var temppoints = localStorage.getItem("earnpoints");
+          var finalearnpoints = parseInt(temppoints) + newpoints;
+          localStorage.setItem("earnpoints", finalearnpoints);
+        }
       } else if (usertier == "Gold") {
         var newpoints = points * 2;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-        localStorage.setItem("earnpoints", totalpoints);
+        if (localStorage.getItem("earnpoints")) {
+          var temppoints = localStorage.getItem("earnpoints");
+          var finalearnpoints = parseInt(temppoints) + newpoints;
+          localStorage.setItem("earnpoints", finalearnpoints);
+        }
       } else if (usertier == "Platinum") {
         var newpoints = points * 2;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-        localStorage.setItem("earnpoints", totalpoints);
+        if (localStorage.getItem("earnpoints")) {
+          var temppoints = localStorage.getItem("earnpoints");
+          var finalearnpoints = parseInt(temppoints) + newpoints;
+          localStorage.setItem("earnpoints", finalearnpoints);
+        }
       } else if (usertier == "Diamond") {
         var newpoints = points * 3;
         totalpoints = parseInt(totalpoints) + parseInt(newpoints);
         localStorage.setItem("totalpoints", totalpoints);
         document.getElementById("totalpoints").innerHTML =
           totalpoints + " points";
-        localStorage.setItem("earnpoints", totalpoints);
+        if (localStorage.getItem("earnpoints")) {
+          var temppoints = localStorage.getItem("earnpoints");
+          var finalearnpoints = parseInt(temppoints) + newpoints;
+          localStorage.setItem("earnpoints", finalearnpoints);
+        }
       }
     } else if (tempnum == "2") {
       localStorage.setItem("voucher", "5OFF");
@@ -363,8 +383,11 @@ updaterewardinfo();
 function updaterewardinfo() {
   if (localStorage.getItem("earnpoints")) {
     var x = localStorage.getItem("earnpoints");
-    var progress = (parseInt(x) / 500) * 97.3;
-    document.getElementById("bar1").style.width = progress + "%";
+    if (x != "0") {
+      var progress = (parseInt(x) / 500) * 97.3;
+      document.getElementById("bar1").style.width = progress + "%";
+    }
+
     if (x == "500") {
       document.getElementById("bar1").style.width = "0%";
       document.getElementById("rewardtier").innerHTML = "Silver";
@@ -711,5 +734,62 @@ $(document).ready(function () {
         }
       }
     });
+  });
+});
+var quizattempt = 0;
+if (localStorage.getItem("earnpoints")) {
+} else {
+  localStorage.setItem("earnpoints", "0");
+}
+function checkquiz() {
+  var currenttime = new Date();
+  var currenthrs = currenttime.getHours();
+  var currentmins = currenttime.getMinutes();
+  var timenow = currenthrs + ":" + currentmins;
+  if (localStorage.getItem("quizattempt")) {
+    var tempattempt = localStorage.getItem("quizattempt");
+    if (tempattempt == "1") {
+      $("#quizbefore").css("display", "none");
+      $("#quizafter").css("display", "block");
+    }
+  } else if (tempattempt == "1" && timenow == resettime) {
+    localStorage.setItem("quizattempt", "0");
+    $("#quizbefore").css("display", "block");
+    $("#quizafter").css("display", "none");
+  }
+  if (timenow == resettime) {
+    $("#quizbefore").css("display", "block");
+    $("#quizafter").css("display", "none");
+    localStorage.setItem("quizattempt", "0");
+  }
+}
+checkquiz();
+$(document).ready(function () {
+  $("#quiz-submit").on("click", function (e) {
+    var x = $("#quizans").val();
+    if (x == "$38.88") {
+      var points = 150;
+      if (localStorage.getItem("earnpoints")) {
+        var temppoints = localStorage.getItem("earnpoints");
+        var finalearnpoints = parseInt(temppoints) + points;
+        localStorage.setItem("earnpoints", finalearnpoints);
+        var temptotalpoints = localStorage.getItem("totalpoints");
+        var finaltotalpoints = parseInt(temptotalpoints) + parseInt(temppoints);
+        localStorage.setItem("totalpoints", finaltotalpoints);
+      }
+      alert(
+        "You have earned " +
+          points +
+          " bonus points for getting the correct answer."
+      );
+      $("#quizbefore").css("display", "none");
+      $("#quizafter").css("display", "block");
+    } else {
+      alert("Wrong answer. Please try again tomorrow.");
+      $("#quizbefore").css("display", "none");
+      $("#quizafter").css("display", "block");
+    }
+    quizattempt = 1;
+    localStorage.setItem("quizattempt", "1");
   });
 });

@@ -655,6 +655,9 @@
   background-color: #ecb5bf;
 }
 
+#quizafter {
+  display: none;
+}
 @media only screen and (width: 280px) {
   .splashscreen {
     background-size: 100% 700px;
