@@ -99,7 +99,6 @@ function getcoordinates(position) {
   var currentlongitude = parseFloat(position.coords.longitude);
   initMap(currentlatitude, currentlongitude);
 }
-getLocation();
 
 function initMap(latitude, longitude) {
   if (latitude == undefined && longitude == undefined) {
