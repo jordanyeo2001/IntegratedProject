@@ -462,6 +462,9 @@ $(document).ready(function () {
             $("#submit-button").prop("disabled", !0),
               $("#add-feedback-form").trigger("reset");
           },
+          error: function () {
+            alert("Please fill in all fields in the form!");
+          },
         };
       $.ajax(o).done(function (e) {
         $("#submit-button").prop("disabled", !1),

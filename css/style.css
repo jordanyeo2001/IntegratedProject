@@ -60,7 +60,6 @@
   height: 200px;
   margin-top: -21%;
   text-align: left;
-  font-size: auto;
 }
 
 .navbarimgsearch {
@@ -76,7 +75,10 @@
   padding: 10px;
   background-color: #fababa;
 }
-
+#profilepage {
+  padding: 10px;
+  background-color: #fababa;
+}
 .profilecontent-navbar {
   margin-top: 80px;
 }
@@ -129,14 +131,6 @@
   float: left;
   border-radius: 100px;
   padding: 10px;
-}
-
-.profilepagebg {
-  background: url(../img/cloud_img.jpg);
-  background-size: 100vw 60vw;
-  height: 180px;
-  text-align: left;
-  font-size: auto;
 }
 
 .profilebtn {
@@ -339,7 +333,7 @@
 }
 
 #info_div {
-  background-color: #f0f8ff;
+  background-color: #ecb5bf;
 }
 
 .viewmodel {
@@ -678,6 +672,8 @@
   margin-left: 10px;
   border-radius: 10px;
   font-size: 20px;
+  width: 350px;
+  border: none;
 }
 
 #quizafter {
