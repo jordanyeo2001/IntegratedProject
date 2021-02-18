@@ -146,5 +146,5 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
 
 
 <h3>Mobile Version</h3>
-<img src="#">
+<img src="../IntegratedProject/gif/dailyreward.gif" alt="Daily Reward">
 <img src="#">
