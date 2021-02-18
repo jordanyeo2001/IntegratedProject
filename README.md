@@ -107,13 +107,22 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
 <h4>Jordan Yeo Xiang Yu</h4>
 ____________________
 <br>
+____________________
+<br>
 Home Page 
 <br>
 ____________________
+<br>
+____________________
+
 <h4>Pan ZiAn</h4>
 ____________________
 <br>
+____________________
+<br>
 Feedback Page
+<br>
+____________________
 <br>
 ____________________
 <h3>Content</h3>
