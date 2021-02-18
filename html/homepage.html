@@ -133,13 +133,20 @@
         <div id="homepagespace">
           <div class="sketchfab-embed-wrapper">
             <iframe
-              class="productimg"
+              id="carsketchfab"
+              class="sketchfabimg"
               title="Toy Car Mercedes-Benz G-class (W463) AMG"
               src="https://sketchfab.com/models/b73fd97d781b4af5b90bbee7d86149d7/embed?autospin=1&autostart=1"
             >
             </iframe>
+            <img
+              id="carimg"
+              class="productimg"
+              src="../img/car_still_image.png"
+              alt=""
+            />
           </div>
-          <p id="carname" class="h4">Mercedes AMG</p>
+          <p id="carname" class="h4" onclick="togglecarimg()">Mercedes AMG</p>
           <p id="carprice">$48.88</p>
           <p id="cardescription">
             A toy car of Mercedes-Benz G-class (W463) AMG 2019 3D model

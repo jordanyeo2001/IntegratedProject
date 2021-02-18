@@ -662,3 +662,15 @@ localStorage.getItem("earnpoints") || localStorage.setItem("earnpoints", "0"),
       (quizattempt = 1), localStorage.setItem("quizattempt", "1");
     });
   });
+
+function togglecarimg() {
+  var sketchfab = document.getElementById("carsketchfab");
+  var stillimage = document.getElementById("carimg");
+  if (sketchfab.style.display == "none") {
+    sketchfab.style.display = "block";
+    stillimage.style.display = "none";
+  } else {
+    sketchfab.style.display = "none";
+    stillimage.style.display = "block";
+  }
+}
