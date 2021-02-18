@@ -44,8 +44,9 @@ When the user click on the daily button in the navbar, it will show a gift box w
 
 
 <h2>Technologies Used</h2>
-[HTML](https://html.com/)
 
+<a href="https://html.com/">HTML</a>
+<br>
 <a href="https://www.w3.org/Style/CSS/">CSS</a>
 <br>
 <a href="https://www.javascript.com/">Javascript</a>
