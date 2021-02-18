@@ -105,14 +105,14 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
 <h2>Credits</h2>
 <h3>Contribution<h3>
 <h4>Jordan Yeo Xiang Yu</h4>
-<br>
 ____________________
+<br>
 Home Page 
 <br>
 ____________________
 <h4>Pan ZiAn</h4>
-<br>
 ____________________
+<br>
 Feedback Page
 <br>
 ____________________
