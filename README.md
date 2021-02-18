@@ -85,7 +85,7 @@ With different browser or devices used, the content of the page will adjust acco
 
 <h3>Validation<h3>
 Websites code such as html and css files validate using <a href="https://jigsaw.w3.org/css-validator/#validate_by_input">W3C CSS Validator</a> and <a href="https://validator.w3.org/nu/">Nu Html Checker with no issues.</a>
-
+<br>
 <h3>Navigation Bar</h3>
 When click on one of the button in the Navbar, it will redirect you to another page such as home, nearbystore, searchpage, etc.
 <br>
