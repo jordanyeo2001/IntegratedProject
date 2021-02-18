@@ -421,7 +421,6 @@ $(document).ready(function () {
   });
 });
 
-updaterewardinfo();
 function updaterewardinfo() {
   if (localStorage.getItem("earnpoints")) {
     var x = localStorage.getItem("earnpoints");
@@ -430,7 +429,7 @@ function updaterewardinfo() {
       document.getElementById("bar1").style.width = progress + "%";
     }
 
-    if (x == "500") {
+    if (parseInt(x) >= 500) {
       document.getElementById("bar1").style.width = "0%";
       document.getElementById("rewardtier").innerHTML = "Silver";
       localStorage.setItem("tier", "Silver");
@@ -835,3 +834,8 @@ $(document).ready(function () {
     localStorage.setItem("quizattempt", "1");
   });
 });
+
+function update() {
+  updaterewardinfo();
+  updatepoints();
+}
