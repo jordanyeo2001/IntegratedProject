@@ -649,7 +649,7 @@ function addvalue2(checkboxElem) {
 
 function loadingpage() {
   setTimeout(function () {
-    window.location.href = "../html/mainpage.html";
+    window.location.href = "html/mainpage.html";
   }, 3000);
 }
 
