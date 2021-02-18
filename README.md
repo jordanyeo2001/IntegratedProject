@@ -104,27 +104,21 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
 
 <h2>Credits</h2>
 <h3>Contribution<h3>
-<h4>Jordan Yeo Xiang Yu</h4>
-____________________
-<br>
-____________________
-<br>
-Home Page 
-<br>
-____________________
-<br>
-____________________
+<table>
+  <tr>
+    <th>Jordan Yeo Xiang Yu</th>
+    <th>Pan ZiAn</th>
+  </tr>
+  <tr>
+    <td>Home Page</td>
+    <td>Feedback Page</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-<h4>Pan ZiAn</h4>
-____________________
-<br>
-____________________
-<br>
-Feedback Page
-<br>
-____________________
-<br>
-____________________
 <h3>Content</h3>
 <a href="https://fakestoreapi.com/">FakestoreAPI</a> is used to get and display a list of products on the application.
 <br>
