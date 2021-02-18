@@ -1,89 +1,72 @@
-var usertier = "";
-var totalpoints = 0;
-if (localStorage.getItem("totalpoints")) {
-  totalpoints = localStorage.getItem("totalpoints");
-} else {
-  localStorage.setItem("totalpoints", 0);
-}
-
+var usertier = "",
+  totalpoints = 0;
 function totalpayment() {
-  var numofitems = localStorage.getItem("cartitem");
-  if (numofitems == "1") {
-    var finalprice = localStorage.getItem("item1price");
+  var e = localStorage.getItem("cartitem");
+  if ("1" == e) {
+    var t = localStorage.getItem("item1price");
     document.getElementById("totalpayement").innerHTML =
-      parseFloat(finalprice) + parseFloat("1");
-  } else if (numofitems == "2") {
-    var finalprice = localStorage.getItem("item1price");
-    var finalprice2 = localStorage.getItem("item2price");
-    if (localStorage.getItem("numofvoucher")) {
-      var x = localStorage.getItem("numofvoucher");
-      if (x == "1") {
+      parseFloat(t) + parseFloat("1");
+  } else if ("2" == e) {
+    t = localStorage.getItem("item1price");
+    var o = localStorage.getItem("item2price");
+    if (localStorage.getItem("numofvoucher"))
+      if ("1" == localStorage.getItem("numofvoucher")) {
         $("#discountbox").css("display", "block");
-        var y = localStorage.getItem("voucher");
-        if (y == "5OFF") {
-          var discount = 5;
-          document.getElementById("discountamount").innerHTML =
-            "$" + discount + ".00";
-          document.getElementById("totalpayment").innerHTML =
-            "$" +
-            (parseFloat(finalprice.substring(1)) +
-              parseFloat(finalprice2.substring(1)) +
-              parseFloat(1) -
-              discount);
-          localStorage.setItem("numofvoucher", "0");
-          localStorage.setItem("voucher", "");
-          $("#profilevouchertext").css("display", "block");
-          $("#profilevoucher").css("display", "none");
-        } else if (y == "10OFF") {
-          var discount = 10;
-          document.getElementById("discountamount").innerHTML =
-            "$" + discount + ".00";
-          document.getElementById("totalpayment").innerHTML =
-            "$" +
-            (parseFloat(finalprice.substring(1)) +
-              parseFloat(finalprice2.substring(1)) +
-              parseFloat(1) -
-              discount);
-          localStorage.setItem("numofvoucher", "0");
-          localStorage.setItem("voucher", "");
-          $("#profilevouchertext").css("display", "block");
-          $("#profilevoucher").css("display", "none");
-        } else if (y == "30%OFF") {
-          var discount = 0.7;
-          document.getElementById("discountamount").innerHTML =
-            "$" + discount + ".00";
-          document.getElementById("totalpayment").innerHTML =
-            "$" +
-            (parseFloat(finalprice.substring(1)) +
-              parseFloat(finalprice2.substring(1)) +
-              parseFloat(1)) *
-              discount;
-          localStorage.setItem("numofvoucher", "0");
-          localStorage.setItem("voucher", "");
-          $("#profilevouchertext").css("display", "block");
-          $("#profilevoucher").css("display", "none");
+        var n = localStorage.getItem("voucher");
+        if ("5OFF" == n) {
+          var a = 5;
+          (document.getElementById("discountamount").innerHTML =
+            "$" + a + ".00"),
+            (document.getElementById("totalpayment").innerHTML =
+              "$" +
+              (parseFloat(t.substring(1)) +
+                parseFloat(o.substring(1)) +
+                parseFloat(1) -
+                a)),
+            localStorage.setItem("numofvoucher", "0"),
+            localStorage.setItem("voucher", ""),
+            $("#profilevouchertext").css("display", "block"),
+            $("#profilevoucher").css("display", "none");
+        } else if ("10OFF" == n) {
+          a = 10;
+          (document.getElementById("discountamount").innerHTML =
+            "$" + a + ".00"),
+            (document.getElementById("totalpayment").innerHTML =
+              "$" +
+              (parseFloat(t.substring(1)) +
+                parseFloat(o.substring(1)) +
+                parseFloat(1) -
+                a)),
+            localStorage.setItem("numofvoucher", "0"),
+            localStorage.setItem("voucher", ""),
+            $("#profilevouchertext").css("display", "block"),
+            $("#profilevoucher").css("display", "none");
+        } else if ("30%OFF" == n) {
+          a = 0.7;
+          (document.getElementById("discountamount").innerHTML =
+            "$" + a + ".00"),
+            (document.getElementById("totalpayment").innerHTML =
+              "$" +
+              (parseFloat(t.substring(1)) +
+                parseFloat(o.substring(1)) +
+                parseFloat(1)) *
+                a),
+            localStorage.setItem("numofvoucher", "0"),
+            localStorage.setItem("voucher", ""),
+            $("#profilevouchertext").css("display", "block"),
+            $("#profilevoucher").css("display", "none");
         }
-      } else {
+      } else
         document.getElementById("totalpayment").innerHTML =
           "$" +
-          (parseFloat(finalprice.substring(1)) +
-            parseFloat(finalprice2.substring(1)) +
+          (parseFloat(t.substring(1)) +
+            parseFloat(o.substring(1)) +
             parseFloat(1));
-      }
-    }
   }
 }
-
 function updatepoints() {
   document.getElementById("totalpoints").innerHTML = totalpoints + " points";
 }
-
-if (localStorage.getItem("tier")) {
-  usertier = localStorage.getItem("tier");
-} else {
-  localStorage.setItem("tier", "Bronze");
-}
-
 function openNavbar() {
   document.getElementById("sidenavbar").style.width = "250px";
 }
@@ -93,749 +76,586 @@ function closeNavbar() {
 function getLocation() {
   navigator.geolocation.getCurrentPosition(getcoordinates);
 }
-
-function getcoordinates(position) {
-  var currentlatitude = parseFloat(position.coords.latitude);
-  var currentlongitude = parseFloat(position.coords.longitude);
-  initMap(currentlatitude, currentlongitude);
+function getcoordinates(e) {
+  initMap(parseFloat(e.coords.latitude), parseFloat(e.coords.longitude));
 }
-
-function initMap(latitude, longitude) {
-  if (latitude == undefined && longitude == undefined) {
-    latitude = 1.3521;
-    longitude = 103.8198;
-  }
-
-  var myMapCenter = { lat: parseFloat(latitude), lng: parseFloat(longitude) };
-  var map = new google.maps.Map(document.getElementById("map"), {
-    center: myMapCenter,
-    zoom: +14,
-  });
-
-  function markStore(storeInfo) {
-    var marker = new google.maps.Marker({
-      map: map,
-      position: storeInfo.location,
-      title: storeInfo.name,
+function initMap(e, t) {
+  null == e && null == t && ((e = 1.3521), (t = 103.8198));
+  var o = { lat: parseFloat(e), lng: parseFloat(t) },
+    n = new google.maps.Map(document.getElementById("map"), {
+      center: o,
+      zoom: 14,
     });
-
-    marker.addListener("click", function () {
-      showStoreInfo(storeInfo);
+  function a(e) {
+    new google.maps.Marker({
+      map: n,
+      position: e.location,
+      title: e.name,
+    }).addListener("click", function () {
+      !(function (e) {
+        document.getElementById("info_div").innerHTML =
+          "Store name: " + e.name + "<br>Hours: " + e.hours;
+      })(e);
     });
   }
-
-  function showStoreInfo(storeInfo) {
-    var info_div = document.getElementById("info_div");
-    info_div.innerHTML =
-      "Store name: " + storeInfo.name + "<br>Hours: " + storeInfo.hours;
-  }
-
-  var stores = [
+  [
     {
       name: "MaMaMart",
-      location: { lat: 1.3372867999999999, lng: 103.7246456 },
+      location: { lat: 1.3372868, lng: 103.7246456 },
       hours: "8AM to 10PM",
     },
     {
       name: "MaMaMart",
-      location: { lat: 1.3392867999999999, lng: 103.7266456 },
+      location: { lat: 1.3392868, lng: 103.7266456 },
       hours: "9AM to 9PM",
     },
     {
       name: "MaMaMart",
-      location: { lat: 1.3332867999999999, lng: 103.7206456 },
+      location: { lat: 1.3332868, lng: 103.7206456 },
       hours: "8AM to 10:30PM",
     },
     {
       name: "MaMaMart",
-      location: { lat: 1.3462867999999999, lng: 103.7036456 },
+      location: { lat: 1.3462868, lng: 103.7036456 },
       hours: "8AM to 8PM",
     },
     {
       name: "MaMaMart",
-      location: { lat: 1.3962867999999999, lng: 103.8236456 },
+      location: { lat: 1.3962868, lng: 103.8236456 },
       hours: "9AM to 10PM",
     },
-  ];
-
-  stores.forEach(function (store) {
-    markStore(store);
+  ].forEach(function (e) {
+    a(e);
   });
 }
-
-//For Login and SignUp
-
-$(document).ready(function () {
-  const APIKEY = "5ffd00071346a1524ff127a5";
-
-  $("#accounts-submit").on("click", function (e) {
-    //prevent default action of the button
-    e.preventDefault();
-
-    let accountusername = $("#accounts-username").val();
-    let accountemail = $("#accounts-email").val();
-    let accountpassword = $("#accounts-password").val();
-    let accountgender = $("#accounts-gender").val();
-    let accountphonenumber = $("#accounts-phonenumber").val();
-
-    let jsondata = {
-      username: accountusername,
-      email: accountemail,
-      password: accountpassword,
-      gender: accountgender,
-      phonenumber: accountphonenumber,
-    };
-
-    let settings = {
-      async: true,
-      crossDomain: true,
-      url: "https://interactivedev-e9de.restdb.io/rest/accounts",
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "x-apikey": APIKEY,
-        "cache-control": "no-cache",
-      },
-      processData: false,
-      data: JSON.stringify(jsondata),
-      beforeSend: function () {},
-      error: function (err) {
-        alert("This username/email is already in use!");
-      },
-    };
-
-    $.ajax(settings).done(function (response) {
-      alert("You account has been successfully created! Please login.");
-      window.location.href = "loginpage.html";
-    });
-  });
-
-  $("#accounts-login").on("click", function (e) {
-    //prevent default action of the button
-    e.preventDefault();
-
-    let accountusername = $("#accounts-username").val();
-    let accountpassword = $("#accounts-password").val();
-    localStorage.setItem("username", accountusername);
-    getaccounts();
-
-    function getaccounts(limit = 10, all = true) {
-      let settings = {
-        async: true,
-        crossDomain: true,
-        url: "https://interactivedev-e9de.restdb.io/rest/accounts",
-        method: "GET",
-        headers: {
-          "content-type": "application/json",
-          "x-apikey": APIKEY,
-          "cache-control": "no-cache",
-        },
-      };
-
-      $.ajax(settings).done(function (response) {
-        var usernamelist = [];
-        var passwordlist = [];
-
-        for (var i = 0; i < response.length && i < limit; i++) {
-          var tempusername = response[i].username;
-          var temppassword = response[i].password;
-          usernamelist.push(tempusername);
-          passwordlist.push(temppassword);
-        }
-        var x = usernamelist.includes(accountusername);
-        var y = passwordlist.includes(accountpassword);
-
-        if (x == true && y == true) {
-          window.location.href = "homepage.html";
-        } else {
-          $("#invalidtext").html("Incorrect username or password");
-        }
-      });
-    }
-  });
-});
-
 function accountinfo() {
-  var settings = {
+  $.ajax({
     url: "https://interactivedev-e9de.restdb.io/rest/accounts",
     method: "GET",
     timeout: 0,
-    headers: {
-      "x-api-key": "5ffd00071346a1524ff127a5",
-    },
-  };
-
-  $.ajax(settings).done(function (response) {
-    var x = localStorage.getItem("username");
-    $("#profileusername").html(x);
-    $("#navbarname").html(x);
-    $("#inputUser").html(x);
-    for (i in response) {
-      var y = response[i].username;
-      if (x == y) {
-        var accemail = response[i].email;
-        var accnumber = response[i].phonenumber;
-        var accgender = response[i].gender;
-        $("#accemail").html(accemail);
-        $("#accphonenumber").html(accnumber);
-        $("#accgender").html(accgender);
+    headers: { "x-api-key": "5ffd00071346a1524ff127a5" },
+  }).done(function (e) {
+    var t = localStorage.getItem("username");
+    for (i in ($("#profileusername").html(t),
+    $("#navbarname").html(t),
+    $("#inputUser").html(t),
+    e)) {
+      if (t == e[i].username) {
+        var o = e[i].email,
+          n = e[i].phonenumber,
+          a = e[i].gender;
+        $("#accemail").html(o),
+          $("#accphonenumber").html(n),
+          $("#accgender").html(a);
       }
     }
   });
 }
-accountinfo();
-resetdaily();
-var resettime = "0:0";
-var checkclaim = 0;
+localStorage.getItem("totalpoints")
+  ? (totalpoints = localStorage.getItem("totalpoints"))
+  : localStorage.setItem("totalpoints", 0),
+  localStorage.getItem("tier")
+    ? (usertier = localStorage.getItem("tier"))
+    : localStorage.setItem("tier", "Bronze"),
+  $(document).ready(function () {
+    const e = "5ffd00071346a1524ff127a5";
+    $("#accounts-submit").on("click", function (t) {
+      t.preventDefault();
+      let o = {
+          username: $("#accounts-username").val(),
+          email: $("#accounts-email").val(),
+          password: $("#accounts-password").val(),
+          gender: $("#accounts-gender").val(),
+          phonenumber: $("#accounts-phonenumber").val(),
+        },
+        n = {
+          async: !0,
+          crossDomain: !0,
+          url: "https://interactivedev-e9de.restdb.io/rest/accounts",
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "x-apikey": e,
+            "cache-control": "no-cache",
+          },
+          processData: !1,
+          data: JSON.stringify(o),
+          beforeSend: function () {},
+          error: function (e) {
+            alert("This username/email is already in use!");
+          },
+        };
+      $.ajax(n).done(function (e) {
+        alert("You account has been successfully created! Please login."),
+          (window.location.href = "loginpage.html");
+      });
+    }),
+      $("#accounts-login").on("click", function (t) {
+        t.preventDefault();
+        let o = $("#accounts-username").val(),
+          n = $("#accounts-password").val();
+        localStorage.setItem("username", o),
+          (function (t = 10, a = !0) {
+            let l = {
+              async: !0,
+              crossDomain: !0,
+              url: "https://interactivedev-e9de.restdb.io/rest/accounts",
+              method: "GET",
+              headers: {
+                "content-type": "application/json",
+                "x-apikey": e,
+                "cache-control": "no-cache",
+              },
+            };
+            $.ajax(l).done(function (e) {
+              for (var a = [], l = [], c = 0; c < e.length && c < t; c++) {
+                var r = e[c].username,
+                  i = e[c].password;
+                a.push(r), l.push(i);
+              }
+              var s = a.includes(o),
+                m = l.includes(n);
+              1 == s && 1 == m
+                ? (window.location.href = "homepage.html")
+                : $("#invalidtext").html("Incorrect username or password");
+            });
+          })();
+      });
+  }),
+  accountinfo(),
+  resetdaily();
+var resettime = "0:0",
+  checkclaim = 0;
 function resetdaily() {
-  var currenttime = new Date();
-  var currenthrs = currenttime.getHours();
-  var currentmins = currenttime.getMinutes();
-  var timenow = currenthrs + ":" + currentmins;
-  if (timenow == resettime) {
-    $("#newmsg").css("display", "inline-block");
-    localStorage.setItem("claimcheck", "0");
-    checkclaim = 0;
-  } else {
-    $("#newmsg").css("display", "none");
-  }
+  var e = new Date();
+  e.getHours() + ":" + e.getMinutes() == resettime
+    ? ($("#newmsg").css("display", "inline-block"),
+      localStorage.setItem("claimcheck", "0"),
+      (checkclaim = 0))
+    : $("#newmsg").css("display", "none");
 }
-
-$(document).ready(function () {
-  var currenttime = new Date();
-  var currenthrs = currenttime.getHours();
-  var currentmins = currenttime.getMinutes();
-  var timenow = currenthrs + ":" + currentmins;
-  if (localStorage.getItem("claimcheck")) {
-    var tempnum = localStorage.getItem("claimcheck");
-    var checkclaim = tempnum;
-  } else {
-    var checkclaim = 0;
-    localStorage.setItem("claimcheck", "0");
-  }
-
-  if (checkclaim == 0) {
-    $("#newmsg").css("display", "inline-block");
-  } else if (checkclaim == 1 && timenow != resettime) {
-    $("#newmsg").css("display", "none");
-  }
-
-  if (timenow == resettime) {
-    $("#newmsg").css("display", "inline-block");
-    localStorage.setItem("claimcheck", "0");
-  } else if (timenow != resettime && checkclaim == 1) {
-    $("#newmsg").css("display", "none");
-  }
-  $("#navbartext4").on("click", function (e) {
-    var checkdaily = localStorage.getItem("claimcheck");
-    if (checkdaily == 0) {
-      $("#newmsg").css("display", "none");
-      localStorage.setItem("claimcheck", "1");
-      closeNavbar();
-      $(".dailyreward").css("display", "block");
-    } else {
-      closeNavbar();
-      alert("You may only claim once a day!");
-    }
-  });
-  $(".dailyreward").on("click", function (e) {
-    $(".dailyreward").css("display", "none");
-    var tempnum = Math.floor(Math.random() * 1) + 1;
-    if (tempnum == "1") {
-      $(".dailyopened").css("display", "block");
-      document.getElementById("rewarddaily").src = "../img/daily_bonus.png";
-      var points = 200;
-      if (usertier == "Bronze") {
-        var newpoints = points * 1;
-        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
-        localStorage.setItem("totalpoints", totalpoints);
-        document.getElementById("totalpoints").innerHTML =
-          totalpoints + " points";
-        if (localStorage.getItem("earnpoints")) {
-          var temppoints = localStorage.getItem("earnpoints");
-          var finalearnpoints = parseInt(temppoints) + newpoints;
-          localStorage.setItem("earnpoints", finalearnpoints);
-        }
-      } else if (usertier == "Silver") {
-        var newpoints = points * 1.5;
-        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
-        localStorage.setItem("totalpoints", totalpoints);
-        document.getElementById("totalpoints").innerHTML =
-          totalpoints + " points";
-        if (localStorage.getItem("earnpoints")) {
-          var temppoints = localStorage.getItem("earnpoints");
-          var finalearnpoints = parseInt(temppoints) + newpoints;
-          localStorage.setItem("earnpoints", finalearnpoints);
-        }
-      } else if (usertier == "Gold") {
-        var newpoints = points * 2;
-        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
-        localStorage.setItem("totalpoints", totalpoints);
-        document.getElementById("totalpoints").innerHTML =
-          totalpoints + " points";
-        if (localStorage.getItem("earnpoints")) {
-          var temppoints = localStorage.getItem("earnpoints");
-          var finalearnpoints = parseInt(temppoints) + newpoints;
-          localStorage.setItem("earnpoints", finalearnpoints);
-        }
-      } else if (usertier == "Platinum") {
-        var newpoints = points * 2;
-        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
-        localStorage.setItem("totalpoints", totalpoints);
-        document.getElementById("totalpoints").innerHTML =
-          totalpoints + " points";
-        if (localStorage.getItem("earnpoints")) {
-          var temppoints = localStorage.getItem("earnpoints");
-          var finalearnpoints = parseInt(temppoints) + newpoints;
-          localStorage.setItem("earnpoints", finalearnpoints);
-        }
-      } else if (usertier == "Diamond") {
-        var newpoints = points * 3;
-        totalpoints = parseInt(totalpoints) + parseInt(newpoints);
-        localStorage.setItem("totalpoints", totalpoints);
-        document.getElementById("totalpoints").innerHTML =
-          totalpoints + " points";
-        if (localStorage.getItem("earnpoints")) {
-          var temppoints = localStorage.getItem("earnpoints");
-          var finalearnpoints = parseInt(temppoints) + newpoints;
-          localStorage.setItem("earnpoints", finalearnpoints);
-        }
-      }
-    } else if (tempnum == "2") {
-      localStorage.setItem("voucher", "5OFF");
-      localStorage.setItem("numofvoucher", "1");
-      document.getElementById("rewarddaily").src = "../img/daily_voucher2.png";
-    } else if (tempnum == "3") {
-      localStorage.setItem("voucher", "10OFF");
-      localStorage.setItem("numofvoucher", "1");
-      document.getElementById("rewarddaily").src = "../img/daily_voucher1.png";
-    } else if (tempnum == "4") {
-      localStorage.setItem("voucher", "30%OFF");
-      localStorage.setItem("numofvoucher", "1");
-      document.getElementById("rewarddaily").src = "../img/daily_voucher3.png";
-    }
-    $(".dailyopened").css("display", "block");
-  });
-  $(".dailyopened").on("click", function (e) {
-    $(".dailyopened").css("display", "none");
-  });
-});
-
 function updaterewardinfo() {
   if (localStorage.getItem("earnpoints")) {
-    var x = localStorage.getItem("earnpoints");
-    if (x != "0") {
-      var progress = (parseInt(x) / 500) * 97.3;
-      document.getElementById("bar1").style.width = progress + "%";
+    var e = localStorage.getItem("earnpoints");
+    if ("0" != e) {
+      var t = (parseInt(e) / 500) * 97.3;
+      document.getElementById("bar1").style.width = t + "%";
     }
-
-    if (parseInt(x) >= 500) {
-      document.getElementById("bar1").style.width = "0%";
-      document.getElementById("rewardtier").innerHTML = "Silver";
-      localStorage.setItem("tier", "Silver");
-      localStorage.setItem("earnpoints", "0");
-    }
+    parseInt(e) >= 500 &&
+      ((document.getElementById("bar1").style.width = "0%"),
+      (document.getElementById("rewardtier").innerHTML = "Silver"),
+      localStorage.setItem("tier", "Silver"),
+      localStorage.setItem("earnpoints", "0"));
   }
 }
-//JS for Feedback Page//
-$(document).ready(function () {
-  const APIKEY = "5ffd003a1346a1524ff127ad";
-
-  $("#submit-button").on("click", function (e) {
-    e.preventDefault();
-    var x = localStorage.getItem("username");
-    let contactUsername = x;
-    let contactName = $("#inputName").val();
-    let contactSubject = $("#inputSubject").val();
-    let contactMessage = $("#inputMessage").val();
-
-    let jsondata = {
-      username: contactUsername,
-      name: contactName,
-      subject: contactSubject,
-      message: contactMessage,
-    };
-
-    let settings = {
-      async: true,
-      crossDomain: true,
-      url: "https://interactivedev-c72a.restdb.io/rest/contact",
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "x-apikey": APIKEY,
-        "cache-control": "no-cache",
-      },
-      processData: false,
-      data: JSON.stringify(jsondata),
-      beforeSend: function () {
-        $("#submit-button").prop("disabled", true);
-        $("#add-feedback-form").trigger("reset");
-      },
-    };
-
-    $.ajax(settings).done(function (response) {
-      $("#submit-button").prop("disabled", false);
-      alert("Your feedback has been succesfully submitted.");
-      window.location.href = "homepage.html";
-    });
-  });
-});
-
-//For homepage AR/3D view
-$(document).ready(function () {
-  $("#camclosebtn").on("click", function (e) {
-    window.location.href = "homepage.html";
-  });
-
-  $("#carmodel").on("click", function (e) {
-    window.location.href = "cararpage.html";
-  });
-
-  $("#truckmodel").on("click", function (e) {
-    window.location.href = "cararpage.html";
-  });
-});
-
-//For cart page
-$(document).ready(function () {
-  $("#plus-btn").on("click", function (e) {
-    var x = document.getElementById("productquantity").value;
-    x = parseInt(x) + 1;
-    document.getElementById("productquantity").value = x;
-  });
-  $("#minus-btn").on("click", function (e) {
-    var x = document.getElementById("productquantity").value;
-    if (x != 1) {
-      x = parseInt(x) - 1;
-    } else {
-      x = 1;
-    }
-
-    document.getElementById("productquantity").value = x;
-  });
-  $("#plus-btn1").on("click", function (e) {
-    var x = document.getElementById("productquantity1").value;
-    x = parseInt(x) + 1;
-    document.getElementById("productquantity1").value = x;
-  });
-  $("#minus-btn1").on("click", function (e) {
-    var x = document.getElementById("productquantity1").value;
-    if (x != 1) {
-      x = parseInt(x) - 1;
-    } else {
-      x = 1;
-    }
-
-    document.getElementById("productquantity1").value = x;
-  });
-  var cartitem = parseInt(0);
-  if (localStorage.getItem("cartitem")) {
-    cartitem = localStorage.getItem("cartitem");
+function addvalue(e) {
+  if (e.checked) {
+    document.getElementById("oncheckout").disabled = !1;
+    var t = localStorage.getItem("item1price"),
+      o = document.getElementById("subtotalamount").textContent;
+    (finalamount = parseFloat(o.substring(1)) + parseFloat(t.substring(1))),
+      (document.getElementById("subtotalamount").innerHTML = "$" + finalamount);
   } else {
-    localStorage.setItem("cartitem", parseInt(0));
-  }
-  if (cartitem == 1) {
-    $("#productcontainer").css("display", "block");
-    $("#carttext").css("display", "none");
-  } else if (cartitem == 2) {
-    $("#productcontainer").css("display", "block");
-    $("#productcontainer1").css("display", "block");
-    $("#carttext").css("display", "none");
-  }
-  $("#truck").on("click", function () {
-    cartitem = parseInt(cartitem) + 1;
-    localStorage.setItem("cartitem", parseInt(cartitem));
-    var tempname = document.getElementsByName("truck")[0].id;
-    var finalname = document.getElementById(tempname + "name").textContent;
-    var finalprice = document.getElementById(tempname + "price").textContent;
-    localStorage.setItem("item1name", finalname);
-    localStorage.setItem("item1price", finalprice);
-  });
-  $("#car").on("click", function () {
-    cartitem = parseInt(cartitem) + 1;
-    localStorage.setItem("cartitem", parseInt(cartitem));
-    var tempname = document.getElementsByName("car")[0].id;
-    var finalname = document.getElementById(tempname + "name").textContent;
-    var finalprice = document.getElementById(tempname + "price").textContent;
-    localStorage.setItem("item2name", finalname);
-    localStorage.setItem("item2price", finalprice);
-  });
-  updatecart();
-  function updatecart() {
-    var numofitems = localStorage.getItem("cartitem");
-    if (numofitems == "1") {
-      var nameofproduct = localStorage.getItem("item1name");
-      var finalprice = localStorage.getItem("item1price");
-      document.getElementById("item1name").innerHTML = nameofproduct;
-      document.getElementById("item1price").innerHTML = finalprice;
-    } else if (numofitems == "2") {
-      var nameofproduct = localStorage.getItem("item1name");
-      var finalprice = localStorage.getItem("item1price");
-      document.getElementById("item1name").innerHTML = nameofproduct;
-      document.getElementById("item1price").innerHTML = finalprice;
-
-      var nameofproduct = localStorage.getItem("item2name");
-      var finalprice = localStorage.getItem("item2price");
-      document.getElementById("item2name").innerHTML = nameofproduct;
-      document.getElementById("item2price").innerHTML = finalprice;
-    }
-  }
-  document.getElementById("selectall").onclick = function () {
-    var productbox = document.getElementsByName("products");
-    for (var x of productbox) {
-      x.checked = this.checked;
-      if (x.checked) {
-        document.getElementById("oncheckout").disabled = false;
-        var finalprice = localStorage.getItem("item1price");
-        document.getElementById("product1").value = finalprice;
-
-        var finalprice2 = localStorage.getItem("item2price");
-        document.getElementById("product2").value = finalprice2;
-        document.getElementById("subtotalamount").innerHTML =
-          "$" +
-          (parseFloat(finalprice.substring(1)) +
-            parseFloat(finalprice2.substring(1)));
-      } else {
-        document.getElementById("subtotalamount").innerHTML = "$0.00";
-      }
-    }
-  };
-
-  document.getElementById("product1").onclick = function () {};
-});
-function addvalue(checkboxElem) {
-  if (checkboxElem.checked) {
-    document.getElementById("oncheckout").disabled = false;
-    var finalprice = localStorage.getItem("item1price");
-    var tempamount = document.getElementById("subtotalamount").textContent;
-    finalamount =
-      parseFloat(tempamount.substring(1)) + parseFloat(finalprice.substring(1));
-    document.getElementById("subtotalamount").innerHTML = "$" + finalamount;
-  } else {
-    var finalprice = localStorage.getItem("item1price");
-    var tempamount = document.getElementById("subtotalamount").textContent;
-    finalamount =
-      parseFloat(tempamount.substring(1)) - parseFloat(finalprice.substring(1));
-    if (finalamount == "0") {
-      document.getElementById("subtotalamount").innerHTML = "$0.00";
-    } else {
-      document.getElementById("subtotalamount").innerHTML = "$" + finalamount;
-    }
+    (t = localStorage.getItem("item1price")),
+      (o = document.getElementById("subtotalamount").textContent);
+    (finalamount = parseFloat(o.substring(1)) - parseFloat(t.substring(1))),
+      "0" == finalamount
+        ? (document.getElementById("subtotalamount").innerHTML = "$0.00")
+        : (document.getElementById("subtotalamount").innerHTML =
+            "$" + finalamount);
   }
 }
-function addvalue2(checkboxElem) {
-  if (checkboxElem.checked) {
-    document.getElementById("oncheckout").disabled = false;
-    var finalprice = localStorage.getItem("item2price");
-    var tempamount = document.getElementById("subtotalamount").textContent;
-    finalamount =
-      parseFloat(tempamount.substring(1)) + parseFloat(finalprice.substring(1));
-    document.getElementById("subtotalamount").innerHTML = "$" + finalamount;
+function addvalue2(e) {
+  if (e.checked) {
+    document.getElementById("oncheckout").disabled = !1;
+    var t = localStorage.getItem("item2price"),
+      o = document.getElementById("subtotalamount").textContent;
+    (finalamount = parseFloat(o.substring(1)) + parseFloat(t.substring(1))),
+      (document.getElementById("subtotalamount").innerHTML = "$" + finalamount);
   } else {
-    var finalprice = localStorage.getItem("item2price");
-    var tempamount = document.getElementById("subtotalamount").textContent;
-    finalamount =
-      parseFloat(tempamount.substring(1)) - parseFloat(finalprice.substring(1));
-    if (finalamount == "0") {
-      document.getElementById("subtotalamount").innerHTML = "$0.00";
-    } else {
-      document.getElementById("subtotalamount").innerHTML = "$" + finalamount;
-    }
+    (t = localStorage.getItem("item2price")),
+      (o = document.getElementById("subtotalamount").textContent);
+    (finalamount = parseFloat(o.substring(1)) - parseFloat(t.substring(1))),
+      "0" == finalamount
+        ? (document.getElementById("subtotalamount").innerHTML = "$0.00")
+        : (document.getElementById("subtotalamount").innerHTML =
+            "$" + finalamount);
   }
 }
-
 function loadingpage() {
   setTimeout(function () {
     window.location.href = "html/mainpage.html";
-  }, 3000);
+  }, 3e3);
 }
-
 function updateUserTier() {
-  if (localStorage.getItem("tier")) {
-    document.getElementById("acclevel").innerHTML = localStorage.getItem(
-      "tier"
-    );
-  } else {
-    document.getElementById("acclevel").innerHTML = "Bronze";
-  }
-
-  if (localStorage.getItem("numofvoucher")) {
-    var x = localStorage.getItem("numofvoucher");
-    if (x == "1") {
-      $("#profilevouchertext").css("display", "none");
+  if (
+    (localStorage.getItem("tier")
+      ? (document.getElementById("acclevel").innerHTML = localStorage.getItem(
+          "tier"
+        ))
+      : (document.getElementById("acclevel").innerHTML = "Bronze"),
+    localStorage.getItem("numofvoucher")) &&
+    "1" == localStorage.getItem("numofvoucher")
+  ) {
+    $("#profilevouchertext").css("display", "none"),
       $("#profilevoucher").css("display", "block");
-      var y = localStorage.getItem("voucher");
-      if (y == "5OFF") {
-        $("#profilevoucher").attr("src", "../img/voucher2.png");
-      } else if (y == "10OFF") {
-        $("#profilevoucher").attr("src", "../img/voucher3.png");
-      } else if (y == "30%OFF") {
+    var e = localStorage.getItem("voucher");
+    "5OFF" == e
+      ? $("#profilevoucher").attr("src", "../img/voucher2.png")
+      : "10OFF" == e
+      ? $("#profilevoucher").attr("src", "../img/voucher3.png")
+      : "30%OFF" == e &&
         $("#profilevoucher").attr("src", "../img/voucher1.png");
-      }
-    }
   }
 }
-
-$(document).ready(function () {
-  $("#oncheckout").on("click", function () {
-    window.location.href = "checkoutpage.html";
-  });
-  $("#placeorderbtn").on("click", function () {
-    alert("Thank you for your purchase, your order has been placed.");
-    window.location.href = "homepage.html";
-  });
-});
-
 function showproducts() {
-  var settings = {
+  $.ajax({
     url: "https://fakestoreapi.com/products",
     method: "GET",
     timeout: 0,
-  };
-
-  $.ajax(settings).done(function (response) {
-    var productlist = "products";
-    for (i in response) {
-      var div = document.createElement("div");
-      div.setAttribute("class", "products");
-      var image = document.createElement("img");
-      image.src = response[i].image;
-      image.setAttribute("class", "productimg");
-      document.getElementById(productlist).className = "productimg";
-
-      var heading = document.createElement("h3");
-      heading.textContent = response[i].title;
-
-      var price = document.createElement("p");
-      price.textContent = "$" + response[i].price;
-
-      var description = document.createElement("p");
-      description.textContent = response[i].description;
-
-      var button = document.createElement("div");
-      button.textContent = "Add to Cart";
-      button.setAttribute("class", "addtocartbtn");
-      document.getElementById(productlist).appendChild(image);
-      document.getElementById(productlist).appendChild(heading);
-      document.getElementById(productlist).appendChild(price);
-      document.getElementById(productlist).appendChild(description);
-      document.getElementById(productlist).appendChild(button);
+  }).done(function (e) {
+    for (i in e) {
+      document.createElement("div").setAttribute("class", "products");
+      var t = document.createElement("img");
+      (t.src = e[i].image),
+        t.setAttribute("class", "productimg"),
+        (document.getElementById("products").className = "productimg");
+      var o = document.createElement("h3");
+      o.textContent = e[i].title;
+      var n = document.createElement("p");
+      n.textContent = "$" + e[i].price;
+      var a = document.createElement("p");
+      a.textContent = e[i].description;
+      var l = document.createElement("div");
+      (l.textContent = "Add to Cart"),
+        l.setAttribute("class", "addtocartbtn"),
+        document.getElementById("products").appendChild(t),
+        document.getElementById("products").appendChild(o),
+        document.getElementById("products").appendChild(n),
+        document.getElementById("products").appendChild(a),
+        document.getElementById("products").appendChild(l);
     }
   });
 }
-
 $(document).ready(function () {
-  $("#search-input").on("keyup", function (e) {
-    $("#products").css("display", "none");
-    $("#products2").css("display", "block");
-    var settings = {
-      url: "https://fakestoreapi.com/products",
-      method: "GET",
-      timeout: 0,
-    };
-
-    $.ajax(settings).done(function (response) {
-      var productlist2 = "products2";
-      for (i in response) {
-        var div = document.createElement("div");
-        div.setAttribute("class", "products");
-
-        var str = response[i].title;
-        var searchtext = e.target.value;
-        if (searchtext == null || searchtext == "") {
-          window.location.href = "searchpage.html";
+  var e = new Date(),
+    t = e.getHours() + ":" + e.getMinutes();
+  if (localStorage.getItem("claimcheck"))
+    var o = localStorage.getItem("claimcheck");
+  else {
+    o = 0;
+    localStorage.setItem("claimcheck", "0");
+  }
+  0 == o
+    ? $("#newmsg").css("display", "inline-block")
+    : 1 == o && t != resettime && $("#newmsg").css("display", "none"),
+    t == resettime
+      ? ($("#newmsg").css("display", "inline-block"),
+        localStorage.setItem("claimcheck", "0"))
+      : t != resettime && 1 == o && $("#newmsg").css("display", "none"),
+    $("#navbartext4").on("click", function (e) {
+      0 == localStorage.getItem("claimcheck")
+        ? ($("#newmsg").css("display", "none"),
+          localStorage.setItem("claimcheck", "1"),
+          closeNavbar(),
+          $(".dailyreward").css("display", "block"))
+        : (closeNavbar(), alert("You may only claim once a day!"));
+    }),
+    $(".dailyreward").on("click", function (e) {
+      $(".dailyreward").css("display", "none");
+      var t = Math.floor(1 * Math.random()) + 1;
+      if ("1" == t) {
+        $(".dailyopened").css("display", "block"),
+          (document.getElementById("rewarddaily").src =
+            "../img/daily_bonus.png");
+        if ("Bronze" == usertier) {
+          var o = 200;
+          if (
+            ((totalpoints = parseInt(totalpoints) + parseInt(o)),
+            localStorage.setItem("totalpoints", totalpoints),
+            (document.getElementById("totalpoints").innerHTML =
+              totalpoints + " points"),
+            localStorage.getItem("earnpoints"))
+          ) {
+            var n = localStorage.getItem("earnpoints"),
+              a = parseInt(n) + o;
+            localStorage.setItem("earnpoints", a);
+          }
+        } else if ("Silver" == usertier) {
+          o = 300;
+          if (
+            ((totalpoints = parseInt(totalpoints) + parseInt(o)),
+            localStorage.setItem("totalpoints", totalpoints),
+            (document.getElementById("totalpoints").innerHTML =
+              totalpoints + " points"),
+            localStorage.getItem("earnpoints"))
+          ) {
+            (n = localStorage.getItem("earnpoints")), (a = parseInt(n) + o);
+            localStorage.setItem("earnpoints", a);
+          }
+        } else if ("Gold" == usertier) {
+          o = 400;
+          if (
+            ((totalpoints = parseInt(totalpoints) + parseInt(o)),
+            localStorage.setItem("totalpoints", totalpoints),
+            (document.getElementById("totalpoints").innerHTML =
+              totalpoints + " points"),
+            localStorage.getItem("earnpoints"))
+          ) {
+            (n = localStorage.getItem("earnpoints")), (a = parseInt(n) + o);
+            localStorage.setItem("earnpoints", a);
+          }
+        } else if ("Platinum" == usertier) {
+          o = 400;
+          if (
+            ((totalpoints = parseInt(totalpoints) + parseInt(o)),
+            localStorage.setItem("totalpoints", totalpoints),
+            (document.getElementById("totalpoints").innerHTML =
+              totalpoints + " points"),
+            localStorage.getItem("earnpoints"))
+          ) {
+            (n = localStorage.getItem("earnpoints")), (a = parseInt(n) + o);
+            localStorage.setItem("earnpoints", a);
+          }
+        } else if ("Diamond" == usertier) {
+          o = 600;
+          if (
+            ((totalpoints = parseInt(totalpoints) + parseInt(o)),
+            localStorage.setItem("totalpoints", totalpoints),
+            (document.getElementById("totalpoints").innerHTML =
+              totalpoints + " points"),
+            localStorage.getItem("earnpoints"))
+          ) {
+            (n = localStorage.getItem("earnpoints")), (a = parseInt(n) + o);
+            localStorage.setItem("earnpoints", a);
+          }
         }
-        var n = str.includes(searchtext);
-        if (n == true) {
-          var image = document.createElement("img");
-          image.src = response[i].image;
-          image.setAttribute("class", "productimg");
-          document.getElementById(productlist2).className = "productimg";
-
-          var heading = document.createElement("h3");
-          heading.textContent = response[i].title;
-
-          var price = document.createElement("p");
-          price.textContent = "$" + response[i].price;
-
-          var description = document.createElement("p");
-          description.textContent = response[i].description;
-
-          var button = document.createElement("div");
-          button.textContent = "Add to Cart";
-          button.setAttribute("class", "addtocartbtn");
-
-          var x = document.getElementById(productlist2);
-          x.appendChild(image);
-          x.appendChild(heading);
-          x.appendChild(price);
-          x.appendChild(description);
-          x.appendChild(button);
+      } else "2" == t ? (localStorage.setItem("voucher", "5OFF"), localStorage.setItem("numofvoucher", "1"), (document.getElementById("rewarddaily").src = "../img/daily_voucher2.png")) : "3" == t ? (localStorage.setItem("voucher", "10OFF"), localStorage.setItem("numofvoucher", "1"), (document.getElementById("rewarddaily").src = "../img/daily_voucher1.png")) : "4" == t && (localStorage.setItem("voucher", "30%OFF"), localStorage.setItem("numofvoucher", "1"), (document.getElementById("rewarddaily").src = "../img/daily_voucher3.png"));
+      $(".dailyopened").css("display", "block");
+    }),
+    $(".dailyopened").on("click", function (e) {
+      $(".dailyopened").css("display", "none");
+    });
+}),
+  $(document).ready(function () {
+    $("#submit-button").on("click", function (e) {
+      e.preventDefault();
+      let t = {
+          username: localStorage.getItem("username"),
+          name: $("#inputName").val(),
+          subject: $("#inputSubject").val(),
+          message: $("#inputMessage").val(),
+        },
+        o = {
+          async: !0,
+          crossDomain: !0,
+          url: "https://interactivedev-c72a.restdb.io/rest/contact",
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "x-apikey": "5ffd003a1346a1524ff127ad",
+            "cache-control": "no-cache",
+          },
+          processData: !1,
+          data: JSON.stringify(t),
+          beforeSend: function () {
+            $("#submit-button").prop("disabled", !0),
+              $("#add-feedback-form").trigger("reset");
+          },
+        };
+      $.ajax(o).done(function (e) {
+        $("#submit-button").prop("disabled", !1),
+          alert("Your feedback has been succesfully submitted."),
+          (window.location.href = "homepage.html");
+      });
+    });
+  }),
+  $(document).ready(function () {
+    $("#camclosebtn").on("click", function (e) {
+      window.location.href = "homepage.html";
+    }),
+      $("#carmodel").on("click", function (e) {
+        window.location.href = "cararpage.html";
+      }),
+      $("#truckmodel").on("click", function (e) {
+        window.location.href = "cararpage.html";
+      });
+  }),
+  $(document).ready(function () {
+    $("#plus-btn").on("click", function (e) {
+      var t = document.getElementById("productquantity").value;
+      (t = parseInt(t) + 1),
+        (document.getElementById("productquantity").value = t);
+    }),
+      $("#minus-btn").on("click", function (e) {
+        var t = document.getElementById("productquantity").value;
+        (t = 1 != t ? parseInt(t) - 1 : 1),
+          (document.getElementById("productquantity").value = t);
+      }),
+      $("#plus-btn1").on("click", function (e) {
+        var t = document.getElementById("productquantity1").value;
+        (t = parseInt(t) + 1),
+          (document.getElementById("productquantity1").value = t);
+      }),
+      $("#minus-btn1").on("click", function (e) {
+        var t = document.getElementById("productquantity1").value;
+        (t = 1 != t ? parseInt(t) - 1 : 1),
+          (document.getElementById("productquantity1").value = t);
+      });
+    var e = parseInt(0);
+    localStorage.getItem("cartitem")
+      ? (e = localStorage.getItem("cartitem"))
+      : localStorage.setItem("cartitem", parseInt(0)),
+      1 == e
+        ? ($("#productcontainer").css("display", "block"),
+          $("#carttext").css("display", "none"))
+        : 2 == e &&
+          ($("#productcontainer").css("display", "block"),
+          $("#productcontainer1").css("display", "block"),
+          $("#carttext").css("display", "none")),
+      $("#truck").on("click", function () {
+        (e = parseInt(e) + 1), localStorage.setItem("cartitem", parseInt(e));
+        var t = document.getElementsByName("truck")[0].id,
+          o = document.getElementById(t + "name").textContent,
+          n = document.getElementById(t + "price").textContent;
+        localStorage.setItem("item1name", o),
+          localStorage.setItem("item1price", n);
+      }),
+      $("#car").on("click", function () {
+        (e = parseInt(e) + 1), localStorage.setItem("cartitem", parseInt(e));
+        var t = document.getElementsByName("car")[0].id,
+          o = document.getElementById(t + "name").textContent,
+          n = document.getElementById(t + "price").textContent;
+        localStorage.setItem("item2name", o),
+          localStorage.setItem("item2price", n);
+      }),
+      (function () {
+        var e = localStorage.getItem("cartitem");
+        if ("1" == e) {
+          var t = localStorage.getItem("item1name"),
+            o = localStorage.getItem("item1price");
+          (document.getElementById("item1name").innerHTML = t),
+            (document.getElementById("item1price").innerHTML = o);
+        } else if ("2" == e) {
+          var t = localStorage.getItem("item1name"),
+            o = localStorage.getItem("item1price");
+          (document.getElementById("item1name").innerHTML = t),
+            (document.getElementById("item1price").innerHTML = o);
+          var t = localStorage.getItem("item2name"),
+            o = localStorage.getItem("item2price");
+          (document.getElementById("item2name").innerHTML = t),
+            (document.getElementById("item2price").innerHTML = o);
         }
-      }
+      })(),
+      (document.getElementById("selectall").onclick = function () {
+        var e = document.getElementsByName("products");
+        for (var t of e)
+          if (((t.checked = this.checked), t.checked)) {
+            document.getElementById("oncheckout").disabled = !1;
+            var o = localStorage.getItem("item1price");
+            document.getElementById("product1").value = o;
+            var n = localStorage.getItem("item2price");
+            (document.getElementById("product2").value = n),
+              (document.getElementById("subtotalamount").innerHTML =
+                "$" +
+                (parseFloat(o.substring(1)) + parseFloat(n.substring(1))));
+          } else document.getElementById("subtotalamount").innerHTML = "$0.00";
+      }),
+      (document.getElementById("product1").onclick = function () {});
+  }),
+  $(document).ready(function () {
+    $("#oncheckout").on("click", function () {
+      window.location.href = "checkoutpage.html";
+    }),
+      $("#placeorderbtn").on("click", function () {
+        alert("Thank you for your purchase, your order has been placed."),
+          (window.location.href = "homepage.html");
+      });
+  }),
+  $(document).ready(function () {
+    $("#search-input").on("keyup", function (e) {
+      $("#products").css("display", "none"),
+        $("#products2").css("display", "block");
+      $.ajax({
+        url: "https://fakestoreapi.com/products",
+        method: "GET",
+        timeout: 0,
+      }).done(function (t) {
+        for (i in t) {
+          document.createElement("div").setAttribute("class", "products");
+          var o = t[i].title,
+            n = e.target.value;
+          if (
+            ((null != n && "" != n) ||
+              (window.location.href = "searchpage.html"),
+            1 == o.includes(n))
+          ) {
+            var a = document.createElement("img");
+            (a.src = t[i].image),
+              a.setAttribute("class", "productimg"),
+              (document.getElementById("products2").className = "productimg");
+            var l = document.createElement("h3");
+            l.textContent = t[i].title;
+            var c = document.createElement("p");
+            c.textContent = "$" + t[i].price;
+            var r = document.createElement("p");
+            r.textContent = t[i].description;
+            var s = document.createElement("div");
+            (s.textContent = "Add to Cart"),
+              s.setAttribute("class", "addtocartbtn");
+            var m = document.getElementById("products2");
+            m.appendChild(a),
+              m.appendChild(l),
+              m.appendChild(c),
+              m.appendChild(r),
+              m.appendChild(s);
+          }
+        }
+      });
     });
   });
-});
 var quizattempt = 0;
-if (localStorage.getItem("earnpoints")) {
-} else {
-  localStorage.setItem("earnpoints", "0");
-}
 function checkquiz() {
-  var currenttime = new Date();
-  var currenthrs = currenttime.getHours();
-  var currentmins = currenttime.getMinutes();
-  var timenow = currenthrs + ":" + currentmins;
+  var e = new Date(),
+    t = e.getHours() + ":" + e.getMinutes();
   if (localStorage.getItem("quizattempt")) {
-    var tempattempt = localStorage.getItem("quizattempt");
-    if (tempattempt == "1") {
-      $("#quizbefore").css("display", "none");
-      $("#quizafter").css("display", "block");
-    }
-  } else if (tempattempt == "1" && timenow == resettime) {
-    localStorage.setItem("quizattempt", "0");
-    $("#quizbefore").css("display", "block");
-    $("#quizafter").css("display", "none");
-  }
-  if (timenow == resettime) {
-    $("#quizbefore").css("display", "block");
-    $("#quizafter").css("display", "none");
-    localStorage.setItem("quizattempt", "0");
-  }
+    var o = localStorage.getItem("quizattempt");
+    "1" == o &&
+      ($("#quizbefore").css("display", "none"),
+      $("#quizafter").css("display", "block"));
+  } else
+    "1" == o &&
+      t == resettime &&
+      (localStorage.setItem("quizattempt", "0"),
+      $("#quizbefore").css("display", "block"),
+      $("#quizafter").css("display", "none"));
+  t == resettime &&
+    ($("#quizbefore").css("display", "block"),
+    $("#quizafter").css("display", "none"),
+    localStorage.setItem("quizattempt", "0"));
 }
-checkquiz();
-$(document).ready(function () {
-  $("#quiz-submit").on("click", function (e) {
-    var x = $("#quizans").val();
-    if (x == "$38.88") {
-      var points = 150;
-      if (localStorage.getItem("earnpoints")) {
-        var temppoints = localStorage.getItem("earnpoints");
-        var finalearnpoints = parseInt(temppoints) + points;
-        localStorage.setItem("earnpoints", finalearnpoints);
-        var temptotalpoints = localStorage.getItem("totalpoints");
-        var finaltotalpoints = parseInt(temptotalpoints) + parseInt(temppoints);
-        localStorage.setItem("totalpoints", finaltotalpoints);
-      }
-      alert(
-        "You have earned " +
-          points +
-          " bonus points for getting the correct answer."
-      );
-      $("#quizbefore").css("display", "none");
-      $("#quizafter").css("display", "block");
-    } else {
-      alert("Wrong answer. Please try again tomorrow.");
-      $("#quizbefore").css("display", "none");
-      $("#quizafter").css("display", "block");
-    }
-    quizattempt = 1;
-    localStorage.setItem("quizattempt", "1");
-  });
-});
-
 function update() {
-  updaterewardinfo();
-  updatepoints();
+  updaterewardinfo(), updatepoints();
 }
+localStorage.getItem("earnpoints") || localStorage.setItem("earnpoints", "0"),
+  checkquiz(),
+  $(document).ready(function () {
+    $("#quiz-submit").on("click", function (e) {
+      if ("$38.88" == $("#quizans").val()) {
+        if (localStorage.getItem("earnpoints")) {
+          var t = localStorage.getItem("earnpoints"),
+            o = parseInt(t) + 150;
+          localStorage.setItem("earnpoints", o);
+          var n = localStorage.getItem("totalpoints"),
+            a = parseInt(n) + parseInt(t);
+          localStorage.setItem("totalpoints", a);
+        }
+        alert(
+          "You have earned 150 bonus points for getting the correct answer."
+        ),
+          $("#quizbefore").css("display", "none"),
+          $("#quizafter").css("display", "block");
+      } else alert("Wrong answer. Please try again tomorrow."), $("#quizbefore").css("display", "none"), $("#quizafter").css("display", "block");
+      (quizattempt = 1), localStorage.setItem("quizattempt", "1");
+    });
+  });

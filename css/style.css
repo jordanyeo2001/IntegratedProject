@@ -6,9 +6,11 @@
 .textcenter {
   text-align: center;
 }
+
 .navbarbg {
   background-color: #dd7e80;
 }
+
 .menuicon {
   width: 80px;
   height: 80px;
@@ -21,14 +23,17 @@
 #sidenavbar {
   z-index: 1;
 }
+
 .profilesidenavbar {
   margin-top: -20px;
 }
+
 #pagename {
   font-size: 30px;
   font-weight: 500;
   line-height: 1.9;
 }
+
 .opennav {
   height: 105%;
   width: 0;
@@ -49,7 +54,8 @@
   transition: 0.5s;
 }
 
-.navbarimg {
+.navbarimg,
+.navbarimgsearch {
   background-color: #0097b5;
   height: 200px;
   margin-top: -21%;
@@ -58,12 +64,9 @@
 }
 
 .navbarimgsearch {
-  background-color: #0097b5;
-  height: 200px;
   margin-top: -10%;
-  text-align: left;
-  font-size: auto;
 }
+
 #profilebtn {
   font-size: 15px;
   margin-top: -10px;
@@ -77,39 +80,48 @@
 .profilecontent-navbar {
   margin-top: 80px;
 }
+
 .profilesearch-navbar {
   margin-top: 60px;
 }
+
+.profileimg,
+.profileimgsearch {
+  float: left;
+  border-radius: 100px;
+  padding: 10px;
+}
+
 .profileimgsearch {
   margin-top: 40px;
   width: 100px;
   height: 100px;
-  float: left;
-  border-radius: 100px;
-  padding: 10px;
 }
+
 .profileimg {
   margin-top: 60px;
   width: 20vw;
   height: 20vw;
-  float: left;
-  border-radius: 100px;
-  padding: 10px;
 }
+
 .profilepagefont {
   margin-top: 30px;
   font-size: 7vw;
 }
+
 .profilepagefont1 {
   font-size: 5vw;
 }
+
 .profilepagebox {
   margin-top: 30px;
   padding: 20px;
 }
+
 .profilepagetext {
   font-size: 6vw;
 }
+
 .profilepageimg {
   margin-top: 30px;
   width: 110px;
@@ -118,19 +130,23 @@
   border-radius: 100px;
   padding: 10px;
 }
+
 .profilepagebg {
-  background: url("../img/cloud_img.jpg");
+  background: url(../img/cloud_img.jpg);
   background-size: 100vw 60vw;
   height: 180px;
   text-align: left;
   font-size: auto;
 }
+
 .profilebtn {
   margin-top: 10px;
 }
+
 .centercontent {
   justify-content: center;
 }
+
 .searchicon {
   width: 80px;
   height: 80px;
@@ -138,29 +154,36 @@
   margin-top: -10px;
   flex: 1;
 }
+
+.btnsize,
 .textboxes {
-  box-shadow: black 2px 2px;
+  box-shadow: #000 2px 2px;
 }
+
 .btnsize {
-  box-shadow: black 2px 2px;
   min-width: 100px;
 }
+
 .btn {
   font-size: 25px;
 }
+
 .space {
   width: 10px;
   display: inline-block;
 }
-.backbtn {
-  width: 120px;
-  height: 100px;
-}
+
+.backbtn,
 .backbtn2 {
   width: 120px;
   height: 100px;
+}
+
+.backbtn2 {
   margin-left: -13px;
 }
+
+.box_img,
 .logo {
   width: 350px;
   height: auto;
@@ -169,65 +192,68 @@
   padding: 10px;
   flex: 1;
 }
+
 .box_img {
-  width: 350px;
-  height: auto;
-  margin-left: 5px;
   margin-top: -150px;
-  padding: 10px;
-  flex: 1;
 }
-.icon {
-  width: 80px;
-  height: 80px;
-  margin-left: -55px;
-  margin-top: 4px;
-  border-radius: 100px;
-  padding: 10px;
-  flex: 1;
-}
+
+.icon,
 .shopicon {
   width: 80px;
   height: 80px;
   padding: 10px;
-  margin-left: -25px;
-  margin-top: 125px;
   flex: 1;
 }
+
+.icon {
+  margin-left: -55px;
+  margin-top: 4px;
+  border-radius: 100px;
+}
+
+.shopicon {
+  margin-left: -25px;
+  margin-top: 125px;
+}
+
 .shoptext {
   margin-top: 150px;
   margin-left: -10px;
   font-size: 4vw;
 }
+
 .shoptext2 {
   margin-top: -15px;
 }
+
 .icon1 {
   width: 80px;
   height: 80px;
   margin-left: 5px;
   margin-top: 4px;
-  border-radius: 100px;
-  padding: 10px;
-  flex: 1;
-}
-.icon2 {
-  width: 80px;
-  height: 80px;
-  margin-left: -70px;
-  border-radius: 100px;
-  padding: 10px;
-  flex: 1;
-}
-.icon3 {
-  width: 80px;
-  height: 80px;
-  margin-right: -60px;
-  border-radius: 100px;
   padding: 10px;
   flex: 1;
 }
 
+.icon1,
+.icon2,
+.icon3 {
+  border-radius: 100px;
+}
+
+.icon2 {
+  width: 80px;
+  height: 80px;
+  margin-left: -70px;
+  padding: 10px;
+  flex: 1;
+}
+
+.icon3 {
+  margin-right: -60px;
+}
+
+.icon3,
 .searchpageicon {
   width: 80px;
   height: 80px;
@@ -238,37 +264,28 @@
 .alignsearchbox {
   margin-top: 10px;
 }
+
 .navbaricons {
   width: 80px;
   height: 80px;
   margin-left: -30px;
   padding: 10px;
 }
-#navbartext {
+
+#navbartext,
+#navbartext1 {
   font-size: 20px;
   margin-top: -10px;
 }
+
 #navbartext1 {
   font-size: 18px;
-  margin-top: -10px;
 }
 
-#navbartext2 {
-  font-size: 20px;
-}
-
-#navbartext3 {
-  font-size: 20px;
-}
-
-#navbartext4 {
-  font-size: 20px;
-}
-
-#navbartext5 {
-  font-size: 20px;
-}
-
+#navbartext2,
+#navbartext3,
+#navbartext4,
+#navbartext5,
 #navbartext6 {
   font-size: 20px;
 }
@@ -285,6 +302,7 @@
 .floatleft {
   float: left;
 }
+
 .floatleft2 {
   float: left;
   padding: 10px;
@@ -293,21 +311,27 @@
 .floatright {
   float: right;
 }
+
 .floatright2 {
   float: right;
   padding: 10px;
 }
+
 .background {
   background-color: #ffd4db;
 }
+
 .background2 {
-  background-image: url("../img/background.jpg");
+  background-image: url(../img/background.jpg);
 }
-.cartproductimg {
+
+.cartproductimg,
+.viewmodel {
   width: 80px;
   height: 80px;
   padding: 5px;
 }
+
 #map {
   width: auto;
   max-width: 100%;
@@ -315,12 +339,10 @@
 }
 
 #info_div {
-  background-color: rgb(240, 248, 255);
+  background-color: #f0f8ff;
 }
 
 .viewmodel {
-  width: 80px;
-  height: 80px;
   padding: 10px;
   flex: 1;
 }
@@ -345,20 +367,26 @@
   text-align: center;
   z-index: 1;
 }
+
 .rewardscontainer {
   padding: 10px;
 }
+
 .rewardpadding {
   padding: 5px;
 }
 
+#bar1,
+#bar2 {
+  border-radius: 5px;
+}
+
 #bar2 {
   width: 97.3%;
-  background-color: #ffffff;
+  background-color: #fff;
   height: 30px;
   border-style: solid;
   border-width: 1px;
-  border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -367,9 +395,9 @@
   width: 0%;
   height: 28px;
   background-color: #a5a5a5;
-  border-radius: 5px;
   margin-left: -1px;
 }
+
 .rewardpoint1 {
   padding-left: 5px;
   margin-top: -27px;
@@ -386,10 +414,12 @@
   height: 20vw;
   padding: 10px;
 }
+
 .allbtns {
-  color: #ffffff;
+  color: #fff;
   background-color: #90bcff;
 }
+
 .cartcontainer {
   width: 96vw;
 }
@@ -405,15 +435,19 @@
   padding: 10px;
   height: 80px;
 }
+
 .quantitybox {
   margin-left: 118px;
 }
+
 .input-group {
   padding: 10px;
 }
+
 #quizbefore {
   padding: 5px;
 }
+
 #quizafter {
   text-align: center;
   padding: 10px;
@@ -424,66 +458,79 @@
   margin-left: 5px;
   margin-top: 10px;
 }
+
 .minus-btn {
   width: 30px;
 }
+
 .productquantity {
   width: 60px;
   text-align: center;
 }
+
 .plus-btn {
   font-size: 20px;
 }
+
 #closebtn {
   margin-left: 1px;
   padding: 5px;
   margin-top: 20px;
 }
-#productcontainer {
-  display: none;
-}
+
+#productcontainer,
 #productcontainer1 {
   display: none;
 }
+
 #closebtn1 {
   margin-left: 1px;
   padding: 5px;
   margin-top: 20px;
 }
+
 .checkoutbtn {
   background-color: #ff4448;
   padding: 17px;
-  border: none;
+  border: 0;
 }
+
 .totalamountbtn {
   background-color: #dd7e80;
   text-align: right;
   padding: 5px;
 }
+
 .selectallbtn {
   width: 15px;
   height: 15px;
   margin-left: 10px;
   margin-top: 20px;
 }
+
 .bottombackground {
   background-color: #dd7e80;
   margin-top: 573px;
   height: 60px;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
 }
+
 .deliverybox {
-  background-color: #ecb5bf;
   height: 65px;
-  border-radius: 10px;
   padding: 7px;
 }
-#discountbox {
-  background-color: #ecb5bf;
-  height: 40px;
+
+#discountbox,
+.deliverybox,
+.productcheckout {
   border-radius: 10px;
+  background-color: #ecb5bf;
+}
+
+#discountbox {
+  height: 40px;
   padding: 7px;
   display: none;
 }
@@ -491,21 +538,24 @@
 .productcheckout {
   height: 90px;
   padding: 5px;
-  border-radius: 10px;
-  background-color: #ecb5bf;
 }
+
 .productcheckoutimg {
   padding: 5px;
   height: 80px;
   width: 80px;
   border-radius: 10px;
 }
+
 .checkoutcontent {
   padding-left: 15px;
 }
+
 .rewardscontent {
   padding: 10px;
 }
+
+.dailyopened,
 .dailyreward {
   width: 360px;
   height: 360px;
@@ -514,14 +564,7 @@
   display: none;
   z-index: 1;
 }
-.dailyopened {
-  width: 360px;
-  height: 360px;
-  margin-top: 50px;
-  position: fixed;
-  display: none;
-  z-index: 1;
-}
+
 .close-button {
   width: 80px;
   height: 100px;
@@ -530,43 +573,12 @@
 .tier-list {
   margin-top: 100px;
 }
-.bronze {
-  width: 140px;
-  height: 180px;
-  border-radius: 100px;
-  padding: 10px;
-  margin-top: -10px;
-  flex: 1;
-}
 
+.bronze,
+.diamond,
+.gold,
+.platinum,
 .silver {
-  width: 140px;
-  height: 180px;
-  border-radius: 100px;
-  padding: 10px;
-  margin-top: -10px;
-  flex: 1;
-}
-
-.gold {
-  width: 140px;
-  height: 180px;
-  border-radius: 100px;
-  padding: 10px;
-  margin-top: -10px;
-  flex: 1;
-}
-
-.platinum {
-  width: 140px;
-  height: 180px;
-  border-radius: 100px;
-  padding: 10px;
-  margin-top: -10px;
-  flex: 1;
-}
-
-.diamond {
   width: 140px;
   height: 180px;
   border-radius: 100px;
@@ -592,7 +604,7 @@
 }
 
 .splashscreen {
-  background-image: url("../img/splashscreen.png");
+  background-image: url(../img/splashscreen.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -610,14 +622,9 @@
 .benefitspage {
   padding: 20px;
 }
-.makecenter {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
+
+#quizheading,
+.makecenter,
 .voucherheading {
   position: relative;
   margin-left: auto;
@@ -625,107 +632,120 @@
   left: 0;
   right: 0;
   text-align: center;
-  padding: 10px;
+}
+
+#quizheading,
+.voucherheading {
   width: 155px;
-  background-color: #ecb5bf;
   box-shadow: 10px 10px #d2a5ad;
 }
+
 #quizheading {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 10px;
   width: 100px;
-  background-color: #ecb5bf;
-  box-shadow: 10px 10px #d2a5ad;
 }
-#profileinfoheading {
-  margin-left: -20px;
+
+#profileinfoheading,
+#quizheading,
+.addtocartbtn,
+.voucherheading {
   padding: 10px;
-  width: 330px;
   background-color: #ecb5bf;
-  box-shadow: 10px 10px #d2a5ad;
 }
+
+#profileinfoheading,
 #voucherprofileheading {
   margin-left: -20px;
+  width: 330px;
+  box-shadow: 10px 10px #d2a5ad;
+}
+
+#voucherprofileheading {
   padding: 10px;
   width: 155px;
   background-color: #ecb5bf;
-  box-shadow: 10px 10px #d2a5ad;
 }
+
 #profilevoucher {
   display: none;
 }
+
 #homepagespace {
   margin-bottom: 20px;
 }
+
 .addtocartbtn {
   margin-right: 10px;
   margin-left: 10px;
   border-radius: 10px;
-  padding: 10px;
   font-size: 20px;
-  background-color: #ecb5bf;
 }
 
 #quizafter {
   display: none;
 }
+
 @media only screen and (width: 280px) {
   .splashscreen {
     background-size: 100% 700px;
   }
 }
+
 @media only screen and (width: 320px) {
+  .center,
   .textcenter {
     margin-right: -65px;
   }
-  .center {
-    margin-right: -65px;
-  }
+
   .navbar2 {
     width: 354.5px;
   }
 }
+
 @media only screen and (width: 360px) {
   .splashscreen {
     background-size: 100% 700px;
   }
 }
+
 @media only screen and (max-width: 376px) {
   .tier-description {
     font-size: 20px;
   }
+
   #tierbox {
     padding: 50px;
   }
 }
+
 @media only screen and (width: 540px) {
   .splashscreen {
     background-size: 100% 800px;
   }
 }
+
 @media only screen and (width: 768px) {
   .profilepageimg {
     margin-top: 10px;
     width: 140px;
     height: 140px;
   }
+
   .profilepagefont {
     margin-top: 10px;
   }
+
   .profilepagefont2 {
     font-size: 30px;
   }
+
   .profilepagebg {
     height: auto;
   }
+
   .splashscreen {
     background-size: 100% 1200px;
   }
+
   .profilepagetext {
     font-size: 4vw;
   }
@@ -737,18 +757,23 @@
     width: 160px;
     height: 160px;
   }
+
   .profilepagefont {
     margin-top: 15px;
   }
+
   .profilepagefont2 {
     font-size: 30px;
   }
+
   .profilepagebg {
     height: auto;
   }
+
   .splashscreen {
     background-size: 100% 1600px;
   }
+
   .profilepagetext {
     font-size: 4vw;
   }
