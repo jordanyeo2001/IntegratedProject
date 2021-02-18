@@ -2,7 +2,6 @@
   font-size: 11px;
   display: inline-block;
 }
-
 .textcenter {
   text-align: center;
 }
@@ -17,7 +16,6 @@
   margin-top: -10px;
   flex: 1;
 }
-
 #sidenavbar {
   z-index: 1;
 }
@@ -40,7 +38,6 @@
   transition: 0.5s;
   padding-top: 20px;
 }
-
 .opennav a {
   padding: 8px 8px 8px 32px;
   font-size: 25px;
@@ -48,7 +45,6 @@
   display: block;
   transition: 0.5s;
 }
-
 .navbarimg {
   background-color: #0097b5;
   height: 200px;
@@ -56,7 +52,6 @@
   text-align: left;
   font-size: auto;
 }
-
 .navbarimgsearch {
   background-color: #0097b5;
   height: 200px;
@@ -68,12 +63,10 @@
   font-size: 15px;
   margin-top: -10px;
 }
-
 #profilebox-navbar {
   padding: 10px;
   background-color: #fababa;
 }
-
 .profilecontent-navbar {
   margin-top: 80px;
 }
@@ -119,7 +112,7 @@
   padding: 10px;
 }
 .profilepagebg {
-  background: url("../img/cloud_img.jpg");
+  background: url(../img/cloud_img.jpg);
   background-size: 100vw 60vw;
   height: 180px;
   text-align: left;
@@ -139,10 +132,10 @@
   flex: 1;
 }
 .textboxes {
-  box-shadow: black 2px 2px;
+  box-shadow: #000 2px 2px;
 }
 .btnsize {
-  box-shadow: black 2px 2px;
+  box-shadow: #000 2px 2px;
   min-width: 100px;
 }
 .btn {
@@ -227,14 +220,12 @@
   padding: 10px;
   flex: 1;
 }
-
 .searchpageicon {
   width: 80px;
   height: 80px;
   padding: 10px;
   flex: 1;
 }
-
 .alignsearchbox {
   margin-top: 10px;
 }
@@ -252,36 +243,28 @@
   font-size: 18px;
   margin-top: -10px;
 }
-
 #navbartext2 {
   font-size: 20px;
 }
-
 #navbartext3 {
   font-size: 20px;
 }
-
 #navbartext4 {
   font-size: 20px;
 }
-
 #navbartext5 {
   font-size: 20px;
 }
-
 #navbartext6 {
   font-size: 20px;
 }
-
 .navbar2 {
   margin-top: -1px;
   margin-left: -34.5px;
 }
-
 .center {
   text-align: center;
 }
-
 .floatleft {
   float: left;
 }
@@ -289,7 +272,6 @@
   float: left;
   padding: 10px;
 }
-
 .floatright {
   float: right;
 }
@@ -301,7 +283,7 @@
   background-color: #ffd4db;
 }
 .background2 {
-  background-image: url("../img/background.jpg");
+  background-image: url(../img/background.jpg);
 }
 .cartproductimg {
   width: 80px;
@@ -313,32 +295,26 @@
   max-width: 100%;
   height: 500px;
 }
-
 #info_div {
   background-color: rgb(240, 248, 255);
 }
-
 .viewmodel {
   width: 80px;
   height: 80px;
   padding: 10px;
   flex: 1;
 }
-
 .productimg {
   max-width: 100%;
   height: 300px;
   padding: 10px;
 }
-
 .form {
   margin-top: 100px;
 }
-
 .feedback-form {
   padding: 10px;
 }
-
 .cambox {
   position: absolute;
   top: 10px;
@@ -351,10 +327,9 @@
 .rewardpadding {
   padding: 5px;
 }
-
 #bar2 {
   width: 97.3%;
-  background-color: #ffffff;
+  background-color: #fff;
   height: 30px;
   border-style: solid;
   border-width: 1px;
@@ -362,7 +337,6 @@
   margin-left: 5px;
   margin-right: 5px;
 }
-
 #bar1 {
   width: 0%;
   height: 28px;
@@ -375,29 +349,25 @@
   margin-top: -27px;
   margin-left: -130px;
 }
-
 .rewardpoint2 {
   padding-right: 5px;
   margin-top: -28px;
 }
-
 .rewardvoucher {
   width: 40vw;
   height: 20vw;
   padding: 10px;
 }
 .allbtns {
-  color: #ffffff;
+  color: #fff;
   background-color: #90bcff;
 }
 .cartcontainer {
   width: 96vw;
 }
-
 .productbox {
   margin-left: 10px;
 }
-
 .productinfobox {
   width: 60%;
   border-radius: 5px;
@@ -471,7 +441,7 @@
   margin-top: 573px;
   height: 60px;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
 }
 .deliverybox {
@@ -487,7 +457,6 @@
   padding: 7px;
   display: none;
 }
-
 .productcheckout {
   height: 90px;
   padding: 5px;
@@ -526,7 +495,6 @@
   width: 80px;
   height: 100px;
 }
-
 .tier-list {
   margin-top: 100px;
 }
@@ -538,7 +506,6 @@
   margin-top: -10px;
   flex: 1;
 }
-
 .silver {
   width: 140px;
   height: 180px;
@@ -547,7 +514,6 @@
   margin-top: -10px;
   flex: 1;
 }
-
 .gold {
   width: 140px;
   height: 180px;
@@ -556,7 +522,6 @@
   margin-top: -10px;
   flex: 1;
 }
-
 .platinum {
   width: 140px;
   height: 180px;
@@ -565,7 +530,6 @@
   margin-top: -10px;
   flex: 1;
 }
-
 .diamond {
   width: 140px;
   height: 180px;
@@ -574,13 +538,11 @@
   margin-top: -10px;
   flex: 1;
 }
-
 .tier-description {
   font-size: 3vw;
   font-weight: 500;
   line-height: 1.9;
 }
-
 .question {
   width: 120px;
   height: 160px;
@@ -590,13 +552,11 @@
   margin-left: -50px;
   flex: 1;
 }
-
 .splashscreen {
-  background-image: url("../img/splashscreen.png");
+  background-image: url(../img/splashscreen.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .loadinganimation {
   position: absolute;
   margin-left: auto;
@@ -606,7 +566,6 @@
   bottom: 0;
   text-align: center;
 }
-
 .benefitspage {
   padding: 20px;
 }
@@ -670,7 +629,6 @@
   font-size: 20px;
   background-color: #ecb5bf;
 }
-
 #quizafter {
   display: none;
 }
@@ -730,7 +688,6 @@
     font-size: 4vw;
   }
 }
-
 @media only screen and (width: 1024px) {
   .profilepageimg {
     margin-top: 10px;
