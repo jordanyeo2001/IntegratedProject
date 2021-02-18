@@ -1,5 +1,5 @@
 # IntegratedProject
-This application called MaMaMart which is created by Jordan Yeo Xiang Yu and Pan ZiAn for a project.
+This application called MaMaMart is created by Jordan Yeo Xiang Yu and Pan ZiAn for a project.
 _____
 <h1>E-Commerce</h1>
 For this project, we have chosen to do a e-commerce mobile application. This application will allow users to get the products they desire. Users can locate our physical store by using the nearby store page based on their location. This gives the user a choice to shop online or at the physical store.
@@ -38,6 +38,16 @@ When the application is launch, it will show a splashscreen page with a loading 
 
 <h3>Feature 9 - Daily rewards animation</h3>
 When the user click on the daily button in the navbar, it will show a gift box with a small animation.
+
+<h3>Feature 10 - Search bar function</h3>
+The search bar allows the user to search and display for specific product.
+
+<h3>Feature 11 - Add to Cart/Checkout Page</h3>
+User will be able to add the products to the cart and checkout their products.
+
+<h3>Feature 12 - Point bar progress</h3>
+Points bar will be filled up based on the amount of points earned.
+
 
 <h2>Features Left to Implement</h2>
 
