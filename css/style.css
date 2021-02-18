@@ -411,6 +411,19 @@
 .input-group {
   padding: 10px;
 }
+#quizbefore {
+  padding: 5px;
+}
+#quizafter {
+  text-align: center;
+  padding: 10px;
+  font-size: 5vw;
+  background-color: #ecb5bf;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
 .minus-btn {
   width: 30px;
 }
