@@ -235,6 +235,13 @@ function resetdaily() {
     : $("#newmsg").css("display", "none");
 }
 function updaterewardinfo() {
+  if (localStorage.getItem("tier")) {
+    document.getElementById("rewardtier").innerHTML = localStorage.getItem(
+      "tier"
+    );
+  } else {
+    document.getElementById("acclevel").innerHTML = "Bronze";
+  }
   if (localStorage.getItem("earnpoints")) {
     var e = localStorage.getItem("earnpoints");
     if ("0" != e) {
@@ -287,6 +294,7 @@ function loadingpage() {
     window.location.href = "html/mainpage.html";
   }, 3e3);
 }
+
 function updateUserTier() {
   if (
     (localStorage.getItem("tier")
@@ -571,6 +579,16 @@ $(document).ready(function () {
       window.location.href = "checkoutpage.html";
     }),
       $("#placeorderbtn").on("click", function () {
+        var amount = document.getElementById("totalpayment").textContent;
+
+        if (localStorage.getItem("earnpoints")) {
+          var t = localStorage.getItem("earnpoints"),
+            o = parseInt(t) + parseInt(amount.substring(1) * 10);
+          localStorage.setItem("earnpoints", o);
+          var n = localStorage.getItem("totalpoints"),
+            a = parseInt(n) + parseInt(o);
+          localStorage.setItem("totalpoints", a);
+        }
         alert("Thank you for your purchase, your order has been placed."),
           (window.location.href = "homepage.html");
       });
