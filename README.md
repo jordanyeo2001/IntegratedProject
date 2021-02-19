@@ -181,18 +181,18 @@ FakestoreAPI and Restdb API by Pan ZiAn.
 <h3>Media</h3>
 <a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Splashscreen_page.jpg">App Splashscreen</a> designed by Pan ZiAn
 <br>
-Side Navigation bar icons designed by Pan ZiAn
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/SideNavigationbar.jpg">Side Navigation bar</a> icons designed by Pan ZiAn
 <br>
-Benefits Tier icons designed by Pan ZiAn
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Benefits_page.jpg">Benefits</a> Tier icons designed by Pan ZiAn
 <br>
 <br>
-3 Main icons on the navigation bar designed by Jordan Yeo Xiang Yu
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/Navbar_icons.jpg">3 Main icons on the navigation bar</a> designed by Jordan Yeo Xiang Yu
 <br>
-Daily reward box designed by Jordan Yeo Xiang Yu
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/reward_close.jpg">Daily reward box</a> designed by Jordan Yeo Xiang Yu
 <br>
-Abstract background for login/signup page designed by Jordan Yeo Xiang Yu
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/background.jpg">Abstract background</a> for login/signup page designed by Jordan Yeo Xiang Yu
 <br>
-App logo and branding designed by Jordan Yeo Xiang Yu
+<a herf="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/logo_icon.png">App logo and branding</a> designed by Jordan Yeo Xiang Yu
 
 
 <h2>Screenshots of Website</h2>
@@ -200,8 +200,60 @@ App logo and branding designed by Jordan Yeo Xiang Yu
 
 <h3>Mobile Version</h3>
 <details>
-  <summary>App Splashscreen, Login, SignUp Page</summary>
+  <summary>App Splashscreen,Main, Login, SignUp Page</summary>
   <img src="/website_screenshots/Splashscreen_page.jpg" name="App Splashscreen">
-  <img src="image-url" name="image-name">
-  <img src="image-url" name="image-name">
+  <img src="/website_screenshots/Main_page.jpg" name="Main Page">
+  <img src="/website_screenshots/Login_page.jpg" name="Login Page">
+  <img src="/website_screenshots/SignUp_page.jpg" name="SignUp Page">
+</details>
+<details>
+  <summary>All other pages</summary>
+  <details>
+  <summary>Home Page</summary>
+  <img src="/website_screenshots/Home_page.jpg" name="Homepage">
+  <img src="/website_screenshots/Home2_page.jpg" name="Homepage2">
+  </details>
+  <details>
+  <summary>NearbyStore Page</summary>
+  <img src="/website_screenshots/NearbyStore_page.jpg" name="NearbyStore Page">
+  </details>
+  <details>
+  <summary>3D AR modelview</summary>
+  <img src="/website_screenshots/Car_ARView.jpg" name="CarModel">
+  <img src="/website_screenshots/Truck_ARView.jpg" name="TruckModel">
+  </details>
+  <details>
+  <summary>Rewards and Benefits Page</summary>
+  <img src="/website_screenshots/Reward_page.jpg" name="Reward Page">
+  <img src="/website_screenshots/Benefits_page.jpg" name="Benefits Page">
+  </details>
+  <details>
+  <summary>Profile Page</summary>
+  <img src="/website_screenshots/Profile_page.jpg" name="Profile Page">
+  </details>
+  <details>
+  <details>
+  <summary>Search Page</summary>
+  <img src="/website_screenshots/Search_page.jpg" name="Search Page">
+  </details>
+  <details>
+  <summary>Side Navigation Bar</summary>
+  <img src="/website_screenshots/SideNavigationbar.jpg" name="SideNavBar">
+  </details>
+  <details>
+  <summary>Feedback Page</summary>
+  <img src="/website_screenshots/Feedback_Page.jpg" name="Feedback Page">
+  </details>
+  <details>
+  <summary>Cart and checkout Pages</summary>
+  <img src="/website_screenshots/Cart_page.jpg" name="Cartempty">
+  <img src="/website_screenshots/Cart2_page.jpg" name="Cartwithproducts">
+  <img src="/website_screenshots/Checkout_page.jpg" name="Checkout Page">
+  </details>
+  <details>
+  <summary>Daily Reward</summary>
+  <img src="/website_screenshots/Dailyreward.jpg" name="boxClosed">
+  <img src="/website_screenshots/Dailyreward2.jpg" name="boxOpened">
+  </details>
+  
 </details>
