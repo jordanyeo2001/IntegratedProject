@@ -1,6 +1,10 @@
 var usertier = "",
   totalpoints = 0;
 function totalpayment() {
+  if (localStorage.getItem("numofvoucher")) {
+  } else {
+    localStorage.setItem("numofvoucher", "0");
+  }
   var e = localStorage.getItem("cartitem");
   if ("1" == e) {
     var t = localStorage.getItem("item1price");
