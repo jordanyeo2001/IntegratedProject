@@ -200,7 +200,7 @@ App logo and branding designed by Jordan Yeo Xiang Yu
 
 <h3>Mobile Version</h3>
 <details>
-  <summary>App Splashscreen, Login, SignUp Page</summary><details>
+  <summary>App Splashscreen, Login, SignUp Page</summary>
   <img src="/website_screenshots/Splashscreen_page.jpg" name="App Splashscreen">
   <img src="image-url" name="image-name">
   <img src="image-url" name="image-name">
