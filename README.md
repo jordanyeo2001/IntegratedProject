@@ -153,6 +153,14 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
     <td>Car/Truck AR Page</td>
     <td></td>
   </tr>
+   <tr>
+    <td>Navigation Menu</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>NearbyStore Page</td>
+    <td></td>
+  </tr>
 
 </table>
 
@@ -165,6 +173,14 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
 <br>
 <a href="https://restdb.io/">Restdb API</a> is used for getting feedback from customers and also store account information.
 <h3>Media</h3>
+App Splashscreen designed by Pan ZiAn
+Side Navigation bar icons designed by Pan ZiAn
+Benefits Tier icons designed by Pan ZiAn
+<br>
+3 Main icons on the navigation bar designed by Jordan Yeo Xiang Yu
+Daily reward box designed by Jordan Yeo Xiang Yu
+Abstract background for login/signup page designed by Jordan Yeo Xiang Yu
+App logo and branding designed by Jordan Yeo Xiang Yu
 
 
 <h2>Screenshots of Website</h2>
