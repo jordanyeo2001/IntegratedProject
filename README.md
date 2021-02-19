@@ -179,20 +179,20 @@ FakestoreAPI, AR.js, Simple Store Locator and Restdb APi by Jordan Yeo Xiang Yu.
 FakestoreAPI and Restdb API by Pan ZiAn.
 
 <h3>Media</h3>
-<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Splashscreen_page.jpg">App Splashscreen</a> designed by Pan ZiAn
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/splashscreen.png">App Splashscreen</a> designed by Pan ZiAn
 <br>
-<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/SideNavigationbar.jpg">Side Navigation bar</a> icons designed by Pan ZiAn
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/SideNavigationbar.jpg">Side Navigation bar icons</a> designed by Pan ZiAn
 <br>
-<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Benefits_page.jpg">Benefits</a> Tier icons designed by Pan ZiAn
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Benefits_page.jpg">Benefits Tier icons</a> designed by Pan ZiAn
 <br>
 <br>
 <a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/Navbar_icons.jpg">3 Main icons on the navigation bar</a> designed by Jordan Yeo Xiang Yu
 <br>
-<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/reward_close.jpg">Daily reward box</a> designed by Jordan Yeo Xiang Yu
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/reward_close.png">Daily reward box</a> designed by Jordan Yeo Xiang Yu
 <br>
-<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/background.jpg">Abstract background</a> for login/signup page designed by Jordan Yeo Xiang Yu
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/background.jpg">Abstract background for login/signup page</a> designed by Jordan Yeo Xiang Yu
 <br>
-<a herf="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/logo_icon.png">App logo and branding</a> designed by Jordan Yeo Xiang Yu
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/logo_icon.png">App logo and branding</a> designed by Jordan Yeo Xiang Yu
 
 
 <h2>Screenshots of Website</h2>
@@ -231,7 +231,6 @@ FakestoreAPI and Restdb API by Pan ZiAn.
   <summary>Profile Page</summary>
   <img src="/website_screenshots/Profile_page.jpg" name="Profile Page">
   </details>
-  <details>
   <details>
   <summary>Search Page</summary>
   <img src="/website_screenshots/Search_page.jpg" name="Search Page">
