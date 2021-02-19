@@ -135,15 +135,11 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
   </tr>
   <tr>
     <td>Login Page</td>
-    <td></td>
+    <td>Profile Page</td>
   </tr>
   <tr>
     <td>Sign Up Page</td>
     <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Profile Page</td>
   </tr>
   <tr>
     <td>Cart Page</td>
@@ -151,6 +147,10 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
   </tr>
   <tr>
     <td>Checkout Page</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Car/Truck AR Page</td>
     <td></td>
   </tr>
 
