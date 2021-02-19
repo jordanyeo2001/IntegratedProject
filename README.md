@@ -172,14 +172,25 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
 <a href="https://developers.google.com/codelabs/maps-platform/google-maps-simple-store-locator#0">Simple Store Locator</a> is used to show the nearby stores of MaMaMart based on your location.
 <br>
 <a href="https://restdb.io/">Restdb API</a> is used for getting feedback from customers and also store account information.
+<br>
+<h4>API Tested</h4>
+FakestoreAPI, AR.js, Simple Store Locator and Restdb APi by Jordan Yeo Xiang Yu. 
+FakestoreAPI, Restdb API by Pan ZiAn.
+
 <h3>Media</h3>
 App Splashscreen designed by Pan ZiAn
+<br>
 Side Navigation bar icons designed by Pan ZiAn
+<br>
 Benefits Tier icons designed by Pan ZiAn
 <br>
+<br>
 3 Main icons on the navigation bar designed by Jordan Yeo Xiang Yu
+<br>
 Daily reward box designed by Jordan Yeo Xiang Yu
+<br>
 Abstract background for login/signup page designed by Jordan Yeo Xiang Yu
+<br>
 App logo and branding designed by Jordan Yeo Xiang Yu
 
 
