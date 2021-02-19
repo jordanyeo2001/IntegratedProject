@@ -175,7 +175,8 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
 <br>
 <h4>API Tested</h4>
 FakestoreAPI, AR.js, Simple Store Locator and Restdb APi by Jordan Yeo Xiang Yu. 
-FakestoreAPI, Restdb API by Pan ZiAn.
+<br>
+FakestoreAPI and Restdb API by Pan ZiAn.
 
 <h3>Media</h3>
 App Splashscreen designed by Pan ZiAn
@@ -198,5 +199,9 @@ App logo and branding designed by Jordan Yeo Xiang Yu
 
 
 <h3>Mobile Version</h3>
-<img src="#">
-<img src="#">
+<details>
+  <summary>App Splashscreen, Login, SignUp Page</summary><details>
+  <img src="[image-url](https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Splashscreen_page.jpg)" name="App Splashscreen">
+  <img src="image-url" name="image-name">
+  <img src="image-url" name="image-name">
+</details>
