@@ -179,7 +179,7 @@ FakestoreAPI, AR.js, Simple Store Locator and Restdb APi by Jordan Yeo Xiang Yu.
 FakestoreAPI and Restdb API by Pan ZiAn.
 
 <h3>Media</h3>
-App Splashscreen designed by Pan ZiAn
+<a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Splashscreen_page.jpg">App Splashscreen</a> designed by Pan ZiAn
 <br>
 Side Navigation bar icons designed by Pan ZiAn
 <br>
@@ -201,7 +201,7 @@ App logo and branding designed by Jordan Yeo Xiang Yu
 <h3>Mobile Version</h3>
 <details>
   <summary>App Splashscreen, Login, SignUp Page</summary><details>
-  <img src="[image-url](https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Splashscreen_page.jpg)" name="App Splashscreen">
+  <img src="/website_screenshots/Splashscreen_page.jpg" name="App Splashscreen">
   <img src="image-url" name="image-name">
   <img src="image-url" name="image-name">
 </details>
