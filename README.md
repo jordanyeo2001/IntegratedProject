@@ -9,7 +9,7 @@ Github Page - https://jordanyeo2001.github.io/IntegratedProject/
 <h1>Design Process</h1> 
 
 
-Wireframe Created - 
+Wireframe Created - https://xd.adobe.com/view/a5a0c6c2-a35b-4565-9250-b18855d6bf69-f0f3/
 
 
 <h1>Features</h1>
@@ -126,9 +126,34 @@ Trouble linking the search bar with api and showing the data on the website.(Sol
     <td>Feedback Page</td>
   </tr>
   <tr>
-    <td></td>
+    <td>Rewards Page</td>
+    <td>Benefits Page</td>
+  </tr>
+  <tr>
+    <td>Main Page</td>
+    <td>Search Page</td>
+  </tr>
+  <tr>
+    <td>Login Page</td>
     <td></td>
   </tr>
+  <tr>
+    <td>Sign Up Page</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Profile Page</td>
+  </tr>
+  <tr>
+    <td>Cart Page</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Checkout Page</td>
+    <td></td>
+  </tr>
+
 </table>
 
 <h3>Content</h3>
