@@ -490,7 +490,7 @@ $(document).ready(function () {
         window.location.href = "cararpage.html";
       }),
       $("#truckmodel").on("click", function (e) {
-        window.location.href = "cararpage.html";
+        window.location.href = "truckarpage.html";
       });
   }),
   $(document).ready(function () {
