@@ -759,8 +759,11 @@
   .profilepagetext {
     font-size: 4vw;
   }
+  .profileimg {
+    width: 15vw;
+    height: 15vw;
+  }
 }
-
 @media only screen and (width: 1024px) {
   .profilepageimg {
     margin-top: 10px;
@@ -786,5 +789,9 @@
 
   .profilepagetext {
     font-size: 4vw;
+  }
+  .profileimg {
+    width: 12vw;
+    height: 12vw;
   }
 }
