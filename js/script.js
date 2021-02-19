@@ -316,6 +316,7 @@ function updateUserTier() {
         $("#profilevoucher").attr("src", "../img/voucher1.png");
   }
 }
+
 function showproducts() {
   $.ajax({
     url: "https://fakestoreapi.com/products",
@@ -494,25 +495,54 @@ $(document).ready(function () {
   }),
   $(document).ready(function () {
     $("#plus-btn").on("click", function (e) {
-      var t = document.getElementById("productquantity").value;
-      (t = parseInt(t) + 1),
-        (document.getElementById("productquantity").value = t);
-    }),
-      $("#minus-btn").on("click", function (e) {
-        var t = document.getElementById("productquantity").value;
-        (t = 1 != t ? parseInt(t) - 1 : 1),
-          (document.getElementById("productquantity").value = t);
-      }),
-      $("#plus-btn1").on("click", function (e) {
-        var t = document.getElementById("productquantity1").value;
-        (t = parseInt(t) + 1),
-          (document.getElementById("productquantity1").value = t);
-      }),
-      $("#minus-btn1").on("click", function (e) {
-        var t = document.getElementById("productquantity1").value;
-        (t = 1 != t ? parseInt(t) - 1 : 1),
-          (document.getElementById("productquantity1").value = t);
-      });
+      var x = document.getElementById("productquantity").value;
+      var y = document.getElementById("item1price").textContent;
+      x = parseInt(x) + 1;
+      y = parseFloat(y.substring(1)) + 38.88;
+      document.getElementById("productquantity").value = x;
+      document.getElementById("item1price").innerHTML = "$" + y.toFixed(2);
+      localStorage.setItem("item1price", "$" + y.toFixed(2));
+      localStorage.setItem("productno1", x);
+    });
+    $("#minus-btn").on("click", function (e) {
+      var x = document.getElementById("productquantity").value;
+      var y = document.getElementById("item1price").textContent;
+      if (x != 1) {
+        x = parseInt(x) - 1;
+        y = parseFloat(y.substring(1)) - 38.88;
+        document.getElementById("productquantity").value = x;
+        document.getElementById("item1price").innerHTML = "$" + y.toFixed(2);
+        localStorage.setItem("item1price", "$" + y.toFixed(2));
+        localStorage.setItem("productno1", x);
+      } else {
+        x = 1;
+      }
+    });
+    $("#plus-btn1").on("click", function (e) {
+      var x = document.getElementById("productquantity1").value;
+      var y = document.getElementById("item2price").textContent;
+      x = parseInt(x) + 1;
+      y = parseFloat(y.substring(1)) + 48.88;
+      document.getElementById("productquantity1").value = x;
+      document.getElementById("item2price").innerHTML = "$" + y.toFixed(2);
+      localStorage.setItem("item2price", "$" + y.toFixed(2));
+      localStorage.setItem("productno2", x);
+    });
+    $("#minus-btn1").on("click", function (e) {
+      var x = document.getElementById("productquantity1").value;
+      var y = document.getElementById("item2price").textContent;
+      if (x != 1) {
+        x = parseInt(x) - 1;
+        y = parseFloat(y.substring(1)) - 48.88;
+        document.getElementById("productquantity1").value = x;
+        document.getElementById("item2price").innerHTML = "$" + y.toFixed(2);
+        localStorage.setItem("item2price", "$" + y.toFixed(2));
+        localStorage.setItem("productno2", x);
+      } else {
+        x = 1;
+      }
+      document.getElementById("productquantity1").value = x;
+    });
     var e = parseInt(0);
     localStorage.getItem("cartitem")
       ? (e = localStorage.getItem("cartitem"))
@@ -531,6 +561,13 @@ $(document).ready(function () {
           n = document.getElementById(t + "price").textContent;
         localStorage.setItem("item1name", o),
           localStorage.setItem("item1price", n);
+        if (localStorage.getItem("productno1")) {
+          var x = localStorage.getItem("productno1");
+          x = parseInt(x) + 1;
+          localStorage.setItem("productno1", x);
+        } else {
+          localStorage.setItem("productno1", "1");
+        }
       }),
       $("#car").on("click", function () {
         (e = parseInt(e) + 1), localStorage.setItem("cartitem", parseInt(e));
@@ -539,6 +576,13 @@ $(document).ready(function () {
           n = document.getElementById(t + "price").textContent;
         localStorage.setItem("item2name", o),
           localStorage.setItem("item2price", n);
+        if (localStorage.getItem("productno2")) {
+          var x = localStorage.getItem("productno2");
+          x = parseInt(x) + 1;
+          localStorage.setItem("productno2", x);
+        } else {
+          localStorage.setItem("productno2", "1");
+        }
       }),
       (function () {
         var e = localStorage.getItem("cartitem");
@@ -684,6 +728,18 @@ localStorage.getItem("earnpoints") || localStorage.setItem("earnpoints", "0"),
 function togglecarimg() {
   var sketchfab = document.getElementById("carsketchfab");
   var stillimage = document.getElementById("carimg");
+  if (sketchfab.style.display == "none") {
+    sketchfab.style.display = "block";
+    stillimage.style.display = "none";
+  } else {
+    sketchfab.style.display = "none";
+    stillimage.style.display = "block";
+  }
+}
+
+function toggletruckimg() {
+  var sketchfab = document.getElementById("trucksketchfab");
+  var stillimage = document.getElementById("truckimg");
   if (sketchfab.style.display == "none") {
     sketchfab.style.display = "block";
     stillimage.style.display = "none";

@@ -689,6 +689,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+#trucksketchfab {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
 @media only screen and (width: 280px) {
   .splashscreen {
     background-size: 100% 700px;

@@ -120,8 +120,24 @@
     <div class="center closebtn" onclick="closeNavbar()">
       <img id="truckmodel" class="viewmodel" src="../img/3d_icon.png" alt="" />
       <div>
-        <img class="productimg" src="../img/Untitled.png" alt="" />
-        <p id="truckname" class="h4">Pick-up Truck</p>
+        <div class="sketchfab-embed-wrapper">
+          <iframe
+            id="trucksketchfab"
+            class="sketchfabimg"
+            title="3DF IP Jeep Truck"
+            src="https://sketchfab.com/models/f51a5b06892a45799494770db8691a79/embed?autospin=1&autostart=1"
+          >
+          </iframe>
+        </div>
+        <img
+          id="truckimg"
+          class="productimg"
+          src="../img/truck_still_image.png"
+          alt=""
+        />
+        <p id="truckname" class="h4" onclick="toggletruckimg()">
+          Pick-up Truck
+        </p>
         <p id="truckprice">$38.88</p>
         <p id="truckdescription">A toy car of pickup truck</p>
         <button id="truck" name="truck" class="addtocartbtn">
