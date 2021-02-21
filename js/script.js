@@ -431,7 +431,7 @@ $(document).ready(function () {
             localStorage.setItem("earnpoints", a);
           }
         } else if ("Diamond" == usertier) {
-          o = 600;
+          o = 400;
           if (
             ((totalpoints = parseInt(totalpoints) + parseInt(o)),
             localStorage.setItem("totalpoints", totalpoints),
