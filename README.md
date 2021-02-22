@@ -185,6 +185,8 @@ FakestoreAPI and Restdb API by Pan ZiAn.
 <br>
 <a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/website_screenshots/Benefits_page.jpg">Benefits Tier icons</a> designed by Pan ZiAn
 <br>
+<a href="https://skfb.ly/6YXvT">Pick-Up Truck(3D Model)</a> designed by Pan ZiAN
+<br>
 <br>
 <a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/Navbar_icons.jpg">3 Main icons on the navigation bar</a> designed by Jordan Yeo Xiang Yu
 <br>
@@ -193,7 +195,8 @@ FakestoreAPI and Restdb API by Pan ZiAn.
 <a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/background.jpg">Abstract background for login/signup page</a> designed by Jordan Yeo Xiang Yu
 <br>
 <a href="https://github.com/jordanyeo2001/IntegratedProject/blob/main/img/logo_icon.png">App logo and branding</a> designed by Jordan Yeo Xiang Yu
-
+<br>
+<a href="https://skfb.ly/6YUF6">Mercedes AMG(3D Model)</a> designed by Jordan Yeo Xiang Yu
 
 <h2>Screenshots of Website</h2>
 
